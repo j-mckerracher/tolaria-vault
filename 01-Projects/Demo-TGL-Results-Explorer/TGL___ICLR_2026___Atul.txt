@@ -1,0 +1,1635 @@
+000
+001
+002
+003
+004
+005
+006
+007
+008
+009
+010
+011
+012
+013
+014
+015
+016
+017
+018
+019
+020
+021
+022
+023
+024
+025
+026
+027
+028
+029
+030
+031
+032
+033
+034
+035
+036
+037
+038
+039
+040
+041
+042
+043
+044
+045
+046
+047
+048
+049
+050
+051
+052
+053
+Under review as a conference paper at ICLR 2026
+TIEREDGOSSIPLEARNING
+COMMUNICATION-FRUGAL ANDSCALABLECOLLAB-
+ORATIVELEARNING
+Anonymous authors
+Paper under double-blind review
+ABSTRACT
+Modern edge deployments require collaborative training schemes that avoid both
+the single-server bottleneck of federated learning (FL) and the high communica-
+tion burden of peer-to-peer (P2P) systems. We propose Tiered Gossip Learning
+(TGL), a two-layer push–gossip–pull protocol that combines the fault tolerance
+of P2P training with the efficiency of hierarchical aggregation. In each round,
+device-level leaves push their models to a randomly selected set of relays; re-
+lays gossip among themselves; and each leaf then pulls and averages models
+from another random subset of relays. Unlike other hierarchical schemes, TGL is
+fully coordinator-free, with communication and aggregation decentralized across
+nodes. It achieves competitive accuracy while reducing per-round communication
+(model exchanges) by nearly two-thirds compared to flat P2P baselines on di-
+verse datasets, including CIFAR-10, FEMNIST, and AG-News. We provide con-
+vergence guarantees for TGL under standard smoothness, bounded variance and
+heterogeneity assumptions, and show how its layered structure enables tunable
+consensus control at each stage. Altogether, TGL brings together the strengths of
+FL and P2P design, enabling robust, low-cost mixing enabling large scale collab-
+orative learning.
+1 INTRODUCTION
+Collaborative training is increasingly vital for machine learning applications spanning edge devices,
+sensor networks, and distributed organizations. These settings demand decentralized solutions due
+to limited resources, privacy constraints, and heterogeneity in local (non-iid) data. As data owner-
+ship becomes increasingly localized, retaining data at the source has become essential. Federated
+Learning (FL) (McMahan et al., 2017; Yang et al., 2019; Kairouz et al., 2021) emerged as a practical
+response to these constraints, enabling clients to share a global model but train locally and periodi-
+cally send model updates to a central server for aggregation. While FL is attractive for its simplicity
+and ease of client participation, it struggles to scale. Congestion at the server increases with more
+clients, slowing down training (Lian et al., 2017) and introducing a single point of failure. A central
+challenge, therefore, is to supportlarge-scale participationwithout overwhelming any single node.
+Hierarchical Federated Learning (HFL) (Liu et al., 2020; Abad et al., 2020) extends this idea by
+introducing intermediate edge servers beneath a single root server to distribute the aggregation load.
+Yet, HFL inherits, and often amplifies the limitations of FL: each added server introduces an ad-
+ditional point of failure, and the root server remains a bottleneck. Centralized coordination offers
+simpler orchestration at the cost of fault tolerance and long-term scalability, motivating decentral-
+ized alternatives. Although privacy and security concerns in centralized systems are beyond this
+paper’s scope, such considerations have also contributed to the growing interest in fully decentral-
+ized paradigms.
+Peer-to-Peer Learning (P2PL) (Lian et al., 2017; Koloskova et al., 2020; Kong et al., 2021) elimi-
+nates central servers entirely, distributing communication uniformly across all participating nodes.
+This enhances fault-tolerance and removes single points of failure, but introduces a new trade-
+off: maintaining strong model mixing requires higher node degrees. The quality of this mix-
+ing is governed by the spectral gap of the gossip matrix, which reflects how effectively informa-
+1
+
+054
+055
+056
+057
+058
+059
+060
+061
+062
+063
+064
+065
+066
+067
+068
+069
+070
+071
+072
+073
+074
+075
+076
+077
+078
+079
+080
+081
+082
+083
+084
+085
+086
+087
+088
+089
+090
+091
+092
+093
+094
+095
+096
+097
+098
+099
+100
+101
+102
+103
+104
+105
+106
+107
+Under review as a conference paper at ICLR 2026
+R1
+R2 R3
+R4
+L1 L2 L3 L4 L5 L6 L7 L8 L9
+Push (L→R)
+Gossip (R→R)
+Pull (R→L)
+Figure 2: A snapshot of the Tiered Gossip Learning (TGL) network with 9 leaves and 4 relays using
+25 directed edges, where connections dynamically change in each round, illustrating the three-stage
+communication process. InStage 1 (Leaf-to-Relay Push), relays aggregate models from randomly
+sampled leaves (shown as blue dashed lines). InStage 2 (Relay Gossip), each relay exchanges
+models with other relay (red dashed lines) and averages received models. InStage 3 (Relay-to-Leaf
+Pull), each leaf retrieves a model from randomly selected relay (green dotted lines). TGL’s two-tier
+hierarchical design—featuring a decentralized relay layer atop a leaf layer with random dynamic
+connections enables scalable and fault-tolerant training while significantly reducing communication
+cost, a key reason behind its superior empirical performance.
+tion flows through the network and controls the speed at which models reach consensus. Think
+of gossip as repeatedlyaveragingwith your neighbors. Thespectral gapmeasures how quickly
+the networkforgets where information started. If the gap is large, every round mixes informa-
+tion well and the network rushes toward consensus; if the gap is small, information leaks slowly
+through narrow bridges or long chains. A larger spectral gap implies faster convergence under
+bounded heterogeneity, but preserving it becomes increasingly expensive as the network scales.
+Figure 1: Spectral gap vs. number
+of nodesnEach curve fixes node de-
+greek. Fork-random regular the gap
+(higher is better) decreases asngrows,
+so maintaining the same mixing quality
+typically requires largerk. Exponential
+graphs, with effective degreeΘ(logn),
+retain larger gaps at largen. At higher
+k, curves plateau—once major bottle-
+necks are removed, each extra neighbor
+yields only small additional gains (di-
+minishing returns).
+As shown in Figure 1, when the number of nodesnis
+small, even a modest node degreekyields a sufficiently
+large spectral gap. However,asnincreases, flat P2P sys-
+tems must raisekto preserve mixing quality, leading to
+higher per-node and total communication. Prior work on
+exponential graphs (Ying et al., 2021) partially addresses
+this by scaling degree asO(logn), but the communica-
+tion burden still grows system-wide, limiting scalability.
+Each prior approach concentrates the burden of scalabil-
+ity differently: FL violates the “no root” constraint and
+overloads a single aggregator asn↑, HFL relaxes load
+at leaves but still concentrates risk/traffic at a root and
+adds failure points; flat P2P preserves decentralization but
+must increasekwithnto maintain the same contraction
+ϵ, violating fixedB ℓ.
+We address this challenge with Tiered Gossip Learning
+(TGL), a hybrid design illustrated in Figure 2 that incor-
+porates the key principles ofhierarchy, asymmetric load
+sharing, and a decentralized top layer with random, dy-
+namic connections.Leaves interact only with a small,
+randomly chosen subset of relays; relays gossip among
+themselves; and leaves then pull updates from another
+random relay subset. This distributes aggregation across
+decentralized relays, avoiding single-server bottlenecks
+while enabling more leaves to participate under fixed per-
+leaf degree. Spectrally, the two-layer process multiplies
+the push, gossip, and pull mixing matrices; although each matrix can be sparse, their product
+yields a denser effective mixing matrix that improves consensus without necessarily increasing
+leaf degrees. TGL thus operationalizes these core principles to enable scalable, fault-tolerant, and
+communication-efficient collaborative learning.
+2
+
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+Under review as a conference paper at ICLR 2026
+We summarize our key contributions as follows:
+1. We introduceTiered Gossip Learning(TGL), a two-layer push–gossip–pull protocol that
+synthesizes structural decentralization with hierarchical efficiency. TGL leverages a tiered
+architecture with asymmetric load sharing to achieve strong model mixing at low commu-
+nication volume, while ensuring that no central coordination is required and all aggregation
+and communication remain decentralized. This design enhances fault tolerance and enables
+scalable participation without overloading any single node, addressing key limitations of
+prior hierarchical and decentralized approaches.
+2. We prove convergence of TGL under standard assumptions of smoothness, bounded vari-
+ance, and bounded heterogeneity. We also derive stage-wise and overall bounds on the
+expected consensus distance, expressed in terms of network parameters including node
+count and degree, highlighting how the tiered mixing structure improves global consensus
+with low node degrees and enables independent control of consensus at each layer.
+3. We evaluate TGL on vision tasks: FEMNIST with a CNN and CIFAR-10 with a
+ResNet—and on a language task, AG News with a TinyTransformer, under non-iid data.
+We compare performance across varying per-round model exchange budgets. TGL con-
+sistently achieves better or comparable accuracy while using up to3× less communica-
+tionthan prior decentralized baselines, including EL-Local, Exponential, Base-(k+1), and
+Erd˝os–R´enyi topologies.
+2 BACKGROUND AND RELATED WORK
+2.1 RELATED WORK
+Related Work.The idea of fully decentralized collaborative learning was popularized by Lian
+et al. (2017), who showed that Peer-to-Peer Learning (P2PL) using Decentralized SGD (DSGD)
+can surpass Federated Learning (FL) in wall-clock time by eliminating the central server that easily
+gets congested. This sparked extensive research on decentralized optimization (Assran et al., 2019;
+Koloskova et al., 2020), with subsequent work focusing on accelerating convergence via algorithmic
+refinements (Yu et al., 2019; Yuan et al., 2021; Chen et al., 2021).
+A key challenge in collaborative learning is the presence of non-iid data across clients. Under
+bounded heterogeneity, prior work has focused on strengthening consensus: either by reducing sen-
+sitivity to the communication graph (Tang et al., 2018; Li et al., 2019; Kong et al., 2021), or by de-
+signing sparse yet well-mixing topologies such as expanders and logarithmic-degree graphs (Nedi ´c
+et al., 2018; Chow et al., 2016; Ying et al., 2021; Takezawa et al., 2023; Wang et al., 2019; Song
+et al., 2022). More recently,Epidemic Learning(EL) (De V os et al., 2023) showed that dynamic
+random graphs can improve mixing more efficiently than fixed topologies. EL also highlighted the
+importance of relaxing the requirement for doubly stochastic mixing: while its Oracle variant relies
+on a coordinator to construct such matrices, the Local variant achieves full decentralization by op-
+erating with only row-stochastic weights. Our work continues in this direction, aiming to improve
+mixing efficiency under constrained communication without any centralized component.
+When heterogeneity is large or unbounded, an alternative line of work has explored clustering strate-
+gies, where nodes preferentially interact with peers holding similar data or model updates (Ghosh
+et al., 2020; Sattler et al., 2020). Such methods mitigate the degradation in local performance that
+arises from enforcing a single global consensus, but generally require orchestration by a central
+scheduler, and thus remain structurally closer to FL. Some P2PL approaches (Onoszko et al., 2021;
+Li et al., 2022) have also incorporated clustering mechanisms for adaptive peer discovery.
+Chaoyue: I don’t quite understand the following sentence. Do you mean: ”A complementary or-
+thogonal direction of reducing communication cost is by limiting ...”? A complementary orthogonal
+direction reduces communication cost by limiting client participation per round. Methods such
+as Teleportation (Takezawa & Stich, 2025) and Plexus (de V os et al., 2023) lower communication
+cost by activating only a subset of nodes per iteration, but at the cost of discarding many updates.
+Chaoyue: However, after a careful check of the theory of Teleportation (Takezawa & Stich, 2025),
+the method of Teleportation, contrary to its claim, actually has a degradation in its convergence rate,
+which theoretically needs more communication cost due to a larger number of iterations. Other
+3
+
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+Under review as a conference paper at ICLR 2026
+methods reduce the per-message size through compressed communication (Koloskova et al., 2019)
+or quantization (Chen et al., 2024). In contrast, our work targets scaling to larger node participation
+under bounded heterogeneity by improving mixing efficiency at limited communication volume,
+without relying on sampling or compression, and by relaxing the requirement for doubly stochastic
+matrices to eliminate central orchestration.
+2.2 BACKGROUND
+Consider a distributed learning setup withn l nodes, each holding a private datasetD i. The nodes
+collaboratively train a global model by periodically exchanging updates. Each node initializes the
+same modelx 0 and follows a shared training routine. The local objective for nodeiis:f (i)(x) :=
+Eξ∼Di [f(x, ξ)], ξbeing a mini-batch sampled fromD i. The global objectiveFminimizes the
+average local objectives across alln l nodes:
+min
+x
+F(x) = min
+x
+1
+nl
+nlX
+i=1
+f(i)(x).(1)
+LetX t ∈R nl×d denote the global model matrix, whose rows are the node models at roundt:X t =
+[x(1)
+t , . . . ,x(nl)
+t ]⊤. This matrix is not available to any individual node but serves as a convenient
+global representation for analysis. Each node locally updatesx (i)
+t →x (i)
+t′ fort < t′ < t+ 1. The
+global matrix then updates via mixing, expressed as:
+Xt+1 =W tXt′ ,(2)
+whereW t ∈R nl×nl is the mixing matrix. Every row ofW t represents the aggregation weights
+assigned by a node to all other nodes.
+Mixing Matrix.Each rowiofW t specifies the aggregation weights assigned by nodeito all
+others. Equivalently, columnirepresents the weights assigned to nodei, i.e., its contribution to
+mixing. Some works assumeW t is doubly stochastic, where both rows and columns sum to one.
+This assumption simplifies analysis by ensuring equal contribution from all nodes, but enforcing it
+typically requires centralized coordination, as highlighted by the Oracle variant of Epidemic Learn-
+ing (EL) (De V os et al., 2023). Denser matrices typically yield larger spectral gaps and faster mixing,
+but at the cost of high node degrees and communication cost. In our design, detailed in Section 3,
+we instead compose multiple sparse matrices across rounds to attain both low degree per step and
+strong effective mixing through their product.
+Consensus Distance.In decentralized settings, where only partial averaging occurs, local models
+may remain different after each round. To quantify this divergence, we use theconsensus distance
+(CD), defined in prior works Kong et al. (2021) as the average squared Euclidean distance of each
+node’s model from the global mean:
+CDt = 1
+nl
+nlX
+i=1
+x(i)
+t − ¯xt
+
+2
+,(3)
+where ¯xt = 1
+nl
+Pnl
+i=1 x(i)
+t . To measure mixing efficiency, we define theconsensus distance ratio
+(CDR) as:
+CDR= CDt+1
+CDt′
+,(4)
+fort < t′ < t+ 1, wheret ′ denotes the pre-gossip stage andt+ 1the post-gossip stage. A lower
+CDR indicates stronger mixing. When CD approaches zero, nodes approach exact averaging; how
+close CDR gets to zero depends on the spectral properties ofW t.
+Spectral Gap.The spectral gap of a mixing matrixWis defined as1−λ 2, whereλ 2 is the second-
+largest eigenvalue in magnitude (λ 1 = 1for a row stochastic matrix). This gap measures how
+quickly models converge to their average. A larger spectral gap implies faster information diffusion
+and better mixing (Ying et al., 2021; Lov´asz, 1993; Chung, 1997) under bounded heterogeneity.
+4
+
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+Under review as a conference paper at ICLR 2026
+Number of Edges as a Proxy for Communication Cost.In our setting, model updates are fixed-
+size messages, so each directed edge corresponds to exactly one exchange. We define one directed
+edge as one unit of communication cost. A node’s degree reflects its individual budget, while the
+total number of directed edges captures system-wide bandwidth and aggregation effort. Since com-
+putation per node also scales with its in-degree, the edge count serves as a unified measure of both
+communication and aggregation cost. This abstraction provides a simple metric using which we
+design and evaluate scalable collaborative learning protocols to reduce the communication cost.
+3 DESIGN OFTIEREDGOSSIPLEARNING(TGL)
+TGL, as illustrated in Figure 2 is composed of two kinds of nodes:relays, which act as server-like
+intermediaries, andleaves, which hold private data and perform local training. A small number of
+relays (nr) support a larger population of leaves (nl), mixing and redistributing their models without
+any direct leaf-to-leaf communication. Leaves may be constrained, with limited connections to
+relays, while relays are assumed more capable and can sustain larger fan-out to many leaves. This
+intentional asymmetry offloads heavier communication to the relay layer.
+Figure 1 shows that strong mixing can be achieved with lower communication burden when fewer
+nodes are involved, motivating a modest choice ofn r based on the relay fanout budget. With un-
+bounded relay budget, a single relay suffices and TGL reduces to FL, while tighter budgets can be
+accommodated by using multiple relays to share the load.
+The relays themselves form a fully decentralized gossip layer with no central coordinator. Moreover,
+all connections in TGL are random and dynamic across rounds. This improves fault tolerance: if a
+relay fails, the system continues to collaborate through the remainingn r −1relays and resampled
+connections, unlike FL or HFL. In this way, TGL synthesizes the design principles of hierarchy,
+asymmetric load sharing, decentralized relay layer, and random dynamic connectivity to enable
+effective mixing, fault-tolerance, and practical scalability without necessarily burdening constrained
+nodes as the system grows. We parameterize the protocol below.
+Between consecutive roundstandt+1, we define three synchronizing steps:t+ 1
+4 , t+2
+4 , t+3
+4 , which
+correspond to the three mixing stages described below. Extensions to asynchronous operation are
+also possible and are discussed in Appendix??.
+Algorithm 1Tiered Gossip Learning (TGL)
+Input:n l (leaves),n r (relays),T(global
+rounds),T loc (local SGD steps),η(learning
+rate),b lr, brr, brl: push, gossip, pull budgets
+Init:x (i)
+0 ←x 0,∀i∈[n l]
+fort= 1toTdo
+Step 0: Local Training
+x(i)
+t+ 1
+4
+←SGD(x (i)
+t ,Di, Tloc, η)
+Step 1: Push
+Each relayksamplesL k,|Lk|=b lr
+x(k)
+t+ 2
+4
+← 1
+blr
+P
+i∈Lk
+x(i)
+t+ 1
+4
+Step 2: Gossip
+Each relayksends tob rr relays and receives
+from a set ofR k relays.
+x(k)
+t+ 3
+4
+← 1
+|Rk|+1 (x(k)
+t+ 2
+4
++ P
+m∈Rk
+x(m)
+t+ 2
+4
+)
+Step 3: Pull
+Each leafisamplesS i,|Si|=b rl
+x(i)
+t+1 ← 1
+brl
+P
+k∈Si x(k)
+t+ 3
+4
+end for
+Output:{x (i)
+T }nl
+i=1
+Each leafiperforms local training fromx (i)
+t
+tox (i)
+t+ 1
+4
+viaT loc steps of SGD on its private
+dataset, where each step uses one mini-batch.
+The updated models are then mixed in three
+fixed hops described below.
+Stage 1: Leaf-to-Relay Push.Each relay
+kindependently selects a random subset of
+blr leaves (also its in-degree or budget), de-
+noted byL k, which respond by pushing their
+current models to relayk, which aggregates
+them as:
+x(k)
+t+ 2
+4
+= 1
+blr
+X
+i∈Lk
+x(i)
+t+ 1
+4
+, X t+ 2
+4
+=W lr Xt+ 1
+4
+,
+whereW lr ∈R nr×nl is the leaf-to-relay
+mixing matrix formed from the sampled leaf
+sets andx (k)
+t+ 2
+4
+is the aggregated model at re-
+layk. Sampling is independent across relays
+and across rounds, ensuring fair selection of
+leaves over time, with each leaf having an ex-
+pected out-degree ofn rblr/nl. Only sampled
+leaves perform local training in that round.
+5
+
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+Under review as a conference paper at ICLR 2026
+Stage 2: Relay-to-Relay Gossip.Relays then engage in decentralized gossip, each sending its
+aggregated model tob rr (its out-degree) randomly selected relays. While the out-degree is fixed, we
+allow the in-degree to vary across rounds, with each relay receiving models from a setR k of peers.
+Over time, the expected in-degree also equalsb rr, but this relaxation avoids the need for central
+coordination. Each relay then updates its state by averaging its own model with those it receives:
+x(k)
+t+ 3
+4
+= 1
+|Rk|+ 1
+
+x(k)
+t+ 1
+2
++
+X
+m∈Rk
+x(m)
+t+ 1
+2
+
+, X t+ 3
+4
+=W rr Xt+ 1
+2
+,
+Wrr ∈R nr×nr is the relay-relay mixing matrix andx (k)
+t+ 3
+4
+is the updated model at the relayk.
+Stage 3: Relay-to-Leaf Pull.Each leafithen pulls updates from a randomly selected subsetS i
+ofb rl ≥1relays and averages the received models:
+x(i)
+t+1 = 1
+brl
+X
+k∈Si
+x(k)
+t+ 3
+4
+, X t+1 =W rl Xt+ 3
+4
+,
+whereW rl ∈R nl×nr is the relay-to-leaf mixing matrix andx (i)
+t+1 is the updated model at leafifor
+the next round. Since models have already been mixed in the relay layer, even a small pull budget
+brl (as low as 1) can suffice, making it easy for leaves to join and for collaboration to scale. While
+usingb rl = 1may leak the exact pre-training model of a leaf, like in FL, a higher value can mitigate
+this when privacy is a concern.
+Combining all three stages yields the end-to-end transformation:
+Xt+1 =W rl Wrr Wlr Xt+ 1
+4
+≡W TGL Xt+ 1
+4
+,
+whereW TGL ∈R nl×nl is the overall mixing matrix for TGL as formed by the connections in a
+given round. Although the individual matrices may be sparse due to constrained budgets,W TGL ,
+being the product of three matrices is typically dense, enabling effective mixing across leaves. This
+dense composition, enabled by the hierarchical structure, is key to TGL’s improved performance
+over all flat P2PL baselines.
+Each mixing stage in TGL has its own budget parameter (b lr, brr, brl), enabling independent con-
+trol. For example, if leaves are constrained but relays underutilized, increasingb rr densifiesW rr,
+improving mixing without raising the leaf budget. This decoupled control is a key advantage of
+TGL over P2PL systems, where unified roles prevent such separation. Together withn r, these bud-
+gets (blr, brr, brl) constitute the core design parameters of TGL. We analyze how these parameters
+influence stage-wise consensus and the overall convergence rate in the next section.
+TGL further benefits from several structural properties. Bounding the in-degrees in Stage 1 (relay
+receive) and Stage 3 (leaf receive) ensures that no receiver is overwhelmed, either due to too many
+senders (as in relays receiving from many leaves) or limited capacity (as in leaves pulling from
+relays). Stage 2, which involves only the small relay set, is less sensitive to such constraints.
+The use of dynamic, random sampling offers two key advantages: it gracefully handles node failures
+by aggregating only over received messages, and it enables seamless scaling, as new leaves or relays
+can be added by simply augmenting the set of valid nodes to sample from. For example, a new leaf
+can immediately begin participation by pulling a recent model in Stage 3. Finally, the total number
+of directed edges per round,n rblr +n rbrr +n lbrl, serves as a direct proxy for communication and
+computation cost, which we use to normalize comparisons across baselines in our evaluation.
+4 THEORETICALANALYSIS
+In this section, we analyze the convergence behavior of TGL under standard assumptions used in
+stochastic first-order methods. Specifically, we assume for local functionsfand global functionF:
+Assumption 4.1(Smoothness).For eachi∈[n l], the local functionf (i) :R d →Ris differentiable,
+and there exists a constantL <∞such that for allx, y∈R d:∥∇f (i)(y)−∇f (i)(x)∥ ≤L∥y−x∥.
+Assumption 4.2(Bounded Stochastic Noise).There exists a constantσ <∞such that for all
+i∈[n l]andx∈R d:E ξ∼D(i)
+
+∥∇f(x, ξ)−∇f(i)(x)∥2
+≤σ 2,whereσcaptures variance introduced
+by stochastic gradients due to batch sampling.
+6
+
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+Under review as a conference paper at ICLR 2026
+Assumption 4.3(Bounded Heterogeneity).There exists a constantH<∞such that for allx∈R d:
+1
+nl
+P
+i∈[nl] ∥∇f(i)(x)− ∇F(x)∥2 ≤ H2,whereHquantifies the heterogeneity arising from the
+non-iid data distribution.
+Theorem 4.4.Consider Algorithm 1 under the above assumptions. Let the initial optimization gap
+be:∆ 0 :=F(x 0)−min x∈Rd F(x).Then, for anyT≥1, withn l ≥2leaves with pull budget
+brl ≥1, andn r ≥2relays with push and gossip budgetsb lr ≥1, brr ≥1, selecting the step size
+as:
+γ∈Θ
+ 
+min
+(s
+nl∆0
+T L((1 +β′)σ2 +β ′H2), 3
+s
+∆0
+T L2βTGL (σ2 +H 2), 1
+L
+)!
+,
+we obtain:
+1
+nlT
+T−1X
+t=0
+nlX
+i=1
+E
+∇F(x(i)
+t )
+
+2
+∈ O
+r
+L∆0
+T nl
+((1 +β ′)σ2 +β ′H2)+
+3
+r
+L2βTGL ∆2
+0(σ2 +H 2)
+T2 +L∆0
+T
+
+.
+(5)
+where
+βTGL :=βlrβrrβrl, β ′ := 1
+2
+h
+βTGL + nl
+nr
+βlr(1 +β rr)
+i
+, β lr := 1
+blr
+
+1− blr−1
+nl−1
+
+,
+βrr := 1
+brr
+
+1−
+
+1− brr
+nr−1
+nr 
+− 1
+nr−1 , β rl := 1
+brl
+
+1− brl−1
+nr−1
+ (6)
+Theseβ-terms appear in Lemma??as stage-wise contraction factors, bounding the expected con-
+sensus distance after each step:
+E[CDt+ 2
+4
+]
+E[CDt+ 1
+4
+] ≤β lr,
+E[CDt+ 3
+4
+]
+E[CDt+ 2
+4
+] ≤β rr, E[CDt+1]
+E[CDt+ 3
+4
+] ≤β rl ⇒ E[CDt+1]
+E[CDt+ 1
+4
+] ≤β TGL.
+As shown in Equation 6, each budget parameterb lr, brr, brl directly controls its correspondingβ-
+value: increasing the budget reduces the contraction factor, yielding faster consensus. Sinceβ TGL is
+multiplicative, improving any single stage strengthens the overall contraction rate.
+We structure the proof through three key lemmas: average preservation in Lemma??, bounding
+stage-wise consensus contraction in Lemma??, and bounding the deviation of the average model in
+Lemma??. These results are combined in Lemmas??and??to yield the full convergence proof in
+Appendix??, and additional analysis in Appendix??, with an overview provided in Appendix??.
+5 SUBMISSION OF CONFERENCE PAPERS TOICLR 2026
+ICLR requires electronic submissions, processed byhttps://openreview.net/. See ICLR’s
+website for more instructions.
+If your paper is ultimately accepted, the statement\iclrfinalcopyshould be inserted to adjust
+the format to the camera ready requirements.
+The format for the submissions is a variant of the NeurIPS format. Please read carefully the instruc-
+tions below, and follow them faithfully.
+5.1 STYLE
+Papers to be submitted to ICLR 2026 must be prepared according to the instructions presented here.
+Authors are required to use the ICLR LATEX style files obtainable at the ICLR website. Please make
+sure you use the current files and not previous versions. Tweaking the style files may be grounds for
+rejection.
+5.2 RETRIEVAL OF STYLE FILES
+The style files for ICLR and other conference information are available online at:
+7
+
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+Under review as a conference paper at ICLR 2026
+http://www.iclr.cc/
+The fileiclr2026_conference.pdfcontains these instructions and illustrates the various
+formatting requirements your ICLR paper must satisfy. Submissions must be made using LATEX and
+the style filesiclr2026_conference.styandiclr2026_conference.bst(to be used
+with LATEX2e). The fileiclr2026_conference.texmay be used as a “shell” for writing your
+paper. All you have to do is replace the author, title, abstract, and text of the paper with your own.
+The formatting instructions contained in these style files are summarized in sections 6, 7, and 8
+below.
+6 GENERAL FORMATTING INSTRUCTIONS
+The text must be confined within a rectangle 5.5 inches (33 picas) wide and 9 inches (54 picas) long.
+The left margin is 1.5 inch (9 picas). Use 10 point type with a vertical spacing of 11 points. Times
+New Roman is the preferred typeface throughout. Paragraphs are separated by 1/2 line space, with
+no indentation.
+Paper title is 17 point, in small caps and left-aligned. All pages should start at 1 inch (6 picas) from
+the top of the page.
+Authors’ names are set in boldface, and each name is placed above its corresponding address. The
+lead author’s name is to be listed first, and the co-authors’ names are set to follow. Authors sharing
+the same address can be on the same line.
+Please pay special attention to the instructions in section 8 regarding figures, tables, acknowledg-
+ments, and references.
+There will be a strict upper limit of9 pagesfor the main text of the initial submission, with unlimited
+additional pages for citations. This limit will be expanded to10 pagesfor rebuttal/camera ready.
+7 HEADINGS:FIRST LEVEL
+First level headings are in small caps, flush left and in point size 12. One line space before the first
+level heading and 1/2 line space after the first level heading.
+7.1 HEADINGS:SECOND LEVEL
+Second level headings are in small caps, flush left and in point size 10. One line space before the
+second level heading and 1/2 line space after the second level heading.
+7.1.1 HEADINGS:THIRD LEVEL
+Third level headings are in small caps, flush left and in point size 10. One line space before the third
+level heading and 1/2 line space after the third level heading.
+8 CITATIONS,FIGURES,TABLES,REFERENCES
+These instructions apply to everyone, regardless of the formatter being used.
+8.1 CITATIONS WITHIN THE TEXT
+Citations within the text should be based on thenatbibpackage and include the authors’ last names
+and year (with the “et al.” construct for more than two authors). When the authors or the publication
+are included in the sentence, the citation should not be in parenthesis using\citet{}(as in “See
+?for more information.”). Otherwise, the citation should be in parenthesis using\citep{}(as in
+“Deep learning shows promise to make progress towards AI (?).”).
+8
+
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+Under review as a conference paper at ICLR 2026
+Table 1: Sample table title
+PART DESCRIPTION
+Dendrite Input terminal
+Axon Output terminal
+Soma Cell body (contains cell nucleus)
+The corresponding references are to be listed in alphabetical order of authors, in the REFERENCES
+section. As to the format of the references themselves, any style is acceptable as long as it is used
+consistently.
+8.2 FOOTNOTES
+Indicate footnotes with a number1 in the text. Place the footnotes at the bottom of the page on which
+they appear. Precede the footnote with a horizontal rule of 2 inches (12 picas).2
+8.3 FIGURES
+All artwork must be neat, clean, and legible. Lines should be dark enough for purposes of repro-
+duction; art work should not be hand-drawn. The figure number and caption always appear after the
+figure. Place one line space before the figure caption, and one line space after the figure. The figure
+caption is lower case (except for first word and proper nouns); figures are numbered consecutively.
+Make sure the figure caption does not get separated from the figure. Leave sufficient space to avoid
+splitting the figure and figure caption.
+You may use color figures. However, it is best for the figure captions and the paper body to make
+sense if the paper is printed either in black/white or in color.
+Figure 3: Sample figure caption.
+8.4 TABLES
+All tables must be centered, neat, clean and legible. Do not use hand-drawn tables. The table number
+and title always appear before the table. See Table 1.
+Place one line space before the table title, one line space after the table title, and one line space after
+the table. The table title must be lower case (except for first word and proper nouns); tables are
+numbered consecutively.
+1Sample of the first footnote
+2Sample of the second footnote
+9
+
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+Under review as a conference paper at ICLR 2026
+9 DEFAULTNOTATION
+In an attempt to encourage standardized notation, we have included the notation file from
+the textbook,Deep Learning?available athttps://github.com/goodfeli/dlbook_
+notation/. Use of this style is not required and can be disabled by commenting out
+math commands.tex.
+Numbers and Arrays
+aA scalar (integer or real)
+aA vector
+AA matrix
+AA tensor
+In Identity matrix withnrows andncolumns
+IIdentity matrix with dimensionality implied by context
+e(i) Standard basis vector[0, . . . ,0,1,0, . . . ,0]with a 1 at po-
+sitioni
+diag(a)A square, diagonal matrix with diagonal entries given bya
+a A scalar random variable
+aA vector-valued random variable
+AA matrix-valued random variable
+Sets and Graphs
+AA set
+RThe set of real numbers
+{0,1}The set containing 0 and 1
+{0,1, . . . , n}The set of all integers between0andn
+[a, b]The real interval includingaandb
+(a, b]The real interval excludingabut includingb
+A\BSet subtraction, i.e., the set containing the elements ofA
+that are not inB
+GA graph
+P aG(xi)The parents of x i inG
+Indexing
+ai Elementiof vectora, with indexing starting at 1
+a−i All elements of vectoraexcept for elementi
+Ai,j Elementi, jof matrixA
+Ai,: Rowiof matrixA
+A:,i Columniof matrixA
+Ai,j,k Element(i, j, k)of a 3-D tensorA
+A:,:,i 2-D slice of a 3-D tensor
+ai Elementiof the random vectora
+Calculus
+10
+
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+Under review as a conference paper at ICLR 2026
+dy
+dx Derivative ofywith respect tox
+∂y
+∂x Partial derivative ofywith respect tox
+∇xyGradient ofywith respect tox
+∇XyMatrix derivatives ofywith respect toX
+∇XyTensor containing derivatives ofywith respect toX
+∂f
+∂x Jacobian matrixJ∈R m×n off:R n →R m
+∇2
+xf(x)orH(f)(x)The Hessian matrix offat input pointxZ
+f(x)dxDefinite integral over the entire domain ofx
+Z
+S
+f(x)dxDefinite integral with respect toxover the setS
+Probability and Information Theory
+P(a)A probability distribution over a discrete variable
+p(a)A probability distribution over a continuous variable, or
+over a variable whose type has not been specified
+a∼PRandom variable a has distributionP
+Ex∼P [f(x)]orEf(x)Expectation off(x)with respect toP(x)
+Var(f(x))Variance off(x)underP(x)
+Cov(f(x), g(x))Covariance off(x)andg(x)underP(x)
+H(x)Shannon entropy of the random variable x
+DKL(P∥Q)Kullback-Leibler divergence of P and Q
+N(x;µ,Σ)Gaussian distribution overxwith meanµand covariance
+Σ
+Functions
+f:A→BThe functionfwith domainAand rangeB
+f◦gComposition of the functionsfandg
+f(x;θ)A function ofxparametrized byθ. (Sometimes we write
+f(x)and omit the argumentθto lighten notation)
+logxNatural logarithm ofx
+σ(x)Logistic sigmoid, 1
+1 + exp(−x)
+ζ(x)Softplus,log(1 + exp(x))
+||x||p Lp norm ofx
+||x||L 2 norm ofx
+x+ Positive part ofx, i.e.,max(0, x)
+1condition is 1 if the condition is true, 0 otherwise
+11
+
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+Under review as a conference paper at ICLR 2026
+10 FINAL INSTRUCTIONS
+Do not change any aspects of the formatting parameters in the style files. In particular, do not modify
+the width or length of the rectangle the text should fit into, and do not change font sizes (except
+perhaps in the REFERENCESsection; see below). Please note that pages should be numbered.
+11 PREPARINGPOSTSCRIPT ORPDFFILES
+Please prepare PostScript or PDF files with paper size “US Letter”, and not, for example, “A4”. The
+-t letter option on dvips will produce US Letter files.
+Consider directly generating PDF files usingpdflatex(especially if you are a MiKTeX user).
+PDF figures must be substituted for EPS figures, however.
+Otherwise, please generate your PostScript and PDF files with the following commands:
+dvips mypaper.dvi -t letter -Ppdf -G0 -o mypaper.ps
+ps2pdf mypaper.ps mypaper.pdf
+11.1 MARGINS INLATEX
+Most of the margin problems come from figures positioned by hand using\specialor other
+commands. We suggest using the command\includegraphicsfrom the graphicx package.
+Always specify the figure width as a multiple of the line width as in the example below using .eps
+graphics
+\usepackage[dvips]{graphicx} ...
+\includegraphics[width=0.8\linewidth]{myfile.eps}
+or
+\usepackage[pdftex]{graphicx} ...
+\includegraphics[width=0.8\linewidth]{myfile.pdf}
+for .pdf graphics. See section 4.4 in the graphics bundle documentation (http://www.ctan.
+org/tex-archive/macros/latex/required/graphics/grfguide.ps)
+A number of width problems arise when LaTeX cannot properly hyphenate a line. Please give
+LaTeX hyphenation hints using the\-command.
+AUTHORCONTRIBUTIONS
+If you’d like to, you may include a section for author contributions as is done in many journals. This
+is optional and at the discretion of the authors.
+ACKNOWLEDGMENTS
+Use unnumbered third level headings for the acknowledgments. All acknowledgments, including
+those to funding agencies, go at the end of the paper.
+REFERENCES
+Mehdi Salehi Heydar Abad, Emre Ozfatura, Deniz Gunduz, and Ozgur Ercetin. Hierarchical feder-
+ated learning across heterogeneous cellular networks. InICASSP 2020-2020 IEEE International
+Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 8866–8870. IEEE, 2020.
+Mahmoud Assran, Nicolas Loizou, Nicolas Ballas, and Mike Rabbat. Stochastic gradient push
+for distributed deep learning. InInternational Conference on Machine Learning, pp. 344–353.
+PMLR, 2019.
+12
+
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+Under review as a conference paper at ICLR 2026
+Li Chen, Wei Liu, Yunfei Chen, and Weidong Wang. Communication-efficient design for quantized
+decentralized federated learning.IEEE Transactions on Signal Processing, 72:1175–1188, 2024.
+Yiming Chen, Kun Yuan, Yingya Zhang, Pan Pan, Yinghui Xu, and Wotao Yin. Accelerating gossip
+sgd with periodic global averaging. InInternational Conference on Machine Learning, pp. 1791–
+1802. PMLR, 2021.
+Yat-Tin Chow, Wei Shi, Tianyu Wu, and Wotao Yin. Expander graph and communication-efficient
+decentralized optimization. In2016 50th Asilomar Conference on Signals, Systems and Comput-
+ers, pp. 1715–1720. IEEE, 2016.
+Fan R. K. Chung.Spectral Graph Theory, volume 92 ofCBMS Regional Conference Series in
+Mathematics. American Mathematical Society, Providence, RI, 1997.
+Martijn de V os, Akash Dhasade, Anne-Marie Kermarrec, Erick Lavoie, Johan Pouwelse, and Rishi
+Sharma. Decentralized learning made practical with client sampling.arXiv e-prints, pp. arXiv–
+2302, 2023.
+Martijn De V os, Sadegh Farhadkhani, Rachid Guerraoui, Anne-Marie Kermarrec, Rafael Pires, and
+Rishi Sharma. Epidemic learning: Boosting decentralized learning with randomized communica-
+tion.Advances in Neural Information Processing Systems, 36:36132–36164, 2023.
+Avishek Ghosh, Jichan Chung, Dong Yin, and Kannan Ramchandran. An efficient framework for
+clustered federated learning.Advances in neural information processing systems, 33:19586–
+19597, 2020.
+Peter Kairouz, H Brendan McMahan, Brendan Avent, Aur ´elien Bellet, Mehdi Bennis, Arjun Nitin
+Bhagoji, Kallista Bonawitz, Zachary Charles, Graham Cormode, Rachel Cummings, et al. Ad-
+vances and open problems in federated learning.Foundations and trends® in machine learning,
+14(1–2):1–210, 2021.
+Anastasia Koloskova, Sebastian Stich, and Martin Jaggi. Decentralized stochastic optimization
+and gossip algorithms with compressed communication. InInternational conference on machine
+learning, pp. 3478–3487. PMLR, 2019.
+Anastasia Koloskova, Nicolas Loizou, Sadra Boreiri, Martin Jaggi, and Sebastian Stich. A unified
+theory of decentralized sgd with changing topology and local updates. InInternational conference
+on machine learning, pp. 5381–5393. PMLR, 2020.
+Lingjing Kong, Tao Lin, Anastasia Koloskova, Martin Jaggi, and Sebastian Stich. Consensus control
+for decentralized deep learning. InInternational Conference on Machine Learning, pp. 5686–
+5696. PMLR, 2021.
+Zexi Li, Jiaxun Lu, Shuang Luo, Didi Zhu, Yunfeng Shao, Yinchuan Li, Zhimeng Zhang, Yongheng
+Wang, and Chao Wu. Towards effective clustered federated learning: A peer-to-peer framework
+with adaptive neighbor matching.IEEE Transactions on Big Data, 10(6):812–826, 2022.
+Zhi Li, Wei Shi, and Ming Yan. A decentralized proximal-gradient method with network indepen-
+dent step-sizes and separated convergence rates.IEEE Transactions on Signal Processing, 67
+(17):4494–4506, 2019.
+X. Lian, C. Zhang, H. Zhang, C.-J. Hsieh, W. Zhang, and J. Liu. Can decentralized algorithms
+outperform centralized algorithms? a case study for decentralized parallel stochastic gradient
+descent. InAdvances in Neural Information Processing Systems (NeurIPS 2017), pp. 5330–5340.
+Curran Associates, Inc., 2017.
+Lumin Liu, Jun Zhang, SH Song, and Khaled B Letaief. Client-edge-cloud hierarchical federated
+learning. InICC 2020-2020 IEEE international conference on communications (ICC), pp. 1–6.
+IEEE, 2020.
+L´aszl´o Lov´asz. Random walks on graphs.Combinatorics, Paul erdos is eighty, 2(1-46):4, 1993.
+13
+
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+Under review as a conference paper at ICLR 2026
+H. Brendan McMahan, E. Moore, D. Ramage, S. Hampson, and B. A. y Arcas. Communication-
+efficient learning of deep networks from decentralized data. InProceedings of the 20th Inter-
+national Conference on Artificial Intelligence and Statistics (AISTATS 2017), pp. 1273–1282.
+PMLR, 2017.
+Angelia Nedi ´c, Alex Olshevsky, and Michael G Rabbat. Network topology and communication-
+computation tradeoffs in decentralized optimization.Proceedings of the IEEE, 106(5):953–976,
+2018.
+Noa Onoszko, Gustav Karlsson, Olof Mogren, and Edvin Listo Zec. Decentralized federated learn-
+ing of deep neural networks on non-iid data.arXiv preprint arXiv:2107.08517, 2021.
+Felix Sattler, Klaus-Robert M ¨uller, and Wojciech Samek. Clustered federated learning: Model-
+agnostic distributed multitask optimization under privacy constraints.IEEE transactions on neu-
+ral networks and learning systems, 32(8):3710–3722, 2020.
+Zhuoqing Song, Weijian Li, Kexin Jin, Lei Shi, Ming Yan, Wotao Yin, and Kun Yuan.
+Communication-efficient topologies for decentralized learning witho(1)consensus rate.Ad-
+vances in Neural Information Processing Systems, 35:1073–1085, 2022.
+Yuki Takezawa and Sebastian U Stich. Scalable decentralized learning with teleportation. In
+The Thirteenth International Conference on Learning Representations, 2025. URLhttps:
+//openreview.net/forum?id=AvmBgiQxxp.
+Yuki Takezawa, Ryoma Sato, Han Bao, Kenta Niwa, and Makoto Yamada. Beyond exponen-
+tial graph: Communication-efficient topologies for decentralized learning via finite-time conver-
+gence.Advances in Neural Information Processing Systems, 36:76692–76717, 2023.
+Hanlin Tang, Xiangru Lian, Ming Yan, Ce Zhang, and Ji Liu. D
+textsuperscript2:: Decentralized training over decentralized data. InInternational Conference on
+Machine Learning, pp. 4848–4856. PMLR, 2018.
+Jianyu Wang, Anit Kumar Sahu, Zhouyi Yang, Gauri Joshi, and Soummya Kar. Matcha: Speed-
+ing up decentralized sgd via matching decomposition sampling. In2019 Sixth Indian Control
+Conference (ICC), pp. 299–300. IEEE, 2019.
+Qiang Yang, Yang Liu, Tianjian Chen, and Yongxin Tong. Federated machine learning: Concept
+and applications.ACM Transactions on Intelligent Systems and Technology (TIST), 10(2):1–19,
+2019.
+Bicheng Ying, Kun Yuan, Yiming Chen, Hanbin Hu, Pan Pan, and Wotao Yin. Exponential graph
+is provably efficient for decentralized deep training.Advances in Neural Information Processing
+Systems, 34:13975–13987, 2021.
+Hao Yu, Rong Jin, and Sen Yang. On the linear speedup analysis of communication efficient mo-
+mentum sgd for distributed non-convex optimization. InInternational Conference on Machine
+Learning, pp. 7184–7193. PMLR, 2019.
+Kun Yuan, Yiming Chen, Xinmeng Huang, Yingya Zhang, Pan Pan, Yinghui Xu, and Wotao Yin.
+Decentlam: Decentralized momentum sgd for large-batch deep training. InProceedings of the
+IEEE/CVF International Conference on Computer Vision, pp. 3029–3039, 2021.
+A APPENDIX
+You may include other additional sections here.
+14
+

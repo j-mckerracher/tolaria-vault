@@ -1,0 +1,26 @@
+{
+  "run_id": "EXP-016_feature_matrix",
+  "dataset_label": "local_job_partials_snapshot",
+  "inputs": [
+    {
+      "cluster": "anvil",
+      "label": "start_year=2023_start_month=06_source_token=NONE",
+      "paths_glob": "..\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\*.parquet",
+      "sample_n_files": 20
+    },
+    {
+      "cluster": "conte",
+      "label": "start_year=2016_start_month=07_source_token=C",
+      "paths_glob": "..\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\*.parquet",
+      "sample_n_files": 20
+    },
+    {
+      "cluster": "stampede",
+      "label": "start_year=2016_start_month=10_source_token=S",
+      "paths_glob": "..\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\*.parquet",
+      "sample_n_files": 20
+    }
+  ],
+  "missingness_safe_cutoff": 0.0,
+  "random_seed": 1337
+}

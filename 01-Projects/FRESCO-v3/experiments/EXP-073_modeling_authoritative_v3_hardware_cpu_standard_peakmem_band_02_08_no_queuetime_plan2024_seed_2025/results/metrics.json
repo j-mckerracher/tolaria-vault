@@ -1,0 +1,72 @@
+{
+  "adaptation": {
+    "applied": false,
+    "config": {
+      "type": "none"
+    }
+  },
+  "created_utc": "2026-03-12T21:56:27Z",
+  "dataset_label": "chunks-v3-authoritative",
+  "eval": {
+    "source_test": {
+      "bias_log": 0.001220874306494909,
+      "intercept": 0.031872852864890736,
+      "mae_log": 0.035929402490675326,
+      "mdae_log": 0.016430004992336877,
+      "overflow_pred": false,
+      "r2": 0.05826217313508031,
+      "slope": 0.8285423095661716,
+      "smape": 10.377811116694376
+    },
+    "target": {
+      "bias_log": 0.019961705274076792,
+      "intercept": 0.10151117294555545,
+      "mae_log": 0.09061849357580021,
+      "mdae_log": 0.08780006709272067,
+      "overflow_pred": false,
+      "r2": -0.09091461220707209,
+      "slope": 0.4119769531542749,
+      "smape": 66.52523709921844
+    },
+    "target_r2_bootstrap": {
+      "r2_ci_lower": -0.15547883214705674,
+      "r2_ci_upper": -0.04653465066239082,
+      "r2_mean": -0.09553622296871608
+    }
+  },
+  "features": [
+    "ncores",
+    "nhosts",
+    "timelimit_sec",
+    "runtime_sec",
+    "runtime_fraction"
+  ],
+  "label": {
+    "column": "peak_memory_fraction",
+    "proxy": false,
+    "transform": "log1p"
+  },
+  "limitations": [
+    "Model uses the feature set specified in the run config; treat this as an ablation baseline, not the final intended Phase 3 feature set.",
+    "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+  ],
+  "model": {
+    "alpha": 1.0,
+    "type": "ridge"
+  },
+  "overlap": {
+    "matched_source_n": 11133,
+    "matched_target_n": 1686,
+    "overlap_band": [
+      0.2,
+      0.8
+    ],
+    "run_id": "EXP-070_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_no_queuetime_plan2024"
+  },
+  "pair": {
+    "source": "anvil",
+    "target": "conte"
+  },
+  "regime": "hardware_cpu_standard",
+  "run_id": "EXP-073_modeling_authoritative_v3_hardware_cpu_standard_peakmem_band_02_08_no_queuetime_plan2024_seed_2025"
+}

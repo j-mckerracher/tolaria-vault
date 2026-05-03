@@ -1,0 +1,61 @@
+[EXP-013] Memory Recalibration
+[config] Input: /depot/sbagchi/data/josh/FRESCO/chunks
+[config] Output: /home/jmckerra/Experiments/EXP-013_memory_recalibration/results
+[load] Loading data...
+[load] Raw: 7,291,456 jobs
+[clean] After filters: 7,255,422 jobs
+        S: 5,004,275 jobs
+        C: 1,792,246 jobs
+        NONE: 458,901 jobs
+[split] S: Train 4,802,019, Test 202,256, Cutoff: 201704
+[split] NONE: Train 255,030, Test 203,871, Cutoff: 202304
+
+[recalib] S → NONE
+          Before calibration: R²=-24.4057, MAE=3.8468
+          Calib 1% (n=2,550): R²=0.0095 (Δ=+24.4152), slope=0.088, intercept=3.797
+          Calib 5% (n=12,751): R²=0.0134 (Δ=+24.4191), slope=0.066, intercept=3.788
+          Calib 10% (n=25,503): R²=0.0129 (Δ=+24.4186), slope=0.067, intercept=3.788
+[split] C: Train 1,200,103, Test 592,143, Cutoff: 201701
+[split] NONE: Train 255,030, Test 203,871, Cutoff: 202304
+
+[recalib] C → NONE
+          Before calibration: R²=-6.4680, MAE=2.1599
+          Calib 1% (n=2,550): R²=0.0301 (Δ=+6.4981), slope=0.740, intercept=2.586
+          Calib 5% (n=12,751): R²=0.0301 (Δ=+6.4981), slope=0.727, intercept=2.602
+          Calib 10% (n=25,503): R²=0.0300 (Δ=+6.4981), slope=0.719, intercept=2.616
+[split] NONE: Train 255,030, Test 203,871, Cutoff: 202304
+[split] S: Train 4,802,019, Test 202,256, Cutoff: 201704
+
+[recalib] NONE → S
+          Before calibration: R²=-10.1838, MAE=2.0064
+          Calib 1% (n=48,020): R²=0.0231 (Δ=+10.2069), slope=0.238, intercept=0.941
+          Calib 5% (n=240,100): R²=0.0232 (Δ=+10.2070), slope=0.250, intercept=0.895
+          Calib 10% (n=480,201): R²=0.0232 (Δ=+10.2070), slope=0.251, intercept=0.887
+[split] S: Train 4,802,019, Test 202,256, Cutoff: 201704
+[split] C: Train 1,200,103, Test 592,143, Cutoff: 201701
+
+[recalib] S → C
+          Before calibration: R²=-0.0633, MAE=0.6422
+          Calib 1% (n=12,001): R²=0.0349 (Δ=+0.0982), slope=0.602, intercept=0.483
+          Calib 5% (n=60,005): R²=0.0349 (Δ=+0.0982), slope=0.595, intercept=0.491
+          Calib 10% (n=120,010): R²=0.0350 (Δ=+0.0983), slope=0.583, intercept=0.512
+[split] C: Train 1,200,103, Test 592,143, Cutoff: 201701
+[split] S: Train 4,802,019, Test 202,256, Cutoff: 201704
+
+[recalib] C → S
+          Before calibration: R²=-0.3592, MAE=0.5416
+          Calib 1% (n=48,020): R²=0.0196 (Δ=+0.3788), slope=0.212, intercept=1.506
+          Calib 5% (n=240,100): R²=0.0197 (Δ=+0.3789), slope=0.200, intercept=1.522
+          Calib 10% (n=480,201): R²=0.0197 (Δ=+0.3789), slope=0.203, intercept=1.517
+[split] NONE: Train 255,030, Test 203,871, Cutoff: 202304
+[split] C: Train 1,200,103, Test 592,143, Cutoff: 201701
+
+[recalib] NONE → C
+          Before calibration: R²=-11.2477, MAE=2.4628
+          Calib 1% (n=12,001): R²=0.0316 (Δ=+11.2792), slope=0.303, intercept=0.319
+          Calib 5% (n=60,005): R²=0.0316 (Δ=+11.2793), slope=0.304, intercept=0.307
+          Calib 10% (n=120,010): R²=0.0317 (Δ=+11.2794), slope=0.300, intercept=0.325
+
+[save] Results saved to /home/jmckerra/Experiments/EXP-013_memory_recalibration/results/exp013_recalibration_results.csv
+EXP-013 complete
+EXP-013 complete

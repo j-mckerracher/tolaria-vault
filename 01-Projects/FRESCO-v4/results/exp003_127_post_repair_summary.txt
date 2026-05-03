@@ -1,0 +1,11 @@
+Post-repair consolidation summary
+================================
+
+- Consolidated rows: 75 total = 25 original valid seed-1337 rows + 50 repaired non-1337 rows.
+- Structural repair status: repaired overlap stays fixed at [223], zero repaired rows have actual_eval_n=0, and 16 repaired rows are calibration-capped.
+- Full-target caveat: 2 repaired full_target row(s) still fall below min_target_eval_rows=50 because actual_eval_n=45.
+- Best repair-only source-using grouped mean: stacked at N=100 (mean target R2=0.0613).
+- Best consolidated source-using grouped mean: stacked at N=100 (mean target R2=0.0763, median=0.0831).
+- EXP-002 zero-shot reference: target R2=0.1070. No consolidated grouped mean or median exceeds this baseline.
+- Interpretation: the repaired pipeline is structurally sound, but the repaired metrics remain scientifically weak; the consolidated panel does not justify a claim that few-shot transfer beats the zero-shot baseline.
+- Caveat: the consolidated panel mixes the original seed-1337 target_overlap_n=2459 cohort with repaired target_overlap_n=223 cohorts, so across-seed dispersion is not a pure frozen-universe estimate.

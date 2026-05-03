@@ -1,0 +1,50 @@
+{
+  "run_id": "EXP-002_zero_shot_baseline",
+  "dataset_version": "v3.0",
+  "dataset_label": "chunks-v3-authoritative",
+  "source_cluster": "anvil",
+  "target_cluster": "conte",
+  "regime": "hardware_cpu_standard",
+  "label_column": "peak_memory_fraction",
+  "label_transform": "log1p",
+  "label_proxy": false,
+  "feature_columns": [
+    "ncores",
+    "nhosts",
+    "timelimit_sec",
+    "runtime_sec",
+    "runtime_fraction"
+  ],
+  "overlap_run": {
+    "run_id": "EXP-001_regime_matching_baseline",
+    "matched_source_indices": "experiments/EXP-001_regime_matching_baseline/results/matched_source_indices.parquet",
+    "matched_target_indices": "experiments/EXP-001_regime_matching_baseline/results/matched_target_indices.parquet",
+    "overlap_band": [
+      0.2,
+      0.8
+    ]
+  },
+  "model": {
+    "type": "ridge",
+    "alpha": 1.0
+  },
+  "adaptation": {
+    "type": "none"
+  },
+  "few_shot": {
+    "n_target_labels": 0,
+    "strategy": "zero_shot",
+    "target_label_seed": 1337
+  },
+  "split": {
+    "type": "random",
+    "test_frac": 0.2,
+    "seed": 1337
+  },
+  "inputs_manifest": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/manifests/output_manifest.jsonl",
+  "max_rows_source": 300000,
+  "max_rows_target": 300000,
+  "sample_n_row_groups_per_file": 24,
+  "n_boot": 200,
+  "random_seed": 1337
+}

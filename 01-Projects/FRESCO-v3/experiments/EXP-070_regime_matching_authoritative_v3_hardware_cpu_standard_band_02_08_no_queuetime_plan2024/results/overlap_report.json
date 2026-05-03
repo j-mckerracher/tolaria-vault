@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-03-12T21:44:02Z",
+  "dataset_label": "chunks-v3-authoritative",
+  "domain_classifier_auc": 0.9294358255247172,
+  "feature_columns": [
+    "ncores",
+    "nhosts",
+    "timelimit_sec",
+    "runtime_sec",
+    "runtime_fraction"
+  ],
+  "ks_by_feature_all": {
+    "ncores": 0.30269784172661873,
+    "nhosts": 0.1338315010602502,
+    "runtime_fraction": 0.5538230172055315,
+    "runtime_sec": 0.5588935370608337,
+    "timelimit_sec": 0.5087005493388861
+  },
+  "ks_by_feature_overlap": {
+    "ncores": 0.06555723651033785,
+    "nhosts": 0.0,
+    "runtime_fraction": 0.6093488821155425,
+    "runtime_sec": 0.5491558922615954,
+    "timelimit_sec": 0.541622005471176
+  },
+  "n_source": 16680,
+  "n_source_overlap": 11898,
+  "n_target": 6136,
+  "n_target_overlap": 1697,
+  "notes": [
+    "Propensity model is trained on sampled job-level frames aggregated from parquet inputs.",
+    "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+  ],
+  "overlap_band": [
+    0.2,
+    0.8
+  ],
+  "regime": "hardware_cpu_standard",
+  "run_id": "EXP-070_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_no_queuetime_plan2024",
+  "source_cluster": "anvil",
+  "target_cluster": "conte",
+  "target_overlap_coverage": 0.2765645371577575
+}

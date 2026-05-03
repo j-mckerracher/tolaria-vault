@@ -1,0 +1,136 @@
+[load] Loading FRESCO data from /depot/sbagchi/data/josh/FRESCO/chunks...
+[load] Extracting source_token from filename...
+[load] Loaded 7,291,381 jobs
+[load] Clusters found:
+       S: 5,004,652 jobs
+       C: 1,820,385 jobs
+       NONE: 466,344 jobs
+
+[train] Training models for clusters: ['S', 'C', 'NONE']
+
+======================================================================
+CLUSTER: C
+======================================================================
+[split] Train: 1,223,043 jobs, Test: 597,342 jobs
+[split] Cutoff time_idx: 201701
+
+--- Variant: full ---
+[eval] R² = 0.1582
+[eval] MAE (log) = 1.8611, MdAE (log) = 1.8555
+[eval] MAPE = 116.5%, MdAPE = 85.3%
+
+--- Variant: no_timelimit ---
+[eval] R² = -0.0292
+[eval] MAE (log) = 2.0172, MdAE (log) = 1.9928
+[eval] MAPE = 101.0%, MdAPE = 87.7%
+
+--- Variant: timelimit_only ---
+[eval] R² = 0.1328
+[eval] MAE (log) = 1.9078, MdAE (log) = 2.0483
+[eval] MAPE = 125.9%, MdAPE = 87.0%
+
+--- Variant: no_month ---
+[eval] R² = 0.1845
+[eval] MAE (log) = 1.8441, MdAE (log) = 1.8423
+[eval] MAPE = 111.9%, MdAPE = 85.4%
+
+--- Baseline: median ---
+[eval] R² = -0.0880, MdAPE = 74.7%
+
+--- Baseline: mean ---
+[eval] R² = 0.0000, MdAPE = 84.5%
+
+======================================================================
+CLUSTER: NONE
+======================================================================
+[split] Train: 256,300 jobs, Test: 210,044 jobs
+[split] Cutoff time_idx: 202304
+
+--- Variant: full ---
+[eval] R² = 0.5616
+[eval] MAE (log) = 1.7427, MdAE (log) = 1.7496
+[eval] MAPE = 644.7%, MdAPE = 92.9%
+
+--- Variant: no_timelimit ---
+[eval] R² = 0.0473
+[eval] MAE (log) = 2.6725, MdAE (log) = 2.6521
+[eval] MAPE = 722.5%, MdAPE = 200.7%
+
+--- Variant: timelimit_only ---
+[eval] R² = 0.5539
+[eval] MAE (log) = 1.7378, MdAE (log) = 1.6234
+[eval] MAPE = 425.2%, MdAPE = 95.4%
+
+--- Variant: no_month ---
+[eval] R² = 0.5829
+[eval] MAE (log) = 1.6659, MdAE (log) = 1.5650
+[eval] MAPE = 481.3%, MdAPE = 94.1%
+
+--- Baseline: median ---
+[eval] R² = -0.1133, MdAPE = 99.8%
+
+--- Baseline: mean ---
+[eval] R² = 0.0000, MdAPE = 118.0%
+
+======================================================================
+CLUSTER: S
+======================================================================
+[split] Train: 4,802,344 jobs, Test: 202,308 jobs
+[split] Cutoff time_idx: 201704
+
+--- Variant: full ---
+[eval] R² = 0.3560
+[eval] MAE (log) = 1.8551, MdAE (log) = 1.6296
+[eval] MAPE = 243.5%, MdAPE = 84.5%
+
+--- Variant: no_timelimit ---
+[eval] R² = 0.1513
+[eval] MAE (log) = 2.2148, MdAE (log) = 2.1282
+[eval] MAPE = 186.2%, MdAPE = 91.0%
+
+--- Variant: timelimit_only ---
+[eval] R² = 0.3372
+[eval] MAE (log) = 1.9686, MdAE (log) = 1.9373
+[eval] MAPE = 198.3%, MdAPE = 89.0%
+
+--- Variant: no_month ---
+[eval] R² = 0.3545
+[eval] MAE (log) = 1.8570, MdAE (log) = 1.6359
+[eval] MAPE = 239.0%, MdAPE = 84.4%
+
+--- Baseline: median ---
+[eval] R² = -0.0167, MdAPE = 93.7%
+
+--- Baseline: mean ---
+[eval] R² = 0.0000, MdAPE = 93.9%
+
+[save] Saved metrics to /home/jmckerra/Experiments/EXP-003b_linear_regression_fixed/results/metrics_comparison.csv
+[save] Saved ablation summary to /home/jmckerra/Experiments/EXP-003b_linear_regression_fixed/results/ablation_summary.csv
+
+======================================================================
+ABLATION SUMMARY
+======================================================================
+cluster         variant        r2  mdae_log      mdape  n_features
+      C        no_month  0.184478  1.842343  85.350514           4
+      C            full  0.158204  1.855462  85.308697          16
+      C  timelimit_only  0.132809  2.048288  87.020345           1
+      C   baseline_mean  0.000000  1.857081  84.534431           0
+      C    no_timelimit -0.029240  1.992770  87.676741          15
+      C baseline_median -0.088009  1.409642  74.744661           0
+   NONE        no_month  0.582890  1.564990  94.059471           4
+   NONE            full  0.561590  1.749638  92.889424          16
+   NONE  timelimit_only  0.553899  1.623385  95.383987           1
+   NONE    no_timelimit  0.047327  2.652141 200.707699          15
+   NONE   baseline_mean  0.000000  2.418185 118.043246           0
+   NONE baseline_median -0.113286  1.764731  99.803326           0
+      S            full  0.355959  1.629634  84.455559          16
+      S        no_month  0.354518  1.635868  84.424540           4
+      S  timelimit_only  0.337188  1.937332  88.960510           1
+      S    no_timelimit  0.151285  2.128237  90.993372          15
+      S   baseline_mean  0.000000  2.321498  93.875077           0
+      S baseline_median -0.016712  2.352482  93.667426           0
+[save] Saved coefficients to /home/jmckerra/Experiments/EXP-003b_linear_regression_fixed/results/coefficients.csv
+[plot] Saved ablation plots to /home/jmckerra/Experiments/EXP-003b_linear_regression_fixed/results/figures
+
+[done] Training complete!
+EXP-003b complete

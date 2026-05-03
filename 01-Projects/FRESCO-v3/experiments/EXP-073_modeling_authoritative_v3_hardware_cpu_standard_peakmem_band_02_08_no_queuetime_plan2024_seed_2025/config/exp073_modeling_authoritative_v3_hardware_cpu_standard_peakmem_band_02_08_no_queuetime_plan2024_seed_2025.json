@@ -1,0 +1,60 @@
+{
+  "run_id": "EXP-073_modeling_authoritative_v3_hardware_cpu_standard_peakmem_band_02_08_no_queuetime_plan2024_seed_2025",
+  "dataset_version": "v3.0",
+  "dataset_label": "chunks-v3-authoritative",
+  "input_root": "/depot/sbagchi/data/josh/FRESCO/chunks-v3",
+  "output_root": "/home/jmckerra/Code/FRESCO-Pipeline/experiments/EXP-073_modeling_authoritative_v3_hardware_cpu_standard_peakmem_band_02_08_no_queuetime_plan2024_seed_2025",
+  "clusters": [
+    "anvil",
+    "conte",
+    "stampede"
+  ],
+  "date_range": {
+    "start": "2015-01-01",
+    "end": "2023-12-31"
+  },
+  "inputs_manifest": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/manifests/output_manifest.jsonl",
+  "source_cluster": "anvil",
+  "target_cluster": "conte",
+  "regime": "hardware_cpu_standard",
+  "label_column": "peak_memory_fraction",
+  "label_transform": "log1p",
+  "label_proxy": false,
+  "feature_columns": [
+    "ncores",
+    "nhosts",
+    "timelimit_sec",
+    "runtime_sec",
+    "runtime_fraction"
+  ],
+  "overlap_run": {
+    "run_id": "EXP-070_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_no_queuetime_plan2024",
+    "matched_source_indices": "experiments/EXP-070_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_no_queuetime_plan2024/results/matched_source_indices.parquet",
+    "matched_target_indices": "experiments/EXP-070_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_no_queuetime_plan2024/results/matched_target_indices.parquet",
+    "overlap_band": [
+      0.2,
+      0.8
+    ]
+  },
+  "model": {
+    "type": "ridge",
+    "alpha": 1.0
+  },
+  "adaptation": {
+    "type": "none"
+  },
+  "split": {
+    "type": "random",
+    "test_frac": 0.2,
+    "seed": 2025
+  },
+  "max_rows_source": 300000,
+  "max_rows_target": 300000,
+  "sample_n_row_groups_per_file": 24,
+  "n_boot": 200,
+  "random_seed": 2025,
+  "write_manifests": true,
+  "write_validation_reports": true,
+  "validation_level": "strict",
+  "sampling_plan_path": "experiments/ANALYSIS_seed_instability/frozen_sampling_plan_exp070_hwcpu_standard_300k_24_seed2024.json"
+}

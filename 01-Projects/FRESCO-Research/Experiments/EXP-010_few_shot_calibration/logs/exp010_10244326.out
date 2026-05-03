@@ -1,0 +1,28 @@
+[load] Loading data...
+[load] Raw: 7,040,808 jobs
+[clean] After: 6,766,216 jobs
+       C: 1,546,127 jobs
+       NONE: 215,706 jobs
+       S: 5,004,383 jobs
+[split] S: train=4,837,564 test=166,819 cutoff=201705
+[split] C: train=1,020,786 test=525,341 cutoff=201702
+[split] NONE: train=166,055 test=49,651 cutoff=202305
+[done] NONE_to_C k=0 r2=0.1434
+[done] NONE_to_C k=100 r2=0.1268
+[done] NONE_to_C k=300 r2=0.0949
+[done] NONE_to_C k=1000 r2=0.1593
+[done] NONE_to_C k=3000 r2=0.1286
+[done] NONE_to_C k=10000 r2=0.1410
+[done] NONE_to_C k=30000 r2=0.1417
+[done] NONE_to_C k=100000 r2=0.1378
+[done] S_to_C k=0 r2=0.0035
+[done] S_to_C k=100 r2=0.1620
+[done] S_to_C k=300 r2=0.0559
+[done] S_to_C k=1000 r2=0.1227
+[done] S_to_C k=3000 r2=0.1159
+[done] S_to_C k=10000 r2=0.1078
+[done] S_to_C k=30000 r2=0.1411
+[done] S_to_C k=100000 r2=0.1211
+[write] /home/jmckerra/Experiments/EXP-010_few_shot_calibration/results/exp010_results.csv
+[write] /home/jmckerra/Experiments/EXP-010_few_shot_calibration/results/exp010_summary_table.csv
+EXP-010 complete

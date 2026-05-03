@@ -1,0 +1,5 @@
+Condition,R2,SMAPE,Description
+A_C_to_C_time,0.1125,145.3,Baseline Time Split
+B_C_to_C_random,0.1539,121.8,Random Split (H2 Check)
+C_NONE_to_C_transfer,0.1535,121.6,Transfer from NONE (H1 Check)
+D_NONE_to_C_transfer_supportmatch,0.1163,148.3,Transfer Constrained (Mechanism Check)

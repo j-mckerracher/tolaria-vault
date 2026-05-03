@@ -1,0 +1,13 @@
+{
+  "run_id": "PROD-20260203-v3",
+  "input_dir": "/depot/sbagchi/data/josh/FRESCO/chunks",
+  "output_dir": "/depot/sbagchi/data/josh/FRESCO/chunks-v3",
+  "clusters": ["anvil", "conte", "stampede"],
+  "date_range": {
+    "start": "2015-01-01",
+    "end": "2023-12-31"
+  },
+  "validation_level": "strict",
+  "write_manifests": true,
+  "write_validation_reports": true
+}

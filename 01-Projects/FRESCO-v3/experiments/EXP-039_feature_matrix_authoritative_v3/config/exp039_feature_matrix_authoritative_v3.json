@@ -1,0 +1,24 @@
+{
+  "run_id": "EXP-039_feature_matrix_authoritative_v3",
+  "dataset_version": "v3.0",
+  "dataset_label": "chunks-v3-authoritative",
+  "input_root": "/depot/sbagchi/data/josh/FRESCO/chunks-v3",
+  "output_root": "/home/jmckerra/Code/FRESCO-Pipeline/experiments/EXP-039_feature_matrix_authoritative_v3",
+  "clusters": [
+    "anvil",
+    "conte",
+    "stampede"
+  ],
+  "date_range": {
+    "start": "2015-01-01",
+    "end": "2023-12-31"
+  },
+  "inputs_manifest": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/manifests/output_manifest.jsonl",
+  "missingness_safe_cutoff": 0.0,
+  "max_rows_per_cluster": 250000,
+  "sample_n_row_groups_per_file": 16,
+  "random_seed": 1337,
+  "write_manifests": true,
+  "write_validation_reports": true,
+  "validation_level": "strict"
+}

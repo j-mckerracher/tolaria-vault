@@ -1,0 +1,70 @@
+{
+  "adaptation": {
+    "applied": false,
+    "config": {
+      "type": "none"
+    }
+  },
+  "created_utc": "2026-03-12T23:32:22Z",
+  "dataset_label": "chunks-v3-authoritative",
+  "eval": {
+    "source_test": {
+      "bias_log": 0.0008740563565462802,
+      "intercept": -0.0018135458200714803,
+      "mae_log": 0.04152866285566143,
+      "mdae_log": 0.020231222913201757,
+      "overflow_pred": false,
+      "r2": 0.04791516995899614,
+      "slope": 1.0144537458320944,
+      "smape": 11.879457804447418
+    },
+    "target": {
+      "bias_log": -0.10173040159891017,
+      "intercept": 0.3260920750420268,
+      "mae_log": 0.1250075022816372,
+      "mdae_log": 0.1290565921306719,
+      "overflow_pred": false,
+      "r2": -1.6086273785870024,
+      "slope": -0.940866021365449,
+      "smape": 83.73515543497916
+    },
+    "target_r2_bootstrap": {
+      "r2_ci_lower": -1.7661614648840114,
+      "r2_ci_upper": -1.4565206025336852,
+      "r2_mean": -1.610961331706292
+    }
+  },
+  "features": [
+    "ncores",
+    "nhosts",
+    "runtime_sec"
+  ],
+  "label": {
+    "column": "peak_memory_fraction",
+    "proxy": false,
+    "transform": "log1p"
+  },
+  "limitations": [
+    "Model uses the feature set specified in the run config; treat this as an ablation baseline, not the final intended Phase 3 feature set.",
+    "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+  ],
+  "model": {
+    "alpha": 1.0,
+    "type": "ridge"
+  },
+  "overlap": {
+    "matched_source_n": 11761,
+    "matched_target_n": 4575,
+    "overlap_band": [
+      0.2,
+      0.8
+    ],
+    "run_id": "EXP-077_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_runtime_sec_only_plan2024"
+  },
+  "pair": {
+    "source": "anvil",
+    "target": "conte"
+  },
+  "regime": "hardware_cpu_standard",
+  "run_id": "EXP-078_modeling_authoritative_v3_hardware_cpu_standard_peakmem_band_02_08_runtime_sec_only_plan2024"
+}

@@ -1,0 +1,29 @@
+{
+  "run_id": "EXP-029_regime_matching_alloc_perf_nomem_band_005_095",
+  "dataset_label": "local_job_partials_snapshot",
+  "inputs_manifest": "experiments\\EXP-016_feature_matrix\\manifests\\input_files.json",
+  "source_cluster": "anvil",
+  "target_cluster": "conte",
+  "regime": "cpu_standard",
+  "feature_columns": [
+    "ncores",
+    "timelimit",
+    "value_block_cnt",
+    "value_block_sum",
+    "value_cpuuser_cnt",
+    "value_cpuuser_sum",
+    "value_gpu_cnt",
+    "value_gpu_sum",
+    "value_nfs_cnt",
+    "value_nfs_sum"
+  ],
+  "propensity_model": {
+    "type": "logreg",
+    "C": 1.0,
+    "max_iter": 2000,
+    "class_weight": "balanced"
+  },
+  "overlap_band": [0.05, 0.95],
+  "max_rows_per_cluster": 200000,
+  "random_seed": 1337
+}

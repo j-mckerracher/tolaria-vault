@@ -1,0 +1,64 @@
+{
+  "created_utc": "2026-02-03T06:25:36Z",
+  "dataset_label": "local_job_partials_snapshot",
+  "domain_classifier_auc": 1.0,
+  "feature_columns": [
+    "ncores",
+    "timelimit",
+    "value_block_cnt",
+    "value_block_sum",
+    "value_cpuuser_cnt",
+    "value_cpuuser_sum",
+    "value_memused_cnt",
+    "value_memused_sum",
+    "value_memused_minus_diskcache_cnt",
+    "value_memused_minus_diskcache_sum",
+    "value_nfs_cnt",
+    "value_nfs_sum"
+  ],
+  "ks_by_feature_all": {
+    "ncores": 0.2223140495867768,
+    "timelimit": 0.5001913509376196,
+    "value_block_cnt": 0.6572095023926774,
+    "value_block_sum": 0.9845698399294058,
+    "value_cpuuser_cnt": 0.6568268005174382,
+    "value_cpuuser_sum": 0.4678331166797923,
+    "value_memused_cnt": 0.6671597511488963,
+    "value_memused_minus_diskcache_cnt": 1.0,
+    "value_memused_minus_diskcache_sum": 1.0,
+    "value_memused_sum": 0.32727272727272727,
+    "value_nfs_cnt": 0.6572095023926774,
+    "value_nfs_sum": 0.29287067523159793
+  },
+  "ks_by_feature_overlap": {
+    "ncores": null,
+    "timelimit": null,
+    "value_block_cnt": null,
+    "value_block_sum": null,
+    "value_cpuuser_cnt": null,
+    "value_cpuuser_sum": null,
+    "value_memused_cnt": null,
+    "value_memused_minus_diskcache_cnt": null,
+    "value_memused_minus_diskcache_sum": null,
+    "value_memused_sum": null,
+    "value_nfs_cnt": null,
+    "value_nfs_sum": null
+  },
+  "n_source": 1210,
+  "n_source_overlap": 0,
+  "n_target": 2613,
+  "n_target_overlap": 178,
+  "notes": [
+    "Propensity model trained on a sampled subset of rows from parquet files listed in the input manifest.",
+    "Regime definition is a local proxy: cpu_standard := (value_gpu_cnt<=0 and value_gpu_sum<=0)."
+  ],
+  "overlap_band": [
+    0.2,
+    0.8
+  ],
+  "regime": "cpu_standard",
+  "run_id": "EXP-017_regime_matching",
+  "source_cluster": "anvil",
+  "target_cluster": "conte",
+  "target_overlap_coverage": 0.06812093379257558
+}

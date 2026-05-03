@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-03-12T23:21:26Z",
+  "dataset_label": "chunks-v3-authoritative",
+  "domain_classifier_auc": 0.8987421210358961,
+  "feature_columns": [
+    "ncores",
+    "nhosts",
+    "runtime_sec"
+  ],
+  "ks_by_feature_all": {
+    "ncores": 0.30269784172661873,
+    "nhosts": 0.1338315010602502,
+    "runtime_sec": 0.5588935370608337
+  },
+  "ks_by_feature_overlap": {
+    "ncores": 0.07145138112725535,
+    "nhosts": 0.0,
+    "runtime_sec": 0.8091869646112309
+  },
+  "n_source": 16680,
+  "n_source_overlap": 12526,
+  "n_target": 6136,
+  "n_target_overlap": 4626,
+  "notes": [
+    "Propensity model is trained on sampled job-level frames aggregated from parquet inputs.",
+    "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+  ],
+  "overlap_band": [
+    0.2,
+    0.8
+  ],
+  "regime": "hardware_cpu_standard",
+  "run_id": "EXP-077_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_runtime_sec_only_plan2024",
+  "source_cluster": "anvil",
+  "target_cluster": "conte",
+  "target_overlap_coverage": 0.7539113428943938
+}

@@ -1,0 +1,54 @@
+{
+  "adaptation": {
+    "applied": false,
+    "config": null
+  },
+  "created_utc": "2026-02-03T19:30:53Z",
+  "dataset_label": "local_job_partials_snapshot",
+  "eval": {
+    "source_test": null,
+    "target": null,
+    "target_r2_bootstrap": null
+  },
+  "features": [
+    "ncores",
+    "timelimit",
+    "value_block_cnt",
+    "value_block_sum",
+    "value_cpuuser_cnt",
+    "value_cpuuser_sum",
+    "value_gpu_cnt",
+    "value_gpu_sum",
+    "value_nfs_cnt",
+    "value_nfs_sum"
+  ],
+  "label": {
+    "column": "value_memused_max",
+    "proxy": true,
+    "transform": "log1p"
+  },
+  "limitations": [
+    "Label is a local proxy (value_memused_max) from job_partials, not the authoritative v3 peak_memory_fraction target.",
+    "Model uses the feature set specified in the run config; treat this as an ablation baseline, not the final intended Phase 3 feature set.",
+    "No training or target rows after overlap/regime filters; metrics not computed."
+  ],
+  "model": {
+    "alpha": 1.0,
+    "type": "ridge"
+  },
+  "overlap": {
+    "matched_source_n": 0,
+    "matched_target_n": 0,
+    "overlap_band": [
+      0.2,
+      0.8
+    ],
+    "run_id": "EXP-037_regime_matching_anvil_to_stampede_band_02_08"
+  },
+  "pair": {
+    "source": "anvil",
+    "target": "stampede"
+  },
+  "regime": "cpu_standard",
+  "run_id": "EXP-038_modeling_anvil_to_stampede_band_02_08"
+}

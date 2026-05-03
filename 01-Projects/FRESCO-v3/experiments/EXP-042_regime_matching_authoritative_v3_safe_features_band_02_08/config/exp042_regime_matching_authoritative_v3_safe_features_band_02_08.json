@@ -1,0 +1,44 @@
+{
+  "run_id": "EXP-042_regime_matching_authoritative_v3_safe_features_band_02_08",
+  "dataset_version": "v3.0",
+  "dataset_label": "chunks-v3-authoritative",
+  "input_root": "/depot/sbagchi/data/josh/FRESCO/chunks-v3",
+  "output_root": "/home/jmckerra/Code/FRESCO-Pipeline/experiments/EXP-042_regime_matching_authoritative_v3_safe_features_band_02_08",
+  "clusters": [
+    "anvil",
+    "conte",
+    "stampede"
+  ],
+  "date_range": {
+    "start": "2015-01-01",
+    "end": "2023-12-31"
+  },
+  "inputs_manifest": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/manifests/output_manifest.jsonl",
+  "source_cluster": "anvil",
+  "target_cluster": "conte",
+  "regime": "cpu_standard",
+  "feature_columns": [
+    "ncores",
+    "nhosts",
+    "timelimit_sec",
+    "runtime_sec",
+    "queue_time_sec",
+    "runtime_fraction"
+  ],
+  "propensity_model": {
+    "type": "logreg",
+    "C": 1.0,
+    "max_iter": 2000,
+    "class_weight": "balanced"
+  },
+  "overlap_band": [
+    0.2,
+    0.8
+  ],
+  "max_rows_per_cluster": 300000,
+  "sample_n_row_groups_per_file": 24,
+  "random_seed": 1337,
+  "write_manifests": true,
+  "write_validation_reports": true,
+  "validation_level": "strict"
+}

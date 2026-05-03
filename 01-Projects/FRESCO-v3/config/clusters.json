@@ -1,0 +1,93 @@
+{
+  "version": "2026-03-12",
+  "notes": [
+    "Partition is recovered from the raw queue field at analysis time.",
+    "Conte and Stampede queue and host identifiers are anonymized in FRESCO, so those clusters use cluster-wide hardware defaults.",
+    "node_memory_gb values are expressed in GB-scale units to match peak_memory_gb derived from value_memused_max.",
+    "gpu_count_per_node counts NVIDIA-style GPUs only; Intel Xeon Phi coprocessors are represented via node_type."
+  ],
+  "clusters": {
+    "anvil": {
+      "partitions": {
+        "debug": {
+          "node_type": "anvil_cpu",
+          "node_cores": 128,
+          "node_memory_gb": 256.0,
+          "gpu_count_per_node": 0,
+          "gpu_model": null,
+          "workload_regime": "cpu_standard"
+        },
+        "gpu": {
+          "node_type": "anvil_gpu_a100",
+          "node_cores": 128,
+          "node_memory_gb": 512.0,
+          "gpu_count_per_node": 4,
+          "gpu_model": "NVIDIA A100",
+          "workload_regime": "gpu_standard"
+        },
+        "highmem": {
+          "node_type": "anvil_highmem",
+          "node_cores": 128,
+          "node_memory_gb": 1024.0,
+          "gpu_count_per_node": 0,
+          "gpu_model": null,
+          "workload_regime": "cpu_largemem"
+        },
+        "shared": {
+          "node_type": "anvil_cpu",
+          "node_cores": 128,
+          "node_memory_gb": 256.0,
+          "gpu_count_per_node": 0,
+          "gpu_model": null,
+          "workload_regime": "cpu_standard"
+        },
+        "standard": {
+          "node_type": "anvil_cpu",
+          "node_cores": 128,
+          "node_memory_gb": 256.0,
+          "gpu_count_per_node": 0,
+          "gpu_model": null,
+          "workload_regime": "cpu_standard"
+        },
+        "wholenode": {
+          "node_type": "anvil_cpu",
+          "node_cores": 128,
+          "node_memory_gb": 256.0,
+          "gpu_count_per_node": 0,
+          "gpu_model": null,
+          "workload_regime": "cpu_standard"
+        },
+        "wide": {
+          "node_type": "anvil_cpu",
+          "node_cores": 128,
+          "node_memory_gb": 256.0,
+          "gpu_count_per_node": 0,
+          "gpu_model": null,
+          "workload_regime": "cpu_standard"
+        }
+      }
+    },
+    "conte": {
+      "default": {
+        "node_type": "conte_xeon_phi",
+        "node_cores": 32,
+        "node_memory_gb": 64.0,
+        "gpu_count_per_node": 0,
+        "gpu_model": null,
+        "workload_regime": "cpu_standard",
+        "partition_is_anonymized": true
+      }
+    },
+    "stampede": {
+      "default": {
+        "node_type": "stampede_xeon_phi",
+        "node_cores": 16,
+        "node_memory_gb": 32.0,
+        "gpu_count_per_node": 0,
+        "gpu_model": null,
+        "workload_regime": "cpu_standard",
+        "partition_is_anonymized": true
+      }
+    }
+  }
+}

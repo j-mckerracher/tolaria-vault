@@ -1,0 +1,21 @@
+[load] Loading data...
+[load] Raw: 7,040,808 jobs
+[clean] After: 6,766,216 jobs
+       C: 1,546,127 jobs
+       NONE: 215,706 jobs
+       S: 5,004,383 jobs
+[split] S: Train 4,837,564, Test 166,819, Cutoff: 201705
+[split] C: Train 1,020,786, Test 525,341, Cutoff: 201702
+[split] NONE: Train 166,055, Test 49,651, Cutoff: 202305
+[train] with_timelimit: single clusters=('S',) conditioning=False
+[train] with_timelimit: single clusters=('C',) conditioning=False
+[train] with_timelimit: single clusters=('NONE',) conditioning=False
+[train] with_timelimit: pooled_all_no_cluster clusters=('S', 'C', 'NONE') conditioning=False
+[train] with_timelimit: pooled_all_with_cluster clusters=('S', 'C', 'NONE') conditioning=True
+[train] no_timelimit: single clusters=('S',) conditioning=False
+[train] no_timelimit: single clusters=('C',) conditioning=False
+[train] no_timelimit: single clusters=('NONE',) conditioning=False
+[train] no_timelimit: pooled_all_no_cluster clusters=('S', 'C', 'NONE') conditioning=False
+[train] no_timelimit: pooled_all_with_cluster clusters=('S', 'C', 'NONE') conditioning=True
+[save] /home/jmckerra/Experiments/EXP-008_transfer_ci_shift_pooled/results/exp008_results.csv
+EXP-008 complete

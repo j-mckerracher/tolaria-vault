@@ -1,0 +1,75 @@
+{
+  "adaptation": {
+    "applied": false,
+    "config": null
+  },
+  "created_utc": "2026-02-03T19:29:00Z",
+  "dataset_label": "local_job_partials_snapshot",
+  "eval": {
+    "source_test": {
+      "bias_log": -0.012642252802793552,
+      "intercept": -0.39432494165923576,
+      "mae_log": 0.0378594201769788,
+      "mdae_log": 0.02271040911209221,
+      "overflow_pred": false,
+      "r2": 0.41592832305937,
+      "slope": 1.1946556176925733,
+      "smape": 2.6179157938165667
+    },
+    "target": {
+      "bias_log": 1.4709975439849141,
+      "intercept": 0.6884409809255498,
+      "mae_log": 1.4709975439849141,
+      "mdae_log": 1.4709975439849141,
+      "overflow_pred": false,
+      "r2": NaN,
+      "slope": 1.388112609921915,
+      "smape": 131.84147856836302
+    },
+    "target_r2_bootstrap": {
+      "r2_ci_lower": NaN,
+      "r2_ci_upper": NaN,
+      "r2_mean": NaN
+    }
+  },
+  "features": [
+    "ncores",
+    "timelimit",
+    "value_block_cnt",
+    "value_block_sum",
+    "value_cpuuser_cnt",
+    "value_cpuuser_sum",
+    "value_gpu_cnt",
+    "value_gpu_sum",
+    "value_nfs_cnt",
+    "value_nfs_sum"
+  ],
+  "label": {
+    "column": "value_memused_max",
+    "proxy": true,
+    "transform": "log1p"
+  },
+  "limitations": [
+    "Label is a local proxy (value_memused_max) from job_partials, not the authoritative v3 peak_memory_fraction target.",
+    "Model uses the feature set specified in the run config; treat this as an ablation baseline, not the final intended Phase 3 feature set."
+  ],
+  "model": {
+    "alpha": 1.0,
+    "type": "ridge"
+  },
+  "overlap": {
+    "matched_source_n": 86,
+    "matched_target_n": 1,
+    "overlap_band": [
+      0.2,
+      0.8
+    ],
+    "run_id": "EXP-033_regime_matching_conte_to_stampede_band_02_08"
+  },
+  "pair": {
+    "source": "conte",
+    "target": "stampede"
+  },
+  "regime": "cpu_standard",
+  "run_id": "EXP-034_modeling_conte_to_stampede_band_02_08"
+}

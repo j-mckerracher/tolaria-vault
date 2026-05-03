@@ -1,0 +1,3 @@
+Synced from local repository commit 0ad0cb1c0c56385664347de15760b3b3c3593fb0 before submission.
+Remote pipeline directory is a synced snapshot, not a git checkout.
+Local git status was clean at submission time.

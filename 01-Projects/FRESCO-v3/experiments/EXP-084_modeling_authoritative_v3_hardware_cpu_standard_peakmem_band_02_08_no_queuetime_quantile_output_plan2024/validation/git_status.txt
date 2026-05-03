@@ -1,0 +1,1 @@
+Remote pipeline path is a synced snapshot, not a git checkout. Local repo was clean at submission time.

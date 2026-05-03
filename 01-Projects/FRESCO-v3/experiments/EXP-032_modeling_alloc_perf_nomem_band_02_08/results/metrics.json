@@ -1,0 +1,75 @@
+{
+  "adaptation": {
+    "applied": false,
+    "config": null
+  },
+  "created_utc": "2026-02-03T19:00:24Z",
+  "dataset_label": "local_job_partials_snapshot",
+  "eval": {
+    "source_test": {
+      "bias_log": -0.9724753085088722,
+      "intercept": 4.5299135348697135,
+      "mae_log": 0.9894944492548047,
+      "mdae_log": 0.032193288097983164,
+      "overflow_pred": false,
+      "r2": -3074.7574951690717,
+      "slope": 0.014921077984327649,
+      "smape": 3.250723929853931
+    },
+    "target": {
+      "bias_log": 87.21196545900199,
+      "intercept": 2.485886841438625,
+      "mae_log": 116.55363312538813,
+      "mdae_log": 37.78257509616884,
+      "overflow_pred": false,
+      "r2": -126879.94516120794,
+      "slope": 0.002131335697899131,
+      "smape": 199.99999975284143
+    },
+    "target_r2_bootstrap": {
+      "r2_ci_lower": -149684.9427403206,
+      "r2_ci_upper": -107454.31547855024,
+      "r2_mean": -127840.48875533819
+    }
+  },
+  "features": [
+    "ncores",
+    "timelimit",
+    "value_block_cnt",
+    "value_block_sum",
+    "value_cpuuser_cnt",
+    "value_cpuuser_sum",
+    "value_gpu_cnt",
+    "value_gpu_sum",
+    "value_nfs_cnt",
+    "value_nfs_sum"
+  ],
+  "label": {
+    "column": "value_memused_max",
+    "proxy": true,
+    "transform": "log1p"
+  },
+  "limitations": [
+    "Label is a local proxy (value_memused_max) from job_partials, not the authoritative v3 peak_memory_fraction target.",
+    "Model uses the feature set specified in the run config; treat this as an ablation baseline, not the final intended Phase 3 feature set."
+  ],
+  "model": {
+    "alpha": 1.0,
+    "type": "ridge"
+  },
+  "overlap": {
+    "matched_source_n": 53,
+    "matched_target_n": 544,
+    "overlap_band": [
+      0.2,
+      0.8
+    ],
+    "run_id": "EXP-031_regime_matching_alloc_perf_nomem_band_02_08"
+  },
+  "pair": {
+    "source": "anvil",
+    "target": "conte"
+  },
+  "regime": "cpu_standard",
+  "run_id": "EXP-032_modeling_alloc_perf_nomem_band_02_08"
+}

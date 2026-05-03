@@ -1,0 +1,170 @@
+[load] Loading data from /depot/sbagchi/data/josh/FRESCO/chunks...
+[load] Loaded 7,040,778 jobs
+       C: 1,569,734 jobs, 577 unique users
+       NONE: 466,345 jobs, 2,384 unique users
+       S: 5,004,699 jobs, 12,225 unique users
+
+======================================================================
+CLUSTER: S
+======================================================================
+[split] S: Train 5,004,293, Test 406, Cutoff: 201803
+
+--- global_median (baseline) ---
+[eval] R² = -0.0028
+[eval] MdAPE = 97.9%
+
+--- user_median (key baseline) ---
+[eval] R² = -0.1985
+[eval] MdAPE = 94.1%
+
+--- no_timelimit / xgboost ---
+[eval] R² = 0.0228
+[eval] MdAPE = 97.4%
+
+--- no_timelimit / ridge ---
+[eval] R² = 0.0177
+[eval] MdAPE = 97.3%
+
+--- with_timelimit / xgboost ---
+[eval] R² = -0.8920
+[eval] MdAPE = 540.8%
+
+--- with_timelimit / ridge ---
+[eval] R² = -0.6628
+[eval] MdAPE = 362.4%
+
+--- with_user / xgboost ---
+[eval] R² = 0.0911
+[eval] MdAPE = 95.5%
+
+--- with_user / ridge ---
+[eval] R² = 0.0160
+[eval] MdAPE = 97.5%
+
+--- with_timelimit_and_user / xgboost ---
+[eval] R² = -0.5423
+[eval] MdAPE = 315.5%
+
+--- with_timelimit_and_user / ridge ---
+[eval] R² = -0.6897
+[eval] MdAPE = 407.8%
+
+======================================================================
+CLUSTER: C
+======================================================================
+[split] C: Train 1,295,824, Test 273,910, Cutoff: 201705
+
+--- global_median (baseline) ---
+[eval] R² = -0.1158
+[eval] MdAPE = 91.8%
+
+--- user_median (key baseline) ---
+[eval] R² = -0.3453
+[eval] MdAPE = 71.7%
+
+--- no_timelimit / xgboost ---
+[eval] R² = -0.2342
+[eval] MdAPE = 93.7%
+
+--- no_timelimit / ridge ---
+[eval] R² = -0.2305
+[eval] MdAPE = 93.5%
+
+--- with_timelimit / xgboost ---
+[eval] R² = 0.2541
+[eval] MdAPE = 81.8%
+
+--- with_timelimit / ridge ---
+[eval] R² = 0.0728
+[eval] MdAPE = 87.7%
+
+--- with_user / xgboost ---
+[eval] R² = 0.2242
+[eval] MdAPE = 60.6%
+
+--- with_user / ridge ---
+[eval] R² = -0.4083
+[eval] MdAPE = 95.9%
+
+--- with_timelimit_and_user / xgboost ---
+[eval] R² = 0.5163
+[eval] MdAPE = 69.2%
+
+--- with_timelimit_and_user / ridge ---
+[eval] R² = 0.0076
+[eval] MdAPE = 90.3%
+
+======================================================================
+CLUSTER: NONE
+======================================================================
+[split] NONE: Train 416,693, Test 49,652, Cutoff: 202305
+
+--- global_median (baseline) ---
+[eval] R² = -13.2312
+[eval] MdAPE = 35603240.3%
+
+--- user_median (key baseline) ---
+[eval] R² = -4.9283
+[eval] MdAPE = 87.6%
+
+--- no_timelimit / xgboost ---
+[eval] R² = -4.5575
+[eval] MdAPE = 167280.5%
+
+--- no_timelimit / ridge ---
+[eval] R² = -4.2592
+[eval] MdAPE = 95720.7%
+
+--- with_timelimit / xgboost ---
+[eval] R² = -5.3745
+[eval] MdAPE = 47073.1%
+
+--- with_timelimit / ridge ---
+[eval] R² = -3.7717
+[eval] MdAPE = 95208.2%
+
+--- with_user / xgboost ---
+[eval] R² = -1.5844
+[eval] MdAPE = 1796.6%
+
+--- with_user / ridge ---
+[eval] R² = -2.9625
+[eval] MdAPE = 9129.3%
+
+--- with_timelimit_and_user / xgboost ---
+[eval] R² = -2.4619
+[eval] MdAPE = 5357.8%
+
+--- with_timelimit_and_user / ridge ---
+[eval] R² = -1.8991
+[eval] MdAPE = 3362.3%
+
+[save] Results saved to /home/jmckerra/Experiments/EXP-006_user_baseline/results/user_baseline_results.csv
+
+======================================================================
+KEY COMPARISON: Does user-median rival XGBoost?
+======================================================================
+
+S:
+  user_median (baseline):     R² = -0.1985
+  XGBoost no_timelimit:       R² = 0.0228
+  XGBoost with_timelimit:     R² = -0.8920
+  XGBoost with_user:          R² = 0.0911
+  → XGBoost adds value beyond user identity
+
+C:
+  user_median (baseline):     R² = -0.3453
+  XGBoost no_timelimit:       R² = -0.2342
+  XGBoost with_timelimit:     R² = 0.2541
+  XGBoost with_user:          R² = 0.2242
+  → XGBoost adds value beyond user identity
+
+NONE:
+  user_median (baseline):     R² = -4.9283
+  XGBoost no_timelimit:       R² = -4.5575
+  XGBoost with_timelimit:     R² = -5.3745
+  XGBoost with_user:          R² = -1.5844
+  → XGBoost adds value beyond user identity
+
+[done] User baseline experiment complete!
+EXP-006 complete

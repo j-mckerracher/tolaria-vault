@@ -1,0 +1,625 @@
+{
+  "clusters": [
+    "anvil",
+    "conte",
+    "stampede"
+  ],
+  "created_utc": "2026-02-03T05:40:47Z",
+  "dataset_label": "local_job_partials_snapshot",
+  "dtype_by_cluster": {
+    "anvil": {
+      "account": [
+        "string"
+      ],
+      "end_time": [
+        "timestamp[ns, tz=UTC]"
+      ],
+      "exitcode": [
+        "string"
+      ],
+      "host": [
+        "string"
+      ],
+      "host_list": [
+        "string"
+      ],
+      "jid": [
+        "string"
+      ],
+      "jobname": [
+        "string"
+      ],
+      "ncores": [
+        "int64"
+      ],
+      "nhosts": [
+        "int64"
+      ],
+      "partial_rows": [
+        "int64"
+      ],
+      "queue": [
+        "string"
+      ],
+      "sample_time_max": [
+        "timestamp[ns, tz=UTC]"
+      ],
+      "sample_time_min": [
+        "timestamp[ns, tz=UTC]"
+      ],
+      "source_token": [
+        "string"
+      ],
+      "start_month": [
+        "int8"
+      ],
+      "start_time": [
+        "timestamp[ns, tz=UTC]"
+      ],
+      "start_year": [
+        "int32"
+      ],
+      "submit_time": [
+        "timestamp[ns, tz=UTC]"
+      ],
+      "timelimit": [
+        "double"
+      ],
+      "unit": [
+        "string"
+      ],
+      "username": [
+        "string"
+      ],
+      "value_block_cnt": [
+        "int64"
+      ],
+      "value_block_max": [
+        "double"
+      ],
+      "value_block_sum": [
+        "double"
+      ],
+      "value_cpuuser_cnt": [
+        "int64"
+      ],
+      "value_cpuuser_max": [
+        "double"
+      ],
+      "value_cpuuser_sum": [
+        "double"
+      ],
+      "value_gpu_cnt": [
+        "int64"
+      ],
+      "value_gpu_max": [
+        "double"
+      ],
+      "value_gpu_sum": [
+        "double"
+      ],
+      "value_memused_cnt": [
+        "int64"
+      ],
+      "value_memused_max": [
+        "double"
+      ],
+      "value_memused_minus_diskcache_cnt": [
+        "int64"
+      ],
+      "value_memused_minus_diskcache_max": [
+        "double"
+      ],
+      "value_memused_minus_diskcache_sum": [
+        "double"
+      ],
+      "value_memused_sum": [
+        "double"
+      ],
+      "value_nfs_cnt": [
+        "int64"
+      ],
+      "value_nfs_max": [
+        "double"
+      ],
+      "value_nfs_sum": [
+        "double"
+      ]
+    },
+    "conte": {
+      "account": [
+        "null"
+      ],
+      "end_time": [
+        "timestamp[ns, tz=UTC]"
+      ],
+      "exitcode": [
+        "string"
+      ],
+      "host": [
+        "string"
+      ],
+      "host_list": [
+        "string"
+      ],
+      "jid": [
+        "string"
+      ],
+      "jobname": [
+        "string"
+      ],
+      "ncores": [
+        "double"
+      ],
+      "nhosts": [
+        "double"
+      ],
+      "partial_rows": [
+        "int64"
+      ],
+      "queue": [
+        "string"
+      ],
+      "sample_time_max": [
+        "timestamp[ns, tz=UTC]"
+      ],
+      "sample_time_min": [
+        "timestamp[ns, tz=UTC]"
+      ],
+      "source_token": [
+        "string"
+      ],
+      "start_month": [
+        "int8"
+      ],
+      "start_time": [
+        "timestamp[ns, tz=UTC]"
+      ],
+      "start_year": [
+        "int32"
+      ],
+      "submit_time": [
+        "timestamp[ns, tz=UTC]"
+      ],
+      "timelimit": [
+        "double"
+      ],
+      "unit": [
+        "string"
+      ],
+      "username": [
+        "string"
+      ],
+      "value_block_cnt": [
+        "int64"
+      ],
+      "value_block_max": [
+        "double"
+      ],
+      "value_block_sum": [
+        "double"
+      ],
+      "value_cpuuser_cnt": [
+        "int64"
+      ],
+      "value_cpuuser_max": [
+        "double"
+      ],
+      "value_cpuuser_sum": [
+        "double"
+      ],
+      "value_gpu_cnt": [
+        "int64"
+      ],
+      "value_gpu_max": [
+        "double"
+      ],
+      "value_gpu_sum": [
+        "double"
+      ],
+      "value_memused_cnt": [
+        "int64"
+      ],
+      "value_memused_max": [
+        "double"
+      ],
+      "value_memused_minus_diskcache_cnt": [
+        "int64"
+      ],
+      "value_memused_minus_diskcache_max": [
+        "double"
+      ],
+      "value_memused_minus_diskcache_sum": [
+        "double"
+      ],
+      "value_memused_sum": [
+        "double"
+      ],
+      "value_nfs_cnt": [
+        "int64"
+      ],
+      "value_nfs_max": [
+        "double"
+      ],
+      "value_nfs_sum": [
+        "double"
+      ]
+    },
+    "stampede": {
+      "account": [
+        "string"
+      ],
+      "end_time": [
+        "timestamp[us, tz=UTC]"
+      ],
+      "exitcode": [
+        "dictionary<values=string, indices=int32, ordered=0>"
+      ],
+      "host": [
+        "string"
+      ],
+      "host_list": [
+        "string"
+      ],
+      "jid": [
+        "string"
+      ],
+      "jobname": [
+        "string"
+      ],
+      "ncores": [
+        "int32"
+      ],
+      "nhosts": [
+        "int32"
+      ],
+      "partial_rows": [
+        "int64"
+      ],
+      "queue": [
+        "string"
+      ],
+      "sample_time_max": [
+        "timestamp[us, tz=UTC]"
+      ],
+      "sample_time_min": [
+        "timestamp[us, tz=UTC]"
+      ],
+      "source_token": [
+        "string"
+      ],
+      "start_month": [
+        "int8"
+      ],
+      "start_time": [
+        "timestamp[us, tz=UTC]"
+      ],
+      "start_year": [
+        "int32"
+      ],
+      "submit_time": [
+        "timestamp[us, tz=UTC]"
+      ],
+      "timelimit": [
+        "int64"
+      ],
+      "unit": [
+        "string"
+      ],
+      "username": [
+        "string"
+      ],
+      "value_block_cnt": [
+        "int64"
+      ],
+      "value_block_max": [
+        "double"
+      ],
+      "value_block_sum": [
+        "double"
+      ],
+      "value_cpuuser_cnt": [
+        "int64"
+      ],
+      "value_cpuuser_max": [
+        "double"
+      ],
+      "value_cpuuser_sum": [
+        "double"
+      ],
+      "value_gpu_cnt": [
+        "int64"
+      ],
+      "value_gpu_max": [
+        "double"
+      ],
+      "value_gpu_sum": [
+        "double"
+      ],
+      "value_memused_cnt": [
+        "int64"
+      ],
+      "value_memused_max": [
+        "double"
+      ],
+      "value_memused_minus_diskcache_cnt": [
+        "int64"
+      ],
+      "value_memused_minus_diskcache_max": [
+        "double"
+      ],
+      "value_memused_minus_diskcache_sum": [
+        "double"
+      ],
+      "value_memused_sum": [
+        "double"
+      ],
+      "value_nfs_cnt": [
+        "int64"
+      ],
+      "value_nfs_max": [
+        "double"
+      ],
+      "value_nfs_sum": [
+        "double"
+      ]
+    }
+  },
+  "intersection_columns": [
+    "account",
+    "end_time",
+    "exitcode",
+    "host",
+    "host_list",
+    "jid",
+    "jobname",
+    "ncores",
+    "nhosts",
+    "partial_rows",
+    "queue",
+    "sample_time_max",
+    "sample_time_min",
+    "source_token",
+    "start_month",
+    "start_time",
+    "start_year",
+    "submit_time",
+    "timelimit",
+    "unit",
+    "username",
+    "value_block_cnt",
+    "value_block_max",
+    "value_block_sum",
+    "value_cpuuser_cnt",
+    "value_cpuuser_max",
+    "value_cpuuser_sum",
+    "value_gpu_cnt",
+    "value_gpu_max",
+    "value_gpu_sum",
+    "value_memused_cnt",
+    "value_memused_max",
+    "value_memused_minus_diskcache_cnt",
+    "value_memused_minus_diskcache_max",
+    "value_memused_minus_diskcache_sum",
+    "value_memused_sum",
+    "value_nfs_cnt",
+    "value_nfs_max",
+    "value_nfs_sum"
+  ],
+  "limitations": [
+    "Missingness is computed over full sampled parquet files (sampling-based across files, not across the full dataset).",
+    "This run uses local EXP-001 job_partials parquet outputs, not the full v3 dataset under /depot/..."
+  ],
+  "missingness_mean_by_cluster": {
+    "anvil": {
+      "account": 0.0,
+      "end_time": 0.0,
+      "exitcode": 0.0,
+      "host": 0.0,
+      "host_list": 0.0,
+      "jid": 0.0,
+      "jobname": 0.0,
+      "ncores": 0.0,
+      "nhosts": 0.0,
+      "partial_rows": 0.0,
+      "queue": 0.0,
+      "sample_time_max": 0.0,
+      "sample_time_min": 0.0,
+      "source_token": 0.0,
+      "start_month": 0.0,
+      "start_time": 0.0,
+      "start_year": 0.0,
+      "submit_time": 0.0,
+      "timelimit": 0.0,
+      "unit": 0.0,
+      "username": 0.0,
+      "value_block_cnt": 0.0,
+      "value_block_max": 0.4162750127227225,
+      "value_block_sum": 0.0,
+      "value_cpuuser_cnt": 0.0,
+      "value_cpuuser_max": 0.4162750127227225,
+      "value_cpuuser_sum": 0.0,
+      "value_gpu_cnt": 0.0,
+      "value_gpu_max": 1.0,
+      "value_gpu_sum": 0.0,
+      "value_memused_cnt": 0.0,
+      "value_memused_max": 0.4162750127227225,
+      "value_memused_minus_diskcache_cnt": 0.0,
+      "value_memused_minus_diskcache_max": 1.0,
+      "value_memused_minus_diskcache_sum": 0.0,
+      "value_memused_sum": 0.0,
+      "value_nfs_cnt": 0.0,
+      "value_nfs_max": 0.0,
+      "value_nfs_sum": 0.0
+    },
+    "conte": {
+      "account": 1.0,
+      "end_time": 0.0,
+      "exitcode": 0.0,
+      "host": 0.0,
+      "host_list": 0.0,
+      "jid": 0.0,
+      "jobname": 0.0,
+      "ncores": 0.0,
+      "nhosts": 0.0002600727664735211,
+      "partial_rows": 0.0,
+      "queue": 0.0,
+      "sample_time_max": 0.0,
+      "sample_time_min": 0.0,
+      "source_token": 0.0,
+      "start_month": 0.0,
+      "start_time": 0.0,
+      "start_year": 0.0,
+      "submit_time": 0.0,
+      "timelimit": 0.0,
+      "unit": 0.0,
+      "username": 0.0,
+      "value_block_cnt": 0.0,
+      "value_block_max": 0.0034794892127952906,
+      "value_block_sum": 0.0,
+      "value_cpuuser_cnt": 0.0,
+      "value_cpuuser_max": 0.0034794892127952906,
+      "value_cpuuser_sum": 0.0,
+      "value_gpu_cnt": 0.0,
+      "value_gpu_max": 1.0,
+      "value_gpu_sum": 0.0,
+      "value_memused_cnt": 0.0,
+      "value_memused_max": 0.0,
+      "value_memused_minus_diskcache_cnt": 0.0,
+      "value_memused_minus_diskcache_max": 0.0,
+      "value_memused_minus_diskcache_sum": 0.0,
+      "value_memused_sum": 0.0,
+      "value_nfs_cnt": 0.0,
+      "value_nfs_max": 0.0034794892127952906,
+      "value_nfs_sum": 0.0
+    },
+    "stampede": {
+      "account": 0.0,
+      "end_time": 0.0,
+      "exitcode": 0.0,
+      "host": 0.0,
+      "host_list": 0.0,
+      "jid": 0.0,
+      "jobname": 0.0,
+      "ncores": 0.0,
+      "nhosts": 0.0,
+      "partial_rows": 0.0,
+      "queue": 0.0,
+      "sample_time_max": 0.0,
+      "sample_time_min": 0.0,
+      "source_token": 0.0,
+      "start_month": 0.0,
+      "start_time": 0.0,
+      "start_year": 0.0,
+      "submit_time": 0.0,
+      "timelimit": 0.0,
+      "unit": 0.0,
+      "username": 0.0,
+      "value_block_cnt": 0.0,
+      "value_block_max": 0.0799240384111254,
+      "value_block_sum": 0.0,
+      "value_cpuuser_cnt": 0.0,
+      "value_cpuuser_max": 0.0799240384111254,
+      "value_cpuuser_sum": 0.0,
+      "value_gpu_cnt": 0.0,
+      "value_gpu_max": 1.0,
+      "value_gpu_sum": 0.0,
+      "value_memused_cnt": 0.0,
+      "value_memused_max": 0.0,
+      "value_memused_minus_diskcache_cnt": 0.0,
+      "value_memused_minus_diskcache_max": 0.0,
+      "value_memused_minus_diskcache_sum": 0.0,
+      "value_memused_sum": 0.0,
+      "value_nfs_cnt": 0.0,
+      "value_nfs_max": 1.0,
+      "value_nfs_sum": 0.0
+    }
+  },
+  "missingness_safe_cutoff": 0.0,
+  "n_files": {
+    "anvil": 20,
+    "conte": 20,
+    "stampede": 20
+  },
+  "random_seed": 1337,
+  "rows_scanned": {
+    "anvil": 1210,
+    "conte": 2613,
+    "stampede": 12680
+  },
+  "run_id": "EXP-016_feature_matrix",
+  "safe_columns": [
+    "end_time",
+    "exitcode",
+    "host",
+    "host_list",
+    "jid",
+    "jobname",
+    "ncores",
+    "partial_rows",
+    "queue",
+    "sample_time_max",
+    "sample_time_min",
+    "source_token",
+    "start_month",
+    "start_time",
+    "start_year",
+    "submit_time",
+    "timelimit",
+    "unit",
+    "username",
+    "value_block_cnt",
+    "value_block_sum",
+    "value_cpuuser_cnt",
+    "value_cpuuser_sum",
+    "value_gpu_cnt",
+    "value_gpu_sum",
+    "value_memused_cnt",
+    "value_memused_minus_diskcache_cnt",
+    "value_memused_minus_diskcache_sum",
+    "value_memused_sum",
+    "value_nfs_cnt",
+    "value_nfs_sum"
+  ],
+  "union_columns": [
+    "account",
+    "end_time",
+    "exitcode",
+    "host",
+    "host_list",
+    "jid",
+    "jobname",
+    "ncores",
+    "nhosts",
+    "partial_rows",
+    "queue",
+    "sample_time_max",
+    "sample_time_min",
+    "source_token",
+    "start_month",
+    "start_time",
+    "start_year",
+    "submit_time",
+    "timelimit",
+    "unit",
+    "username",
+    "value_block_cnt",
+    "value_block_max",
+    "value_block_sum",
+    "value_cpuuser_cnt",
+    "value_cpuuser_max",
+    "value_cpuuser_sum",
+    "value_gpu_cnt",
+    "value_gpu_max",
+    "value_gpu_sum",
+    "value_memused_cnt",
+    "value_memused_max",
+    "value_memused_minus_diskcache_cnt",
+    "value_memused_minus_diskcache_max",
+    "value_memused_minus_diskcache_sum",
+    "value_memused_sum",
+    "value_nfs_cnt",
+    "value_nfs_max",
+    "value_nfs_sum"
+  ]
+}

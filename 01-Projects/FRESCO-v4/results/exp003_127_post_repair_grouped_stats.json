@@ -1,0 +1,3146 @@
+{
+  "generated_utc": "2026-03-17T05:36:59.209879Z",
+  "source_artifacts": {
+    "summary_csv": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-v4\\results\\exp003_main_few_shot_summary.csv",
+    "original_grouped_stats_json": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-v4\\results\\exp003_main_few_shot_grouped_stats.json",
+    "repair_csv": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-v4\\results\\exp078_127_repair_harvest.csv",
+    "repair_json": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-v4\\results\\exp078_127_repair_harvest.json",
+    "base_config": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-v4\\config\\exp002_zero_shot_baseline.json",
+    "main_sweep_config": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-v4\\config\\exp003_main_few_shot_sweep.json"
+  },
+  "baseline_exp002": {
+    "run_id": "EXP-002_zero_shot_baseline",
+    "target_r2": 0.107,
+    "source_cluster": "anvil",
+    "target_cluster": "conte",
+    "regime": "hardware_cpu_standard"
+  },
+  "counts": {
+    "original_valid_seed1337_rows": 25,
+    "repair_non1337_rows": 50,
+    "consolidated_rows": 75,
+    "strategy_n_groups": 25
+  },
+  "structural_repair_summary": {
+    "repair_rows": 50,
+    "repair_target_overlap_n_unique": [
+      223
+    ],
+    "repair_source_overlap_n_unique": [
+      6995
+    ],
+    "repair_actual_eval_n_zero_count": 0,
+    "repair_rows_below_min_target_eval_rows": 2,
+    "repair_below_min_run_ids": [
+      "EXP-078_few_shot_repair_non1337_full_target_seed2024",
+      "EXP-079_few_shot_repair_non1337_full_target_seed2025"
+    ],
+    "repair_capped_calibration_rows": 16
+  },
+  "provenance_summary": {
+    "original_valid_seed1337": {
+      "seeds": [
+        1337
+      ],
+      "target_overlap_n_unique": [
+        2459
+      ],
+      "actual_eval_n_range": [
+        491,
+        2445
+      ]
+    },
+    "repair_non1337": {
+      "seeds": [
+        2024,
+        2025
+      ],
+      "target_overlap_n_unique": [
+        223
+      ],
+      "actual_eval_n_range": [
+        45,
+        213
+      ]
+    }
+  },
+  "best_repair_only_source_group": {
+    "strategy": "stacked",
+    "n_target_labels": 100,
+    "target_r2_mean": 0.06132218651383464,
+    "target_r2_median": 0.06132218651383464,
+    "target_r2_std": 0.021810265560189248,
+    "delta_vs_exp002_mean": -0.045677813486165356,
+    "best_run_id": "EXP-110_few_shot_repair_non1337_stacked_n100_seed2024",
+    "best_run_seed": 2024,
+    "group_caveats": []
+  },
+  "best_consolidated_source_group": {
+    "strategy": "stacked",
+    "n_target_labels": 100,
+    "target_r2_mean": 0.07626167466814072,
+    "target_r2_median": 0.0831324520740239,
+    "target_r2_std": 0.027631535157544577,
+    "delta_vs_exp002_mean": -0.030738325331859273,
+    "best_run_id": "EXP-051_few_shot_main_stacked_n100_seed1337",
+    "best_run_seed": 1337,
+    "group_caveats": [
+      "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+      "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+    ]
+  },
+  "best_consolidated_nonfull_group": {
+    "strategy": "stacked",
+    "n_target_labels": 100,
+    "target_r2_mean": 0.07626167466814072,
+    "target_r2_median": 0.0831324520740239,
+    "target_r2_std": 0.027631535157544577,
+    "delta_vs_exp002_mean": -0.030738325331859273,
+    "best_run_id": "EXP-051_few_shot_main_stacked_n100_seed1337",
+    "best_run_seed": 1337,
+    "group_caveats": [
+      "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+      "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+    ]
+  },
+  "best_single_run": {
+    "run_id": "EXP-003_few_shot_main_full_target_seed1337",
+    "analysis_origin": "original_valid_seed1337",
+    "strategy": "full_target",
+    "n_target_labels": -1,
+    "seed": 1337,
+    "target_r2": 0.1370020548738587
+  },
+  "grouped_r2_stats": [
+    {
+      "strategy": "full_target",
+      "n_target_labels": -1,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        -1
+      ],
+      "effective_n_target_labels_unique": [
+        178,
+        1964
+      ],
+      "actual_cal_n_unique": [
+        178,
+        1964
+      ],
+      "actual_eval_n_unique": [
+        45,
+        491
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 2,
+      "all_min_target_eval_rows_satisfied": false,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": true,
+      "target_r2_mean": 0.03189205994515539,
+      "target_r2_median": -0.0071022914594462,
+      "target_r2_std": 0.07514419204432608,
+      "target_r2_iqr": 0.0856128192264025,
+      "target_r2_min": -0.0342235835789463,
+      "target_r2_max": 0.1370020548738587,
+      "target_r2_range": 0.171225638452805,
+      "delta_vs_exp002_mean": -0.07510794005484461,
+      "delta_vs_exp002_median": -0.1141022914594462,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.08597885875255251,
+      "median_target_mae_log": 0.0835877110741026,
+      "mean_target_smape": 65.1402338647569,
+      "median_target_smape": 61.76914980441015,
+      "mean_target_slope": 0.8037102547623819,
+      "median_target_slope": 0.931345018446282,
+      "best_run_id": "EXP-003_few_shot_main_full_target_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1370020548738587,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate.",
+        "Effective calibration sizes differ across rows, so requested N does not map to one shared calibration count.",
+        "2 row(s) fall below min_target_eval_rows=50; repaired full_target rows have actual_eval_n=45."
+      ],
+      "vs_target_only_same_n": null
+    },
+    {
+      "strategy": "output_recal",
+      "n_target_labels": 10,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        10
+      ],
+      "effective_n_target_labels_unique": [
+        10
+      ],
+      "actual_cal_n_unique": [
+        10
+      ],
+      "actual_eval_n_unique": [
+        213,
+        2445
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": -0.10970792566018879,
+      "target_r2_median": -0.0603780082619662,
+      "target_r2_std": 0.1264399198897404,
+      "target_r2_iqr": 0.1488472352773116,
+      "target_r2_min": -0.2832201196366117,
+      "target_r2_max": 0.0144743509180115,
+      "target_r2_range": 0.2976944705546232,
+      "delta_vs_exp002_mean": -0.2167079256601888,
+      "delta_vs_exp002_median": -0.1673780082619662,
+      "rows_above_exp002": 0,
+      "rows_below_or_equal_exp002": 3,
+      "mean_target_mae_log": 0.0809626016595343,
+      "median_target_mae_log": 0.0817052682835106,
+      "mean_target_smape": 47.442472715877955,
+      "median_target_smape": 43.98366019628639,
+      "mean_target_slope": 0.0366885472025699,
+      "median_target_slope": -0.5456428227414275,
+      "best_run_id": "EXP-006_few_shot_main_output_recal_n10_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.0144743509180115,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 2,
+        "losses_or_ties": 1,
+        "mean_delta_r2": 0.04588851335546009,
+        "median_delta_r2": 0.04614307291047548,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-006_few_shot_main_output_recal_n10_seed1337",
+            "target_only_run_id": "EXP-060_few_shot_main_target_only_n10_seed1337",
+            "strategy_r2": 0.0144743509180115,
+            "target_only_r2": 0.0409888006455009,
+            "delta_r2": -0.0265144497274894
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-080_few_shot_repair_non1337_output_recal_n10_seed2024",
+            "target_only_run_id": "EXP-116_few_shot_repair_non1337_target_only_n10_seed2024",
+            "strategy_r2": -0.2832201196366117,
+            "target_only_r2": -0.3293631925470872,
+            "delta_r2": 0.04614307291047548
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-081_few_shot_repair_non1337_output_recal_n10_seed2025",
+            "target_only_run_id": "EXP-117_few_shot_repair_non1337_target_only_n10_seed2025",
+            "strategy_r2": -0.0603780082619662,
+            "target_only_r2": -0.1784149251453604,
+            "delta_r2": 0.11803691688339418
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "output_recal",
+      "n_target_labels": 25,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        25
+      ],
+      "effective_n_target_labels_unique": [
+        25
+      ],
+      "actual_cal_n_unique": [
+        25
+      ],
+      "actual_eval_n_unique": [
+        198,
+        2430
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.004981655650084201,
+      "target_r2_median": -0.0428652147164561,
+      "target_r2_std": 0.08312672014930099,
+      "target_r2_iqr": 0.09299508132834725,
+      "target_r2_min": -0.0640899904949929,
+      "target_r2_max": 0.1219001721617016,
+      "target_r2_range": 0.1859901626566945,
+      "delta_vs_exp002_mean": -0.1020183443499158,
+      "delta_vs_exp002_median": -0.14986521471645609,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.08773590458444207,
+      "median_target_mae_log": 0.0881207155054304,
+      "mean_target_smape": 58.83358836643746,
+      "median_target_smape": 50.32945306655354,
+      "mean_target_slope": -0.449452579249376,
+      "median_target_slope": -0.8280411191565221,
+      "best_run_id": "EXP-009_few_shot_main_output_recal_n25_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1219001721617016,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 1,
+        "losses_or_ties": 2,
+        "mean_delta_r2": -0.04827633789129723,
+        "median_delta_r2": -0.0632195977188361,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-009_few_shot_main_output_recal_n25_seed1337",
+            "target_only_run_id": "EXP-063_few_shot_main_target_only_n25_seed1337",
+            "strategy_r2": 0.1219001721617016,
+            "target_only_r2": 0.1217496675066805,
+            "delta_r2": 0.00015050465502110255
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-082_few_shot_repair_non1337_output_recal_n25_seed2024",
+            "target_only_run_id": "EXP-118_few_shot_repair_non1337_target_only_n25_seed2024",
+            "strategy_r2": -0.0640899904949929,
+            "target_only_r2": 0.0176699301150838,
+            "delta_r2": -0.0817599206100767
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-083_few_shot_repair_non1337_output_recal_n25_seed2025",
+            "target_only_run_id": "EXP-119_few_shot_repair_non1337_target_only_n25_seed2025",
+            "strategy_r2": -0.0428652147164561,
+            "target_only_r2": 0.02035438300238,
+            "delta_r2": -0.0632195977188361
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "output_recal",
+      "n_target_labels": 50,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        50
+      ],
+      "effective_n_target_labels_unique": [
+        50
+      ],
+      "actual_cal_n_unique": [
+        50
+      ],
+      "actual_eval_n_unique": [
+        173,
+        2405
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.0344398958031313,
+      "target_r2_median": 0.0090876252100954,
+      "target_r2_std": 0.04334607379301289,
+      "target_r2_iqr": 0.048334976484292344,
+      "target_r2_min": -0.0012189453846431,
+      "target_r2_max": 0.0954510075839416,
+      "target_r2_range": 0.09666995296858469,
+      "delta_vs_exp002_mean": -0.0725601041968687,
+      "delta_vs_exp002_median": -0.0979123747899046,
+      "rows_above_exp002": 0,
+      "rows_below_or_equal_exp002": 3,
+      "mean_target_mae_log": 0.0902190692469812,
+      "median_target_mae_log": 0.0922242229933395,
+      "mean_target_smape": 71.18051233037502,
+      "median_target_smape": 68.1020815298269,
+      "mean_target_slope": 1.0873904384327107,
+      "median_target_slope": 1.1633571727486618,
+      "best_run_id": "EXP-012_few_shot_main_output_recal_n50_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.0954510075839416,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 1,
+        "losses_or_ties": 2,
+        "mean_delta_r2": 0.020966811045153837,
+        "median_delta_r2": -0.013199765268940705,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-012_few_shot_main_output_recal_n50_seed1337",
+            "target_only_run_id": "EXP-066_few_shot_main_target_only_n50_seed1337",
+            "strategy_r2": 0.0954510075839416,
+            "target_only_r2": 0.1086507728528823,
+            "delta_r2": -0.013199765268940705
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-084_few_shot_repair_non1337_output_recal_n50_seed2024",
+            "target_only_run_id": "EXP-120_few_shot_repair_non1337_target_only_n50_seed2024",
+            "strategy_r2": -0.0012189453846431,
+            "target_only_r2": -0.1215917392721253,
+            "delta_r2": 0.1203727938874822
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-085_few_shot_repair_non1337_output_recal_n50_seed2025",
+            "target_only_run_id": "EXP-121_few_shot_repair_non1337_target_only_n50_seed2025",
+            "strategy_r2": 0.0090876252100954,
+            "target_only_r2": 0.0533602206931754,
+            "delta_r2": -0.04427259548308
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "output_recal",
+      "n_target_labels": 100,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        100
+      ],
+      "effective_n_target_labels_unique": [
+        100
+      ],
+      "actual_cal_n_unique": [
+        100
+      ],
+      "actual_eval_n_unique": [
+        123,
+        2355
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.021182202445591335,
+      "target_r2_median": 0.0095306874677572,
+      "target_r2_std": 0.050282283228736756,
+      "target_r2_iqr": 0.0607506679723222,
+      "target_r2_min": -0.0337427080378138,
+      "target_r2_max": 0.0877586279068306,
+      "target_r2_range": 0.1215013359446444,
+      "delta_vs_exp002_mean": -0.08581779755440866,
+      "delta_vs_exp002_median": -0.0974693125322428,
+      "rows_above_exp002": 0,
+      "rows_below_or_equal_exp002": 3,
+      "mean_target_mae_log": 0.09013473659124664,
+      "median_target_mae_log": 0.0927571291785913,
+      "mean_target_smape": 72.75627168233045,
+      "median_target_smape": 70.72831005039892,
+      "mean_target_slope": 1.4529776318856096,
+      "median_target_slope": 0.6729710585578842,
+      "best_run_id": "EXP-015_few_shot_main_output_recal_n100_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.0877586279068306,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 0,
+        "losses_or_ties": 3,
+        "mean_delta_r2": -0.049936936679978026,
+        "median_delta_r2": -0.0640665176400618,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-015_few_shot_main_output_recal_n100_seed1337",
+            "target_only_run_id": "EXP-069_few_shot_main_target_only_n100_seed1337",
+            "strategy_r2": 0.0877586279068306,
+            "target_only_r2": 0.1062402249355866,
+            "delta_r2": -0.018481597028756
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-086_few_shot_repair_non1337_output_recal_n100_seed2024",
+            "target_only_run_id": "EXP-122_few_shot_repair_non1337_target_only_n100_seed2024",
+            "strategy_r2": 0.0095306874677572,
+            "target_only_r2": 0.073597205107819,
+            "delta_r2": -0.0640665176400618
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-087_few_shot_repair_non1337_output_recal_n100_seed2025",
+            "target_only_run_id": "EXP-123_few_shot_repair_non1337_target_only_n100_seed2025",
+            "strategy_r2": -0.0337427080378138,
+            "target_only_r2": 0.0335199873333025,
+            "delta_r2": -0.06726269537111629
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "output_recal",
+      "n_target_labels": 200,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        200
+      ],
+      "effective_n_target_labels_unique": [
+        173,
+        200
+      ],
+      "actual_cal_n_unique": [
+        173,
+        200
+      ],
+      "actual_eval_n_unique": [
+        50,
+        2255
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 2,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": true,
+      "target_r2_mean": -0.06587326298724003,
+      "target_r2_median": -0.0100959872795893,
+      "target_r2_std": 0.17579839564871147,
+      "target_r2_iqr": 0.2098196499495838,
+      "target_r2_min": -0.3035815507906492,
+      "target_r2_max": 0.1160577491085184,
+      "target_r2_range": 0.4196392998991676,
+      "delta_vs_exp002_mean": -0.17287326298724004,
+      "delta_vs_exp002_median": -0.1170959872795893,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.09556308657878172,
+      "median_target_mae_log": 0.1003473395873694,
+      "mean_target_smape": 74.53627920767258,
+      "median_target_smape": 79.02953851883389,
+      "mean_target_slope": 0.3075801565264345,
+      "median_target_slope": 0.8249686962821337,
+      "best_run_id": "EXP-018_few_shot_main_output_recal_n200_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1160577491085184,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate.",
+        "Effective calibration sizes differ across rows, so requested N does not map to one shared calibration count.",
+        "2 row(s) cap calibration to preserve the evaluation holdout."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 0,
+        "losses_or_ties": 3,
+        "mean_delta_r2": -0.08409688409040363,
+        "median_delta_r2": -0.0747633836630824,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-018_few_shot_main_output_recal_n200_seed1337",
+            "target_only_run_id": "EXP-072_few_shot_main_target_only_n200_seed1337",
+            "strategy_r2": 0.1160577491085184,
+            "target_only_r2": 0.1339564455271632,
+            "delta_r2": -0.017898696418644805
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-088_few_shot_repair_non1337_output_recal_n200_seed2024",
+            "target_only_run_id": "EXP-124_few_shot_repair_non1337_target_only_n200_seed2024",
+            "strategy_r2": -0.3035815507906492,
+            "target_only_r2": -0.1439529786011655,
+            "delta_r2": -0.1596285721894837
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-089_few_shot_repair_non1337_output_recal_n200_seed2025",
+            "target_only_run_id": "EXP-125_few_shot_repair_non1337_target_only_n200_seed2025",
+            "strategy_r2": -0.0100959872795893,
+            "target_only_r2": 0.0646673963834931,
+            "delta_r2": -0.0747633836630824
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "output_recal",
+      "n_target_labels": 500,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        500
+      ],
+      "effective_n_target_labels_unique": [
+        173,
+        500
+      ],
+      "actual_cal_n_unique": [
+        173,
+        500
+      ],
+      "actual_eval_n_unique": [
+        50,
+        1955
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 2,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": true,
+      "target_r2_mean": -0.06730135961064863,
+      "target_r2_median": -0.0100959872795893,
+      "target_r2_std": 0.17432591518319343,
+      "target_r2_iqr": 0.20767750501447088,
+      "target_r2_min": -0.3035815507906492,
+      "target_r2_max": 0.1117734592382926,
+      "target_r2_range": 0.4153550100289418,
+      "delta_vs_exp002_mean": -0.17430135961064863,
+      "delta_vs_exp002_median": -0.1170959872795893,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.09527506631288661,
+      "median_target_mae_log": 0.1003473395873694,
+      "mean_target_smape": 74.31917214720126,
+      "median_target_smape": 78.3782173374199,
+      "mean_target_slope": 0.3158562939751033,
+      "median_target_slope": 0.84979710862814,
+      "best_run_id": "EXP-021_few_shot_main_output_recal_n500_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1117734592382926,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate.",
+        "Effective calibration sizes differ across rows, so requested N does not map to one shared calibration count.",
+        "2 row(s) cap calibration to preserve the evaluation holdout."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 1,
+        "losses_or_ties": 2,
+        "mean_delta_r2": -0.07603960609773792,
+        "median_delta_r2": -0.0747633836630824,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-021_few_shot_main_output_recal_n500_seed1337",
+            "target_only_run_id": "EXP-075_few_shot_main_target_only_n500_seed1337",
+            "strategy_r2": 0.1117734592382926,
+            "target_only_r2": 0.1055003216789403,
+            "delta_r2": 0.006273137559352299
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-090_few_shot_repair_non1337_output_recal_n500_seed2024",
+            "target_only_run_id": "EXP-126_few_shot_repair_non1337_target_only_n500_seed2024",
+            "strategy_r2": -0.3035815507906492,
+            "target_only_r2": -0.1439529786011655,
+            "delta_r2": -0.1596285721894837
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-091_few_shot_repair_non1337_output_recal_n500_seed2025",
+            "target_only_run_id": "EXP-127_few_shot_repair_non1337_target_only_n500_seed2025",
+            "strategy_r2": -0.0100959872795893,
+            "target_only_r2": 0.0646673963834931,
+            "delta_r2": -0.0747633836630824
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "fine_tune",
+      "n_target_labels": 10,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        10
+      ],
+      "effective_n_target_labels_unique": [
+        10
+      ],
+      "actual_cal_n_unique": [
+        10
+      ],
+      "actual_eval_n_unique": [
+        213,
+        2445
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.035419808303377834,
+      "target_r2_median": 0.0104169521610416,
+      "target_r2_std": 0.03724136494917334,
+      "target_r2_iqr": 0.04014376394236725,
+      "target_r2_min": 0.0077774724321787,
+      "target_r2_max": 0.0880650003169132,
+      "target_r2_range": 0.08028752788473449,
+      "delta_vs_exp002_mean": -0.07158019169662216,
+      "delta_vs_exp002_median": -0.0965830478389584,
+      "rows_above_exp002": 0,
+      "rows_below_or_equal_exp002": 3,
+      "mean_target_mae_log": 0.084053907459271,
+      "median_target_mae_log": 0.0845104824696361,
+      "mean_target_smape": 61.696556497662904,
+      "median_target_smape": 61.74743758791281,
+      "mean_target_slope": 1.4526475526252718,
+      "median_target_slope": 1.2340758344840428,
+      "best_run_id": "EXP-024_few_shot_main_fine_tune_n10_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.0880650003169132,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 3,
+        "losses_or_ties": 0,
+        "mean_delta_r2": 0.19101624731902675,
+        "median_delta_r2": 0.18619239757753908,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-024_few_shot_main_fine_tune_n10_seed1337",
+            "target_only_run_id": "EXP-060_few_shot_main_target_only_n10_seed1337",
+            "strategy_r2": 0.0880650003169132,
+            "target_only_r2": 0.0409888006455009,
+            "delta_r2": 0.04707619967141229
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-092_few_shot_repair_non1337_fine_tune_n10_seed2024",
+            "target_only_run_id": "EXP-116_few_shot_repair_non1337_target_only_n10_seed2024",
+            "strategy_r2": 0.0104169521610416,
+            "target_only_r2": -0.3293631925470872,
+            "delta_r2": 0.3397801447081288
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-093_few_shot_repair_non1337_fine_tune_n10_seed2025",
+            "target_only_run_id": "EXP-117_few_shot_repair_non1337_target_only_n10_seed2025",
+            "strategy_r2": 0.0077774724321787,
+            "target_only_r2": -0.1784149251453604,
+            "delta_r2": 0.18619239757753908
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "fine_tune",
+      "n_target_labels": 25,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        25
+      ],
+      "effective_n_target_labels_unique": [
+        25
+      ],
+      "actual_cal_n_unique": [
+        25
+      ],
+      "actual_eval_n_unique": [
+        198,
+        2430
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.06142860110221546,
+      "target_r2_median": 0.033064221565213,
+      "target_r2_std": 0.048649951349023286,
+      "target_r2_iqr": 0.054284649114682094,
+      "target_r2_min": 0.0213261417560346,
+      "target_r2_max": 0.1298954399853988,
+      "target_r2_range": 0.10856929822936419,
+      "delta_vs_exp002_mean": -0.04557139889778454,
+      "delta_vs_exp002_median": -0.07393577843478699,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.088717476367279,
+      "median_target_mae_log": 0.0889967618180402,
+      "mean_target_smape": 69.05678766533525,
+      "median_target_smape": 66.88082333139738,
+      "mean_target_slope": 1.2010637075600679,
+      "median_target_slope": 1.1727677546184685,
+      "best_run_id": "EXP-027_few_shot_main_fine_tune_n25_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1298954399853988,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 3,
+        "losses_or_ties": 0,
+        "mean_delta_r2": 0.008170607560834032,
+        "median_delta_r2": 0.008145772478718297,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-027_few_shot_main_fine_tune_n25_seed1337",
+            "target_only_run_id": "EXP-063_few_shot_main_target_only_n25_seed1337",
+            "strategy_r2": 0.1298954399853988,
+            "target_only_r2": 0.1217496675066805,
+            "delta_r2": 0.008145772478718297
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-094_few_shot_repair_non1337_fine_tune_n25_seed2024",
+            "target_only_run_id": "EXP-118_few_shot_repair_non1337_target_only_n25_seed2024",
+            "strategy_r2": 0.0213261417560346,
+            "target_only_r2": 0.0176699301150838,
+            "delta_r2": 0.003656211640950799
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-095_few_shot_repair_non1337_fine_tune_n25_seed2025",
+            "target_only_run_id": "EXP-119_few_shot_repair_non1337_target_only_n25_seed2025",
+            "strategy_r2": 0.033064221565213,
+            "target_only_r2": 0.02035438300238,
+            "delta_r2": 0.012709838562833
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "fine_tune",
+      "n_target_labels": 50,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        50
+      ],
+      "effective_n_target_labels_unique": [
+        50
+      ],
+      "actual_cal_n_unique": [
+        50
+      ],
+      "actual_eval_n_unique": [
+        173,
+        2405
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.04304410965578733,
+      "target_r2_median": 0.0332362200073833,
+      "target_r2_std": 0.0507826438838478,
+      "target_r2_iqr": 0.06161306156355245,
+      "target_r2_min": -0.0136650070835631,
+      "target_r2_max": 0.1095611160435418,
+      "target_r2_range": 0.1232261231271049,
+      "delta_vs_exp002_mean": -0.06395589034421267,
+      "delta_vs_exp002_median": -0.0737637799926167,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.09055566254319684,
+      "median_target_mae_log": 0.0912711304926142,
+      "mean_target_smape": 69.60904284659007,
+      "median_target_smape": 64.36585990035411,
+      "mean_target_slope": -1.690443602388081,
+      "median_target_slope": 0.7553904428185652,
+      "best_run_id": "EXP-030_few_shot_main_fine_tune_n50_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1095611160435418,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 2,
+        "losses_or_ties": 1,
+        "mean_delta_r2": 0.029571024897809866,
+        "median_delta_r2": 0.0009103431906594961,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-030_few_shot_main_fine_tune_n50_seed1337",
+            "target_only_run_id": "EXP-066_few_shot_main_target_only_n50_seed1337",
+            "strategy_r2": 0.1095611160435418,
+            "target_only_r2": 0.1086507728528823,
+            "delta_r2": 0.0009103431906594961
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-096_few_shot_repair_non1337_fine_tune_n50_seed2024",
+            "target_only_run_id": "EXP-120_few_shot_repair_non1337_target_only_n50_seed2024",
+            "strategy_r2": -0.0136650070835631,
+            "target_only_r2": -0.1215917392721253,
+            "delta_r2": 0.10792673218856219
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-097_few_shot_repair_non1337_fine_tune_n50_seed2025",
+            "target_only_run_id": "EXP-121_few_shot_repair_non1337_target_only_n50_seed2025",
+            "strategy_r2": 0.0332362200073833,
+            "target_only_r2": 0.0533602206931754,
+            "delta_r2": -0.0201240006857921
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "fine_tune",
+      "n_target_labels": 100,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        100
+      ],
+      "effective_n_target_labels_unique": [
+        100
+      ],
+      "actual_cal_n_unique": [
+        100
+      ],
+      "actual_eval_n_unique": [
+        123,
+        2355
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.06036037858202207,
+      "target_r2_median": 0.0406127964392725,
+      "target_r2_std": 0.031505957102765235,
+      "target_r2_iqr": 0.03458992265210266,
+      "target_r2_min": 0.0356442470012942,
+      "target_r2_max": 0.1048240923054995,
+      "target_r2_range": 0.06917984530420529,
+      "delta_vs_exp002_mean": -0.04663962141797793,
+      "delta_vs_exp002_median": -0.0663872035607275,
+      "rows_above_exp002": 0,
+      "rows_below_or_equal_exp002": 3,
+      "mean_target_mae_log": 0.0876792002474509,
+      "median_target_mae_log": 0.0891548776300794,
+      "mean_target_smape": 68.47683079384494,
+      "median_target_smape": 64.31499873381166,
+      "mean_target_slope": 1.4767647672986002,
+      "median_target_slope": 1.7325958552970606,
+      "best_run_id": "EXP-033_few_shot_main_fine_tune_n100_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1048240923054995,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 1,
+        "losses_or_ties": 2,
+        "mean_delta_r2": -0.010758760543547304,
+        "median_delta_r2": -0.001416132630087108,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-033_few_shot_main_fine_tune_n100_seed1337",
+            "target_only_run_id": "EXP-069_few_shot_main_target_only_n100_seed1337",
+            "strategy_r2": 0.1048240923054995,
+            "target_only_r2": 0.1062402249355866,
+            "delta_r2": -0.001416132630087108
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-098_few_shot_repair_non1337_fine_tune_n100_seed2024",
+            "target_only_run_id": "EXP-122_few_shot_repair_non1337_target_only_n100_seed2024",
+            "strategy_r2": 0.0356442470012942,
+            "target_only_r2": 0.073597205107819,
+            "delta_r2": -0.037952958106524805
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-099_few_shot_repair_non1337_fine_tune_n100_seed2025",
+            "target_only_run_id": "EXP-123_few_shot_repair_non1337_target_only_n100_seed2025",
+            "strategy_r2": 0.0406127964392725,
+            "target_only_r2": 0.0335199873333025,
+            "delta_r2": 0.007092809105970002
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "fine_tune",
+      "n_target_labels": 200,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        200
+      ],
+      "effective_n_target_labels_unique": [
+        173,
+        200
+      ],
+      "actual_cal_n_unique": [
+        173,
+        200
+      ],
+      "actual_eval_n_unique": [
+        50,
+        2255
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 2,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": true,
+      "target_r2_mean": 0.05609836309066526,
+      "target_r2_median": 0.0266459045373781,
+      "target_r2_std": 0.05160623390072149,
+      "target_r2_iqr": 0.057829227731305055,
+      "target_r2_min": 0.0129953646360038,
+      "target_r2_max": 0.1286538200986139,
+      "target_r2_range": 0.1156584554626101,
+      "delta_vs_exp002_mean": -0.05090163690933474,
+      "delta_vs_exp002_median": -0.0803540954626219,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.08755484011347915,
+      "median_target_mae_log": 0.0821263402737731,
+      "mean_target_smape": 64.12082399246202,
+      "median_target_smape": 65.2163517188759,
+      "mean_target_slope": 1.6559315464963282,
+      "median_target_slope": 1.4584822449023316,
+      "best_run_id": "EXP-036_few_shot_main_fine_tune_n200_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1286538200986139,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate.",
+        "Effective calibration sizes differ across rows, so requested N does not map to one shared calibration count.",
+        "2 row(s) cap calibration to preserve the evaluation holdout."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 1,
+        "losses_or_ties": 2,
+        "mean_delta_r2": 0.03787474198750165,
+        "median_delta_r2": -0.005302625428549312,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-036_few_shot_main_fine_tune_n200_seed1337",
+            "target_only_run_id": "EXP-072_few_shot_main_target_only_n200_seed1337",
+            "strategy_r2": 0.1286538200986139,
+            "target_only_r2": 0.1339564455271632,
+            "delta_r2": -0.005302625428549312
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-100_few_shot_repair_non1337_fine_tune_n200_seed2024",
+            "target_only_run_id": "EXP-124_few_shot_repair_non1337_target_only_n200_seed2024",
+            "strategy_r2": 0.0129953646360038,
+            "target_only_r2": -0.1439529786011655,
+            "delta_r2": 0.15694834323716927
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-101_few_shot_repair_non1337_fine_tune_n200_seed2025",
+            "target_only_run_id": "EXP-125_few_shot_repair_non1337_target_only_n200_seed2025",
+            "strategy_r2": 0.0266459045373781,
+            "target_only_r2": 0.0646673963834931,
+            "delta_r2": -0.038021491846115
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "fine_tune",
+      "n_target_labels": 500,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        500
+      ],
+      "effective_n_target_labels_unique": [
+        173,
+        500
+      ],
+      "actual_cal_n_unique": [
+        173,
+        500
+      ],
+      "actual_eval_n_unique": [
+        50,
+        1955
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 2,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": true,
+      "target_r2_mean": 0.05450481746015414,
+      "target_r2_median": 0.0266459045373781,
+      "target_r2_std": 0.04936639838796739,
+      "target_r2_iqr": 0.05543890928553835,
+      "target_r2_min": 0.0129953646360038,
+      "target_r2_max": 0.1238731832070805,
+      "target_r2_range": 0.1108778185710767,
+      "delta_vs_exp002_mean": -0.05249518253984586,
+      "delta_vs_exp002_median": -0.0803540954626219,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.08711454894619182,
+      "median_target_mae_log": 0.0816036578608735,
+      "mean_target_smape": 62.365162746508354,
+      "median_target_smape": 65.2163517188759,
+      "mean_target_slope": 1.6604700536882282,
+      "median_target_slope": 1.4584822449023316,
+      "best_run_id": "EXP-039_few_shot_main_fine_tune_n500_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1238731832070805,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate.",
+        "Effective calibration sizes differ across rows, so requested N does not map to one shared calibration count.",
+        "2 row(s) cap calibration to preserve the evaluation holdout."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 2,
+        "losses_or_ties": 1,
+        "mean_delta_r2": 0.04576657097306483,
+        "median_delta_r2": 0.018372861528140202,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-039_few_shot_main_fine_tune_n500_seed1337",
+            "target_only_run_id": "EXP-075_few_shot_main_target_only_n500_seed1337",
+            "strategy_r2": 0.1238731832070805,
+            "target_only_r2": 0.1055003216789403,
+            "delta_r2": 0.018372861528140202
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-102_few_shot_repair_non1337_fine_tune_n500_seed2024",
+            "target_only_run_id": "EXP-126_few_shot_repair_non1337_target_only_n500_seed2024",
+            "strategy_r2": 0.0129953646360038,
+            "target_only_r2": -0.1439529786011655,
+            "delta_r2": 0.15694834323716927
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-103_few_shot_repair_non1337_fine_tune_n500_seed2025",
+            "target_only_run_id": "EXP-127_few_shot_repair_non1337_target_only_n500_seed2025",
+            "strategy_r2": 0.0266459045373781,
+            "target_only_r2": 0.0646673963834931,
+            "delta_r2": -0.038021491846115
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "stacked",
+      "n_target_labels": 10,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        10
+      ],
+      "effective_n_target_labels_unique": [
+        10
+      ],
+      "actual_cal_n_unique": [
+        10
+      ],
+      "actual_eval_n_unique": [
+        213,
+        2445
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": -0.15021948607574737,
+      "target_r2_median": -0.1356707687490039,
+      "target_r2_std": 0.16226733117665876,
+      "target_r2_iqr": 0.1983362832890217,
+      "target_r2_min": -0.3558301280281408,
+      "target_r2_max": 0.0408424385499026,
+      "target_r2_range": 0.3966725665780434,
+      "delta_vs_exp002_mean": -0.25721948607574735,
+      "delta_vs_exp002_median": -0.2426707687490039,
+      "rows_above_exp002": 0,
+      "rows_below_or_equal_exp002": 3,
+      "mean_target_mae_log": 0.08249832583753501,
+      "median_target_mae_log": 0.0846491741909771,
+      "mean_target_smape": 48.591002137828525,
+      "median_target_smape": 47.7642710231216,
+      "mean_target_slope": -0.24505981712688454,
+      "median_target_slope": -0.6004211223852178,
+      "best_run_id": "EXP-042_few_shot_main_stacked_n10_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.0408424385499026,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 1,
+        "losses_or_ties": 2,
+        "mean_delta_r2": 0.005376952939901522,
+        "median_delta_r2": -0.00014636209559830415,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-042_few_shot_main_stacked_n10_seed1337",
+            "target_only_run_id": "EXP-060_few_shot_main_target_only_n10_seed1337",
+            "strategy_r2": 0.0408424385499026,
+            "target_only_r2": 0.0409888006455009,
+            "delta_r2": -0.00014636209559830415
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-104_few_shot_repair_non1337_stacked_n10_seed2024",
+            "target_only_run_id": "EXP-116_few_shot_repair_non1337_target_only_n10_seed2024",
+            "strategy_r2": -0.3558301280281408,
+            "target_only_r2": -0.3293631925470872,
+            "delta_r2": -0.02646693548105361
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-105_few_shot_repair_non1337_stacked_n10_seed2025",
+            "target_only_run_id": "EXP-117_few_shot_repair_non1337_target_only_n10_seed2025",
+            "strategy_r2": -0.1356707687490039,
+            "target_only_r2": -0.1784149251453604,
+            "delta_r2": 0.04274415639635648
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "stacked",
+      "n_target_labels": 25,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        25
+      ],
+      "effective_n_target_labels_unique": [
+        25
+      ],
+      "actual_cal_n_unique": [
+        25
+      ],
+      "actual_eval_n_unique": [
+        198,
+        2430
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.05653607341608884,
+      "target_r2_median": 0.0280566557679111,
+      "target_r2_std": 0.04596645123178567,
+      "target_r2_iqr": 0.0506069564001007,
+      "target_r2_min": 0.020168825840077,
+      "target_r2_max": 0.1213827386402784,
+      "target_r2_range": 0.10121391280020141,
+      "delta_vs_exp002_mean": -0.050463926583911155,
+      "delta_vs_exp002_median": -0.0789433442320889,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.0874108108732408,
+      "median_target_mae_log": 0.0858373441740315,
+      "mean_target_smape": 69.33312290750034,
+      "median_target_smape": 67.76243140021401,
+      "mean_target_slope": 0.9496750294695105,
+      "median_target_slope": 1.0175506466663178,
+      "best_run_id": "EXP-045_few_shot_main_stacked_n25_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1213827386402784,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 1,
+        "losses_or_ties": 2,
+        "mean_delta_r2": 0.003278079874707402,
+        "median_delta_r2": -0.0001855571623030003,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-045_few_shot_main_stacked_n25_seed1337",
+            "target_only_run_id": "EXP-063_few_shot_main_target_only_n25_seed1337",
+            "strategy_r2": 0.1213827386402784,
+            "target_only_r2": 0.1217496675066805,
+            "delta_r2": -0.00036692886640209144
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-106_few_shot_repair_non1337_stacked_n25_seed2024",
+            "target_only_run_id": "EXP-118_few_shot_repair_non1337_target_only_n25_seed2024",
+            "strategy_r2": 0.0280566557679111,
+            "target_only_r2": 0.0176699301150838,
+            "delta_r2": 0.010386725652827299
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-107_few_shot_repair_non1337_stacked_n25_seed2025",
+            "target_only_run_id": "EXP-119_few_shot_repair_non1337_target_only_n25_seed2025",
+            "strategy_r2": 0.020168825840077,
+            "target_only_r2": 0.02035438300238,
+            "delta_r2": -0.0001855571623030003
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "stacked",
+      "n_target_labels": 50,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        50
+      ],
+      "effective_n_target_labels_unique": [
+        50
+      ],
+      "actual_cal_n_unique": [
+        50
+      ],
+      "actual_eval_n_unique": [
+        173,
+        2405
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.02473411092913824,
+      "target_r2_median": 0.0641208974463234,
+      "target_r2_std": 0.08914049636756519,
+      "target_r2_iqr": 0.10370898189101616,
+      "target_r2_min": -0.0986682642204705,
+      "target_r2_max": 0.1087496995615618,
+      "target_r2_range": 0.2074179637820323,
+      "delta_vs_exp002_mean": -0.08226588907086176,
+      "delta_vs_exp002_median": -0.04287910255367659,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.08978653062158248,
+      "median_target_mae_log": 0.0880292754087316,
+      "mean_target_smape": 69.01790965752119,
+      "median_target_smape": 64.73907166617082,
+      "mean_target_slope": 0.5807462602541619,
+      "median_target_slope": 0.7382907681379138,
+      "best_run_id": "EXP-048_few_shot_main_stacked_n50_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1087496995615618,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 3,
+        "losses_or_ties": 0,
+        "mean_delta_r2": 0.011261026171160772,
+        "median_delta_r2": 0.010760676753148006,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-048_few_shot_main_stacked_n50_seed1337",
+            "target_only_run_id": "EXP-066_few_shot_main_target_only_n50_seed1337",
+            "strategy_r2": 0.1087496995615618,
+            "target_only_r2": 0.1086507728528823,
+            "delta_r2": 9.892670867950315e-05
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-108_few_shot_repair_non1337_stacked_n50_seed2024",
+            "target_only_run_id": "EXP-120_few_shot_repair_non1337_target_only_n50_seed2024",
+            "strategy_r2": -0.0986682642204705,
+            "target_only_r2": -0.1215917392721253,
+            "delta_r2": 0.022923475051654804
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-109_few_shot_repair_non1337_stacked_n50_seed2025",
+            "target_only_run_id": "EXP-121_few_shot_repair_non1337_target_only_n50_seed2025",
+            "strategy_r2": 0.0641208974463234,
+            "target_only_r2": 0.0533602206931754,
+            "delta_r2": 0.010760676753148006
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "stacked",
+      "n_target_labels": 100,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        100
+      ],
+      "effective_n_target_labels_unique": [
+        100
+      ],
+      "actual_cal_n_unique": [
+        100
+      ],
+      "actual_eval_n_unique": [
+        123,
+        2355
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.07626167466814072,
+      "target_r2_median": 0.0831324520740239,
+      "target_r2_std": 0.027631535157544577,
+      "target_r2_iqr": 0.033314365011553757,
+      "target_r2_min": 0.0395119209536454,
+      "target_r2_max": 0.1061406509767529,
+      "target_r2_range": 0.06662873002310751,
+      "delta_vs_exp002_mean": -0.030738325331859273,
+      "delta_vs_exp002_median": -0.023867547925976104,
+      "rows_above_exp002": 0,
+      "rows_below_or_equal_exp002": 3,
+      "mean_target_mae_log": 0.08668827816858533,
+      "median_target_mae_log": 0.0887927667655802,
+      "mean_target_smape": 69.68010020852296,
+      "median_target_smape": 66.10745215040214,
+      "mean_target_slope": 0.9438421752101739,
+      "median_target_slope": 0.770900088129852,
+      "best_run_id": "EXP-051_few_shot_main_stacked_n100_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1061406509767529,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 2,
+        "losses_or_ties": 1,
+        "mean_delta_r2": 0.005142535542571364,
+        "median_delta_r2": 0.0059919336203429,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-051_few_shot_main_stacked_n100_seed1337",
+            "target_only_run_id": "EXP-069_few_shot_main_target_only_n100_seed1337",
+            "strategy_r2": 0.1061406509767529,
+            "target_only_r2": 0.1062402249355866,
+            "delta_r2": -9.957395883369857e-05
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-110_few_shot_repair_non1337_stacked_n100_seed2024",
+            "target_only_run_id": "EXP-122_few_shot_repair_non1337_target_only_n100_seed2024",
+            "strategy_r2": 0.0831324520740239,
+            "target_only_r2": 0.073597205107819,
+            "delta_r2": 0.009535246966204891
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-111_few_shot_repair_non1337_stacked_n100_seed2025",
+            "target_only_run_id": "EXP-123_few_shot_repair_non1337_target_only_n100_seed2025",
+            "strategy_r2": 0.0395119209536454,
+            "target_only_r2": 0.0335199873333025,
+            "delta_r2": 0.0059919336203429
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "stacked",
+      "n_target_labels": 200,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        200
+      ],
+      "effective_n_target_labels_unique": [
+        173,
+        200
+      ],
+      "actual_cal_n_unique": [
+        173,
+        200
+      ],
+      "actual_eval_n_unique": [
+        50,
+        2255
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 2,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": true,
+      "target_r2_mean": 0.02593253584927413,
+      "target_r2_median": 0.0736033574203486,
+      "target_r2_std": 0.11311076947949454,
+      "target_r2_iqr": 0.13223724451310648,
+      "target_r2_min": -0.1301401194493696,
+      "target_r2_max": 0.1343343695768434,
+      "target_r2_range": 0.26447448902621296,
+      "delta_vs_exp002_mean": -0.08106746415072587,
+      "delta_vs_exp002_median": -0.0333966425796514,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.08762430189985347,
+      "median_target_mae_log": 0.0852695903674351,
+      "mean_target_smape": 67.96093621745426,
+      "median_target_smape": 68.24742168805902,
+      "mean_target_slope": 0.815580951139974,
+      "median_target_slope": 0.8720590776717275,
+      "best_run_id": "EXP-054_few_shot_main_stacked_n200_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1343343695768434,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate.",
+        "Effective calibration sizes differ across rows, so requested N does not map to one shared calibration count.",
+        "2 row(s) cap calibration to preserve the evaluation holdout."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 3,
+        "losses_or_ties": 0,
+        "mean_delta_r2": 0.007708914746110522,
+        "median_delta_r2": 0.008935961036855497,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-054_few_shot_main_stacked_n200_seed1337",
+            "target_only_run_id": "EXP-072_few_shot_main_target_only_n200_seed1337",
+            "strategy_r2": 0.1343343695768434,
+            "target_only_r2": 0.1339564455271632,
+            "delta_r2": 0.00037792404968017834
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-112_few_shot_repair_non1337_stacked_n200_seed2024",
+            "target_only_run_id": "EXP-124_few_shot_repair_non1337_target_only_n200_seed2024",
+            "strategy_r2": -0.1301401194493696,
+            "target_only_r2": -0.1439529786011655,
+            "delta_r2": 0.013812859151795892
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-113_few_shot_repair_non1337_stacked_n200_seed2025",
+            "target_only_run_id": "EXP-125_few_shot_repair_non1337_target_only_n200_seed2025",
+            "strategy_r2": 0.0736033574203486,
+            "target_only_r2": 0.0646673963834931,
+            "delta_r2": 0.008935961036855497
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "stacked",
+      "n_target_labels": 500,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        500
+      ],
+      "effective_n_target_labels_unique": [
+        173,
+        500
+      ],
+      "actual_cal_n_unique": [
+        173,
+        500
+      ],
+      "actual_eval_n_unique": [
+        50,
+        1955
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 2,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": true,
+      "target_r2_mean": 0.016174497823556535,
+      "target_r2_median": 0.0736033574203486,
+      "target_r2_std": 0.10425404717958808,
+      "target_r2_iqr": 0.11760018747453009,
+      "target_r2_min": -0.1301401194493696,
+      "target_r2_max": 0.1050602554996906,
+      "target_r2_range": 0.2352003749490602,
+      "delta_vs_exp002_mean": -0.09082550217644346,
+      "delta_vs_exp002_median": -0.0333966425796514,
+      "rows_above_exp002": 0,
+      "rows_below_or_equal_exp002": 3,
+      "mean_target_mae_log": 0.0877868921795497,
+      "median_target_mae_log": 0.0852695903674351,
+      "mean_target_smape": 66.39053810047538,
+      "median_target_smape": 68.24742168805902,
+      "mean_target_slope": 0.7723146064955655,
+      "median_target_slope": 0.7422600437385024,
+      "best_run_id": "EXP-057_few_shot_main_stacked_n500_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1050602554996906,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate.",
+        "Effective calibration sizes differ across rows, so requested N does not map to one shared calibration count.",
+        "2 row(s) cap calibration to preserve the evaluation holdout."
+      ],
+      "vs_target_only_same_n": {
+        "common_seed_count": 3,
+        "wins": 2,
+        "losses_or_ties": 1,
+        "mean_delta_r2": 0.00743625133646723,
+        "median_delta_r2": 0.008935961036855497,
+        "per_seed": [
+          {
+            "analysis_origin": "original_valid_seed1337",
+            "seed": 1337,
+            "strategy_run_id": "EXP-057_few_shot_main_stacked_n500_seed1337",
+            "target_only_run_id": "EXP-075_few_shot_main_target_only_n500_seed1337",
+            "strategy_r2": 0.1050602554996906,
+            "target_only_r2": 0.1055003216789403,
+            "delta_r2": -0.00044006617924970126
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2024,
+            "strategy_run_id": "EXP-114_few_shot_repair_non1337_stacked_n500_seed2024",
+            "target_only_run_id": "EXP-126_few_shot_repair_non1337_target_only_n500_seed2024",
+            "strategy_r2": -0.1301401194493696,
+            "target_only_r2": -0.1439529786011655,
+            "delta_r2": 0.013812859151795892
+          },
+          {
+            "analysis_origin": "repair_non1337",
+            "seed": 2025,
+            "strategy_run_id": "EXP-115_few_shot_repair_non1337_stacked_n500_seed2025",
+            "target_only_run_id": "EXP-127_few_shot_repair_non1337_target_only_n500_seed2025",
+            "strategy_r2": 0.0736033574203486,
+            "target_only_r2": 0.0646673963834931,
+            "delta_r2": 0.008935961036855497
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "target_only",
+      "n_target_labels": 10,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        10
+      ],
+      "effective_n_target_labels_unique": [
+        10
+      ],
+      "actual_cal_n_unique": [
+        10
+      ],
+      "actual_eval_n_unique": [
+        213,
+        2445
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": -0.15559643901564887,
+      "target_r2_median": -0.1784149251453604,
+      "target_r2_std": 0.15205407414769606,
+      "target_r2_iqr": 0.18517599659629408,
+      "target_r2_min": -0.3293631925470872,
+      "target_r2_max": 0.0409888006455009,
+      "target_r2_range": 0.3703519931925881,
+      "delta_vs_exp002_mean": -0.2625964390156489,
+      "delta_vs_exp002_median": -0.2854149251453604,
+      "rows_above_exp002": 0,
+      "rows_below_or_equal_exp002": 3,
+      "mean_target_mae_log": 0.0819968027083736,
+      "median_target_mae_log": 0.0835900323401673,
+      "mean_target_smape": 48.21785484177641,
+      "median_target_smape": 46.72347464297171,
+      "mean_target_slope": -0.19309344487846516,
+      "median_target_slope": -0.5810901038618753,
+      "best_run_id": "EXP-060_few_shot_main_target_only_n10_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.0409888006455009,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": null
+    },
+    {
+      "strategy": "target_only",
+      "n_target_labels": 25,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        25
+      ],
+      "effective_n_target_labels_unique": [
+        25
+      ],
+      "actual_cal_n_unique": [
+        25
+      ],
+      "actual_eval_n_unique": [
+        198,
+        2430
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.05325799354138142,
+      "target_r2_median": 0.02035438300238,
+      "target_r2_std": 0.048443325125020385,
+      "target_r2_iqr": 0.05203986869579835,
+      "target_r2_min": 0.0176699301150838,
+      "target_r2_max": 0.1217496675066805,
+      "target_r2_range": 0.10407973739159669,
+      "delta_vs_exp002_mean": -0.053742006458618576,
+      "delta_vs_exp002_median": -0.08664561699762,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.08724036271481883,
+      "median_target_mae_log": 0.0856994621953638,
+      "mean_target_smape": 69.02140925471483,
+      "median_target_smape": 66.93770888578383,
+      "mean_target_slope": 0.9207251803459032,
+      "median_target_slope": 1.0207158597340085,
+      "best_run_id": "EXP-063_few_shot_main_target_only_n25_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1217496675066805,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": null
+    },
+    {
+      "strategy": "target_only",
+      "n_target_labels": 50,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        50
+      ],
+      "effective_n_target_labels_unique": [
+        50
+      ],
+      "actual_cal_n_unique": [
+        50
+      ],
+      "actual_eval_n_unique": [
+        173,
+        2405
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.013473084757977467,
+      "target_r2_median": 0.0533602206931754,
+      "target_r2_std": 0.09813644007959287,
+      "target_r2_iqr": 0.11512125606250379,
+      "target_r2_min": -0.1215917392721253,
+      "target_r2_max": 0.1086507728528823,
+      "target_r2_range": 0.2302425121250076,
+      "delta_vs_exp002_mean": -0.09352691524202253,
+      "delta_vs_exp002_median": -0.0536397793068246,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.09059425947028676,
+      "median_target_mae_log": 0.0892197404387115,
+      "mean_target_smape": 69.73992232950962,
+      "median_target_smape": 65.9861178664441,
+      "mean_target_slope": 0.6292475903954647,
+      "median_target_slope": 0.7379229412147607,
+      "best_run_id": "EXP-066_few_shot_main_target_only_n50_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1086507728528823,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": null
+    },
+    {
+      "strategy": "target_only",
+      "n_target_labels": 100,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        100
+      ],
+      "effective_n_target_labels_unique": [
+        100
+      ],
+      "actual_cal_n_unique": [
+        100
+      ],
+      "actual_eval_n_unique": [
+        123,
+        2355
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 0,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": false,
+      "target_r2_mean": 0.07111913912556937,
+      "target_r2_median": 0.073597205107819,
+      "target_r2_std": 0.029739579099156182,
+      "target_r2_iqr": 0.03636011880114205,
+      "target_r2_min": 0.0335199873333025,
+      "target_r2_max": 0.1062402249355866,
+      "target_r2_range": 0.0727202376022841,
+      "delta_vs_exp002_mean": -0.035880860874430626,
+      "delta_vs_exp002_median": -0.033402794892180995,
+      "rows_above_exp002": 0,
+      "rows_below_or_equal_exp002": 3,
+      "mean_target_mae_log": 0.08699466473210353,
+      "median_target_mae_log": 0.0892207422686593,
+      "mean_target_smape": 68.18503717995063,
+      "median_target_smape": 64.2159078337093,
+      "mean_target_slope": 0.9113077938591191,
+      "median_target_slope": 0.7530163092319972,
+      "best_run_id": "EXP-069_few_shot_main_target_only_n100_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1062402249355866,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate."
+      ],
+      "vs_target_only_same_n": null
+    },
+    {
+      "strategy": "target_only",
+      "n_target_labels": 200,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        200
+      ],
+      "effective_n_target_labels_unique": [
+        173,
+        200
+      ],
+      "actual_cal_n_unique": [
+        173,
+        200
+      ],
+      "actual_eval_n_unique": [
+        50,
+        2255
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 2,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": true,
+      "target_r2_mean": 0.01822362110316361,
+      "target_r2_median": 0.0646673963834931,
+      "target_r2_std": 0.11811344885759095,
+      "target_r2_iqr": 0.13895471206416432,
+      "target_r2_min": -0.1439529786011655,
+      "target_r2_max": 0.1339564455271632,
+      "target_r2_range": 0.2779094241283287,
+      "delta_vs_exp002_mean": -0.08877637889683639,
+      "delta_vs_exp002_median": -0.0423326036165069,
+      "rows_above_exp002": 1,
+      "rows_below_or_equal_exp002": 2,
+      "mean_target_mae_log": 0.08804605007470784,
+      "median_target_mae_log": 0.0868730695980551,
+      "mean_target_smape": 66.16040887177138,
+      "median_target_smape": 63.51430792042778,
+      "mean_target_slope": 0.6291111015808103,
+      "median_target_slope": 0.8688153105887585,
+      "best_run_id": "EXP-072_few_shot_main_target_only_n200_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1339564455271632,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate.",
+        "Effective calibration sizes differ across rows, so requested N does not map to one shared calibration count.",
+        "2 row(s) cap calibration to preserve the evaluation holdout."
+      ],
+      "vs_target_only_same_n": null
+    },
+    {
+      "strategy": "target_only",
+      "n_target_labels": 500,
+      "count": 3,
+      "seeds": [
+        1337,
+        2024,
+        2025
+      ],
+      "analysis_origins": [
+        "original_valid_seed1337",
+        "repair_non1337"
+      ],
+      "requested_n_target_labels_unique": [
+        500
+      ],
+      "effective_n_target_labels_unique": [
+        173,
+        500
+      ],
+      "actual_cal_n_unique": [
+        173,
+        500
+      ],
+      "actual_eval_n_unique": [
+        50,
+        1955
+      ],
+      "source_overlap_n_unique": [
+        6995
+      ],
+      "target_overlap_n_unique": [
+        223,
+        2459
+      ],
+      "min_target_eval_rows": [
+        50
+      ],
+      "calibration_n_capped_count": 2,
+      "below_min_target_eval_rows_count": 0,
+      "all_min_target_eval_rows_satisfied": true,
+      "mixed_target_overlap_n": true,
+      "mixed_actual_eval_n": true,
+      "mixed_effective_n_target_labels": true,
+      "target_r2_mean": 0.008738246487089305,
+      "target_r2_median": 0.0646673963834931,
+      "target_r2_std": 0.10924830925086806,
+      "target_r2_iqr": 0.1247266501400529,
+      "target_r2_min": -0.1439529786011655,
+      "target_r2_max": 0.1055003216789403,
+      "target_r2_range": 0.2494533002801058,
+      "delta_vs_exp002_mean": -0.0982617535129107,
+      "delta_vs_exp002_median": -0.0423326036165069,
+      "rows_above_exp002": 0,
+      "rows_below_or_equal_exp002": 3,
+      "mean_target_mae_log": 0.08829922981361754,
+      "median_target_mae_log": 0.0868730695980551,
+      "mean_target_smape": 64.79784637555485,
+      "median_target_smape": 63.51430792042778,
+      "mean_target_slope": 0.5874067898862401,
+      "median_target_slope": 0.7437023755050481,
+      "best_run_id": "EXP-075_few_shot_main_target_only_n500_seed1337",
+      "best_run_origin": "original_valid_seed1337",
+      "best_run_seed": 1337,
+      "best_run_target_r2": 0.1055003216789403,
+      "group_caveats": [
+        "Mixed cohort sizes: original seed-1337 uses target_overlap_n=2459 while repaired seeds use target_overlap_n=223.",
+        "Evaluation-set sizes differ sharply across rows; across-seed dispersion is not a pure fixed-cohort estimate.",
+        "Effective calibration sizes differ across rows, so requested N does not map to one shared calibration count.",
+        "2 row(s) cap calibration to preserve the evaluation holdout."
+      ],
+      "vs_target_only_same_n": null
+    }
+  ],
+  "best_mean_source_strategy_per_n": {
+    "10": {
+      "strategy": "fine_tune",
+      "n_target_labels": 10,
+      "target_r2_mean": 0.035419808303377834,
+      "target_r2_median": 0.0104169521610416,
+      "delta_vs_exp002_mean": -0.07158019169662216
+    },
+    "25": {
+      "strategy": "fine_tune",
+      "n_target_labels": 25,
+      "target_r2_mean": 0.06142860110221546,
+      "target_r2_median": 0.033064221565213,
+      "delta_vs_exp002_mean": -0.04557139889778454
+    },
+    "50": {
+      "strategy": "fine_tune",
+      "n_target_labels": 50,
+      "target_r2_mean": 0.04304410965578733,
+      "target_r2_median": 0.0332362200073833,
+      "delta_vs_exp002_mean": -0.06395589034421267
+    },
+    "100": {
+      "strategy": "stacked",
+      "n_target_labels": 100,
+      "target_r2_mean": 0.07626167466814072,
+      "target_r2_median": 0.0831324520740239,
+      "delta_vs_exp002_mean": -0.030738325331859273
+    },
+    "200": {
+      "strategy": "fine_tune",
+      "n_target_labels": 200,
+      "target_r2_mean": 0.05609836309066526,
+      "target_r2_median": 0.0266459045373781,
+      "delta_vs_exp002_mean": -0.05090163690933474
+    },
+    "500": {
+      "strategy": "fine_tune",
+      "n_target_labels": 500,
+      "target_r2_mean": 0.05450481746015414,
+      "target_r2_median": 0.0266459045373781,
+      "delta_vs_exp002_mean": -0.05249518253984586
+    }
+  },
+  "pairwise_vs_target_only": {
+    "output_recal": {
+      "comparable_rows": 18,
+      "wins": 5,
+      "losses_or_ties": 13,
+      "mean_delta_r2": -0.03191574005980049,
+      "median_delta_r2": -0.0353935226052847,
+      "per_seed": [
+        {
+          "n_target_labels": 10,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-006_few_shot_main_output_recal_n10_seed1337",
+          "target_only_run_id": "EXP-060_few_shot_main_target_only_n10_seed1337",
+          "strategy_r2": 0.0144743509180115,
+          "target_only_r2": 0.0409888006455009,
+          "delta_r2": -0.0265144497274894
+        },
+        {
+          "n_target_labels": 10,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-080_few_shot_repair_non1337_output_recal_n10_seed2024",
+          "target_only_run_id": "EXP-116_few_shot_repair_non1337_target_only_n10_seed2024",
+          "strategy_r2": -0.2832201196366117,
+          "target_only_r2": -0.3293631925470872,
+          "delta_r2": 0.04614307291047548
+        },
+        {
+          "n_target_labels": 10,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-081_few_shot_repair_non1337_output_recal_n10_seed2025",
+          "target_only_run_id": "EXP-117_few_shot_repair_non1337_target_only_n10_seed2025",
+          "strategy_r2": -0.0603780082619662,
+          "target_only_r2": -0.1784149251453604,
+          "delta_r2": 0.11803691688339418
+        },
+        {
+          "n_target_labels": 25,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-009_few_shot_main_output_recal_n25_seed1337",
+          "target_only_run_id": "EXP-063_few_shot_main_target_only_n25_seed1337",
+          "strategy_r2": 0.1219001721617016,
+          "target_only_r2": 0.1217496675066805,
+          "delta_r2": 0.00015050465502110255
+        },
+        {
+          "n_target_labels": 25,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-082_few_shot_repair_non1337_output_recal_n25_seed2024",
+          "target_only_run_id": "EXP-118_few_shot_repair_non1337_target_only_n25_seed2024",
+          "strategy_r2": -0.0640899904949929,
+          "target_only_r2": 0.0176699301150838,
+          "delta_r2": -0.0817599206100767
+        },
+        {
+          "n_target_labels": 25,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-083_few_shot_repair_non1337_output_recal_n25_seed2025",
+          "target_only_run_id": "EXP-119_few_shot_repair_non1337_target_only_n25_seed2025",
+          "strategy_r2": -0.0428652147164561,
+          "target_only_r2": 0.02035438300238,
+          "delta_r2": -0.0632195977188361
+        },
+        {
+          "n_target_labels": 50,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-012_few_shot_main_output_recal_n50_seed1337",
+          "target_only_run_id": "EXP-066_few_shot_main_target_only_n50_seed1337",
+          "strategy_r2": 0.0954510075839416,
+          "target_only_r2": 0.1086507728528823,
+          "delta_r2": -0.013199765268940705
+        },
+        {
+          "n_target_labels": 50,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-084_few_shot_repair_non1337_output_recal_n50_seed2024",
+          "target_only_run_id": "EXP-120_few_shot_repair_non1337_target_only_n50_seed2024",
+          "strategy_r2": -0.0012189453846431,
+          "target_only_r2": -0.1215917392721253,
+          "delta_r2": 0.1203727938874822
+        },
+        {
+          "n_target_labels": 50,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-085_few_shot_repair_non1337_output_recal_n50_seed2025",
+          "target_only_run_id": "EXP-121_few_shot_repair_non1337_target_only_n50_seed2025",
+          "strategy_r2": 0.0090876252100954,
+          "target_only_r2": 0.0533602206931754,
+          "delta_r2": -0.04427259548308
+        },
+        {
+          "n_target_labels": 100,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-015_few_shot_main_output_recal_n100_seed1337",
+          "target_only_run_id": "EXP-069_few_shot_main_target_only_n100_seed1337",
+          "strategy_r2": 0.0877586279068306,
+          "target_only_r2": 0.1062402249355866,
+          "delta_r2": -0.018481597028756
+        },
+        {
+          "n_target_labels": 100,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-086_few_shot_repair_non1337_output_recal_n100_seed2024",
+          "target_only_run_id": "EXP-122_few_shot_repair_non1337_target_only_n100_seed2024",
+          "strategy_r2": 0.0095306874677572,
+          "target_only_r2": 0.073597205107819,
+          "delta_r2": -0.0640665176400618
+        },
+        {
+          "n_target_labels": 100,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-087_few_shot_repair_non1337_output_recal_n100_seed2025",
+          "target_only_run_id": "EXP-123_few_shot_repair_non1337_target_only_n100_seed2025",
+          "strategy_r2": -0.0337427080378138,
+          "target_only_r2": 0.0335199873333025,
+          "delta_r2": -0.06726269537111629
+        },
+        {
+          "n_target_labels": 200,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-018_few_shot_main_output_recal_n200_seed1337",
+          "target_only_run_id": "EXP-072_few_shot_main_target_only_n200_seed1337",
+          "strategy_r2": 0.1160577491085184,
+          "target_only_r2": 0.1339564455271632,
+          "delta_r2": -0.017898696418644805
+        },
+        {
+          "n_target_labels": 200,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-088_few_shot_repair_non1337_output_recal_n200_seed2024",
+          "target_only_run_id": "EXP-124_few_shot_repair_non1337_target_only_n200_seed2024",
+          "strategy_r2": -0.3035815507906492,
+          "target_only_r2": -0.1439529786011655,
+          "delta_r2": -0.1596285721894837
+        },
+        {
+          "n_target_labels": 200,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-089_few_shot_repair_non1337_output_recal_n200_seed2025",
+          "target_only_run_id": "EXP-125_few_shot_repair_non1337_target_only_n200_seed2025",
+          "strategy_r2": -0.0100959872795893,
+          "target_only_r2": 0.0646673963834931,
+          "delta_r2": -0.0747633836630824
+        },
+        {
+          "n_target_labels": 500,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-021_few_shot_main_output_recal_n500_seed1337",
+          "target_only_run_id": "EXP-075_few_shot_main_target_only_n500_seed1337",
+          "strategy_r2": 0.1117734592382926,
+          "target_only_r2": 0.1055003216789403,
+          "delta_r2": 0.006273137559352299
+        },
+        {
+          "n_target_labels": 500,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-090_few_shot_repair_non1337_output_recal_n500_seed2024",
+          "target_only_run_id": "EXP-126_few_shot_repair_non1337_target_only_n500_seed2024",
+          "strategy_r2": -0.3035815507906492,
+          "target_only_r2": -0.1439529786011655,
+          "delta_r2": -0.1596285721894837
+        },
+        {
+          "n_target_labels": 500,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-091_few_shot_repair_non1337_output_recal_n500_seed2025",
+          "target_only_run_id": "EXP-127_few_shot_repair_non1337_target_only_n500_seed2025",
+          "strategy_r2": -0.0100959872795893,
+          "target_only_r2": 0.0646673963834931,
+          "delta_r2": -0.0747633836630824
+        }
+      ]
+    },
+    "fine_tune": {
+      "comparable_rows": 18,
+      "wins": 12,
+      "losses_or_ties": 6,
+      "mean_delta_r2": 0.050273405365781634,
+      "median_delta_r2": 0.007619290792344149,
+      "per_seed": [
+        {
+          "n_target_labels": 10,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-024_few_shot_main_fine_tune_n10_seed1337",
+          "target_only_run_id": "EXP-060_few_shot_main_target_only_n10_seed1337",
+          "strategy_r2": 0.0880650003169132,
+          "target_only_r2": 0.0409888006455009,
+          "delta_r2": 0.04707619967141229
+        },
+        {
+          "n_target_labels": 10,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-092_few_shot_repair_non1337_fine_tune_n10_seed2024",
+          "target_only_run_id": "EXP-116_few_shot_repair_non1337_target_only_n10_seed2024",
+          "strategy_r2": 0.0104169521610416,
+          "target_only_r2": -0.3293631925470872,
+          "delta_r2": 0.3397801447081288
+        },
+        {
+          "n_target_labels": 10,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-093_few_shot_repair_non1337_fine_tune_n10_seed2025",
+          "target_only_run_id": "EXP-117_few_shot_repair_non1337_target_only_n10_seed2025",
+          "strategy_r2": 0.0077774724321787,
+          "target_only_r2": -0.1784149251453604,
+          "delta_r2": 0.18619239757753908
+        },
+        {
+          "n_target_labels": 25,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-027_few_shot_main_fine_tune_n25_seed1337",
+          "target_only_run_id": "EXP-063_few_shot_main_target_only_n25_seed1337",
+          "strategy_r2": 0.1298954399853988,
+          "target_only_r2": 0.1217496675066805,
+          "delta_r2": 0.008145772478718297
+        },
+        {
+          "n_target_labels": 25,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-094_few_shot_repair_non1337_fine_tune_n25_seed2024",
+          "target_only_run_id": "EXP-118_few_shot_repair_non1337_target_only_n25_seed2024",
+          "strategy_r2": 0.0213261417560346,
+          "target_only_r2": 0.0176699301150838,
+          "delta_r2": 0.003656211640950799
+        },
+        {
+          "n_target_labels": 25,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-095_few_shot_repair_non1337_fine_tune_n25_seed2025",
+          "target_only_run_id": "EXP-119_few_shot_repair_non1337_target_only_n25_seed2025",
+          "strategy_r2": 0.033064221565213,
+          "target_only_r2": 0.02035438300238,
+          "delta_r2": 0.012709838562833
+        },
+        {
+          "n_target_labels": 50,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-030_few_shot_main_fine_tune_n50_seed1337",
+          "target_only_run_id": "EXP-066_few_shot_main_target_only_n50_seed1337",
+          "strategy_r2": 0.1095611160435418,
+          "target_only_r2": 0.1086507728528823,
+          "delta_r2": 0.0009103431906594961
+        },
+        {
+          "n_target_labels": 50,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-096_few_shot_repair_non1337_fine_tune_n50_seed2024",
+          "target_only_run_id": "EXP-120_few_shot_repair_non1337_target_only_n50_seed2024",
+          "strategy_r2": -0.0136650070835631,
+          "target_only_r2": -0.1215917392721253,
+          "delta_r2": 0.10792673218856219
+        },
+        {
+          "n_target_labels": 50,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-097_few_shot_repair_non1337_fine_tune_n50_seed2025",
+          "target_only_run_id": "EXP-121_few_shot_repair_non1337_target_only_n50_seed2025",
+          "strategy_r2": 0.0332362200073833,
+          "target_only_r2": 0.0533602206931754,
+          "delta_r2": -0.0201240006857921
+        },
+        {
+          "n_target_labels": 100,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-033_few_shot_main_fine_tune_n100_seed1337",
+          "target_only_run_id": "EXP-069_few_shot_main_target_only_n100_seed1337",
+          "strategy_r2": 0.1048240923054995,
+          "target_only_r2": 0.1062402249355866,
+          "delta_r2": -0.001416132630087108
+        },
+        {
+          "n_target_labels": 100,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-098_few_shot_repair_non1337_fine_tune_n100_seed2024",
+          "target_only_run_id": "EXP-122_few_shot_repair_non1337_target_only_n100_seed2024",
+          "strategy_r2": 0.0356442470012942,
+          "target_only_r2": 0.073597205107819,
+          "delta_r2": -0.037952958106524805
+        },
+        {
+          "n_target_labels": 100,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-099_few_shot_repair_non1337_fine_tune_n100_seed2025",
+          "target_only_run_id": "EXP-123_few_shot_repair_non1337_target_only_n100_seed2025",
+          "strategy_r2": 0.0406127964392725,
+          "target_only_r2": 0.0335199873333025,
+          "delta_r2": 0.007092809105970002
+        },
+        {
+          "n_target_labels": 200,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-036_few_shot_main_fine_tune_n200_seed1337",
+          "target_only_run_id": "EXP-072_few_shot_main_target_only_n200_seed1337",
+          "strategy_r2": 0.1286538200986139,
+          "target_only_r2": 0.1339564455271632,
+          "delta_r2": -0.005302625428549312
+        },
+        {
+          "n_target_labels": 200,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-100_few_shot_repair_non1337_fine_tune_n200_seed2024",
+          "target_only_run_id": "EXP-124_few_shot_repair_non1337_target_only_n200_seed2024",
+          "strategy_r2": 0.0129953646360038,
+          "target_only_r2": -0.1439529786011655,
+          "delta_r2": 0.15694834323716927
+        },
+        {
+          "n_target_labels": 200,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-101_few_shot_repair_non1337_fine_tune_n200_seed2025",
+          "target_only_run_id": "EXP-125_few_shot_repair_non1337_target_only_n200_seed2025",
+          "strategy_r2": 0.0266459045373781,
+          "target_only_r2": 0.0646673963834931,
+          "delta_r2": -0.038021491846115
+        },
+        {
+          "n_target_labels": 500,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-039_few_shot_main_fine_tune_n500_seed1337",
+          "target_only_run_id": "EXP-075_few_shot_main_target_only_n500_seed1337",
+          "strategy_r2": 0.1238731832070805,
+          "target_only_r2": 0.1055003216789403,
+          "delta_r2": 0.018372861528140202
+        },
+        {
+          "n_target_labels": 500,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-102_few_shot_repair_non1337_fine_tune_n500_seed2024",
+          "target_only_run_id": "EXP-126_few_shot_repair_non1337_target_only_n500_seed2024",
+          "strategy_r2": 0.0129953646360038,
+          "target_only_r2": -0.1439529786011655,
+          "delta_r2": 0.15694834323716927
+        },
+        {
+          "n_target_labels": 500,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-103_few_shot_repair_non1337_fine_tune_n500_seed2025",
+          "target_only_run_id": "EXP-127_few_shot_repair_non1337_target_only_n500_seed2025",
+          "strategy_r2": 0.0266459045373781,
+          "target_only_r2": 0.0646673963834931,
+          "delta_r2": -0.038021491846115
+        }
+      ]
+    },
+    "stacked": {
+      "comparable_rows": 18,
+      "wins": 12,
+      "losses_or_ties": 6,
+      "mean_delta_r2": 0.0067006267684864675,
+      "median_delta_r2": 0.0074639473285991985,
+      "per_seed": [
+        {
+          "n_target_labels": 10,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-042_few_shot_main_stacked_n10_seed1337",
+          "target_only_run_id": "EXP-060_few_shot_main_target_only_n10_seed1337",
+          "strategy_r2": 0.0408424385499026,
+          "target_only_r2": 0.0409888006455009,
+          "delta_r2": -0.00014636209559830415
+        },
+        {
+          "n_target_labels": 10,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-104_few_shot_repair_non1337_stacked_n10_seed2024",
+          "target_only_run_id": "EXP-116_few_shot_repair_non1337_target_only_n10_seed2024",
+          "strategy_r2": -0.3558301280281408,
+          "target_only_r2": -0.3293631925470872,
+          "delta_r2": -0.02646693548105361
+        },
+        {
+          "n_target_labels": 10,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-105_few_shot_repair_non1337_stacked_n10_seed2025",
+          "target_only_run_id": "EXP-117_few_shot_repair_non1337_target_only_n10_seed2025",
+          "strategy_r2": -0.1356707687490039,
+          "target_only_r2": -0.1784149251453604,
+          "delta_r2": 0.04274415639635648
+        },
+        {
+          "n_target_labels": 25,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-045_few_shot_main_stacked_n25_seed1337",
+          "target_only_run_id": "EXP-063_few_shot_main_target_only_n25_seed1337",
+          "strategy_r2": 0.1213827386402784,
+          "target_only_r2": 0.1217496675066805,
+          "delta_r2": -0.00036692886640209144
+        },
+        {
+          "n_target_labels": 25,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-106_few_shot_repair_non1337_stacked_n25_seed2024",
+          "target_only_run_id": "EXP-118_few_shot_repair_non1337_target_only_n25_seed2024",
+          "strategy_r2": 0.0280566557679111,
+          "target_only_r2": 0.0176699301150838,
+          "delta_r2": 0.010386725652827299
+        },
+        {
+          "n_target_labels": 25,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-107_few_shot_repair_non1337_stacked_n25_seed2025",
+          "target_only_run_id": "EXP-119_few_shot_repair_non1337_target_only_n25_seed2025",
+          "strategy_r2": 0.020168825840077,
+          "target_only_r2": 0.02035438300238,
+          "delta_r2": -0.0001855571623030003
+        },
+        {
+          "n_target_labels": 50,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-048_few_shot_main_stacked_n50_seed1337",
+          "target_only_run_id": "EXP-066_few_shot_main_target_only_n50_seed1337",
+          "strategy_r2": 0.1087496995615618,
+          "target_only_r2": 0.1086507728528823,
+          "delta_r2": 9.892670867950315e-05
+        },
+        {
+          "n_target_labels": 50,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-108_few_shot_repair_non1337_stacked_n50_seed2024",
+          "target_only_run_id": "EXP-120_few_shot_repair_non1337_target_only_n50_seed2024",
+          "strategy_r2": -0.0986682642204705,
+          "target_only_r2": -0.1215917392721253,
+          "delta_r2": 0.022923475051654804
+        },
+        {
+          "n_target_labels": 50,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-109_few_shot_repair_non1337_stacked_n50_seed2025",
+          "target_only_run_id": "EXP-121_few_shot_repair_non1337_target_only_n50_seed2025",
+          "strategy_r2": 0.0641208974463234,
+          "target_only_r2": 0.0533602206931754,
+          "delta_r2": 0.010760676753148006
+        },
+        {
+          "n_target_labels": 100,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-051_few_shot_main_stacked_n100_seed1337",
+          "target_only_run_id": "EXP-069_few_shot_main_target_only_n100_seed1337",
+          "strategy_r2": 0.1061406509767529,
+          "target_only_r2": 0.1062402249355866,
+          "delta_r2": -9.957395883369857e-05
+        },
+        {
+          "n_target_labels": 100,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-110_few_shot_repair_non1337_stacked_n100_seed2024",
+          "target_only_run_id": "EXP-122_few_shot_repair_non1337_target_only_n100_seed2024",
+          "strategy_r2": 0.0831324520740239,
+          "target_only_r2": 0.073597205107819,
+          "delta_r2": 0.009535246966204891
+        },
+        {
+          "n_target_labels": 100,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-111_few_shot_repair_non1337_stacked_n100_seed2025",
+          "target_only_run_id": "EXP-123_few_shot_repair_non1337_target_only_n100_seed2025",
+          "strategy_r2": 0.0395119209536454,
+          "target_only_r2": 0.0335199873333025,
+          "delta_r2": 0.0059919336203429
+        },
+        {
+          "n_target_labels": 200,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-054_few_shot_main_stacked_n200_seed1337",
+          "target_only_run_id": "EXP-072_few_shot_main_target_only_n200_seed1337",
+          "strategy_r2": 0.1343343695768434,
+          "target_only_r2": 0.1339564455271632,
+          "delta_r2": 0.00037792404968017834
+        },
+        {
+          "n_target_labels": 200,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-112_few_shot_repair_non1337_stacked_n200_seed2024",
+          "target_only_run_id": "EXP-124_few_shot_repair_non1337_target_only_n200_seed2024",
+          "strategy_r2": -0.1301401194493696,
+          "target_only_r2": -0.1439529786011655,
+          "delta_r2": 0.013812859151795892
+        },
+        {
+          "n_target_labels": 200,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-113_few_shot_repair_non1337_stacked_n200_seed2025",
+          "target_only_run_id": "EXP-125_few_shot_repair_non1337_target_only_n200_seed2025",
+          "strategy_r2": 0.0736033574203486,
+          "target_only_r2": 0.0646673963834931,
+          "delta_r2": 0.008935961036855497
+        },
+        {
+          "n_target_labels": 500,
+          "analysis_origin": "original_valid_seed1337",
+          "seed": 1337,
+          "strategy_run_id": "EXP-057_few_shot_main_stacked_n500_seed1337",
+          "target_only_run_id": "EXP-075_few_shot_main_target_only_n500_seed1337",
+          "strategy_r2": 0.1050602554996906,
+          "target_only_r2": 0.1055003216789403,
+          "delta_r2": -0.00044006617924970126
+        },
+        {
+          "n_target_labels": 500,
+          "analysis_origin": "repair_non1337",
+          "seed": 2024,
+          "strategy_run_id": "EXP-114_few_shot_repair_non1337_stacked_n500_seed2024",
+          "target_only_run_id": "EXP-126_few_shot_repair_non1337_target_only_n500_seed2024",
+          "strategy_r2": -0.1301401194493696,
+          "target_only_r2": -0.1439529786011655,
+          "delta_r2": 0.013812859151795892
+        },
+        {
+          "n_target_labels": 500,
+          "analysis_origin": "repair_non1337",
+          "seed": 2025,
+          "strategy_run_id": "EXP-115_few_shot_repair_non1337_stacked_n500_seed2025",
+          "target_only_run_id": "EXP-127_few_shot_repair_non1337_target_only_n500_seed2025",
+          "strategy_r2": 0.0736033574203486,
+          "target_only_r2": 0.0646673963834931,
+          "delta_r2": 0.008935961036855497
+        }
+      ]
+    }
+  },
+  "conclusion_flags": {
+    "repair_overlap_constant_223": true,
+    "repair_zero_eval_failures_resolved": true,
+    "any_group_mean_above_exp002": false,
+    "any_group_median_above_exp002": false,
+    "full_target_rows_below_min_target_eval_rows": 2,
+    "mixed_target_overlap_panel": true
+  },
+  "analysis_scope": {
+    "min_target_eval_rows": 50,
+    "mixed_panel_note": "The consolidated panel is not a pure frozen-universe seed study: original seed-1337 rows use target_overlap_n=2459, while repaired 2024/2025 rows use target_overlap_n=223.",
+    "calibration_capping_note": "Repaired N=200 and N=500 rows cap effective_n_target_labels at 173 to preserve a 50-row evaluation holdout."
+  },
+  "reference_artifact_summary": {
+    "original_grouped_json_present": true,
+    "repair_grouped_json_present": true,
+    "existing_repair_only_best_mean_target_r2": 0.0613221865138347
+  },
+  "interpretation_notes": [
+    "The repaired reruns are structurally sound: all repaired rows have metrics, overlap_total stays fixed at 223, and no repaired row collapses to actual_eval_n=0.",
+    "Structural soundness does not translate into strong predictive results: no consolidated strategy/N grouped mean or median target R\u00b2 exceeds the EXP-002 zero-shot baseline of 0.1070.",
+    "Best repair-only two-seed source-using mean target R\u00b2 remains weak; the repaired panel peaks at stacked N=100 with mean target R\u00b2 near 0.0613.",
+    "Adding the original valid seed-1337 row raises the best consolidated source-using grouped mean to stacked N=100 at about 0.0763, still below the zero-shot baseline.",
+    "The repaired full_target rows are included for completeness but remain caveated because actual_eval_n=45 is below min_target_eval_rows=50.",
+    "Across-seed dispersion in the consolidated artifact reflects both target-label sampling and the cohort-size shift between the original seed-1337 row and the repaired non-1337 reruns."
+  ]
+}

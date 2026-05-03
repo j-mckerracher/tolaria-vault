@@ -1,0 +1,9 @@
+{
+  "run_id": "EXP-015_baseline_replay",
+  "baseline_dir": "experiments\\EXP-015_baseline",
+  "paths": {
+    "source_report_md": "experiments\\EXP-015_baseline\\source\\EXP015_FINAL_REPORT.md",
+    "source_results_csv": "experiments\\EXP-015_baseline\\source\\results\\exp015_results.csv",
+    "source_covariate_shift_json": "experiments\\EXP-015_baseline\\source\\results\\exp015_covariate_shift.json"
+  }
+}

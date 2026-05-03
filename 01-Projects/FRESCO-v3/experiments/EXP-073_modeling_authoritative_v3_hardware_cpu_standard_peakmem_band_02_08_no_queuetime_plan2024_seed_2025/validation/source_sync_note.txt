@@ -1,0 +1,1 @@
+Remote pipeline directory is a synced snapshot of local commit 167f2da5940b63c34d862cfbc6bfb4189121c443 for the second frozen-universe modeling validation; git metadata must be interpreted from this pinned commit rather than a live remote checkout.

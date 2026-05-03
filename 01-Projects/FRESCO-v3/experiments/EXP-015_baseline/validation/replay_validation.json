@@ -1,0 +1,26 @@
+{
+  "checks": [
+    {
+      "details": [
+        "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-v3\\experiments\\EXP-015_baseline\\source\\EXP015_FINAL_REPORT.md",
+        "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-v3\\experiments\\EXP-015_baseline\\source\\results\\exp015_results.csv",
+        "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-v3\\experiments\\EXP-015_baseline\\source\\results\\exp015_covariate_shift.json"
+      ],
+      "name": "inputs_exist",
+      "passed": true
+    },
+    {
+      "details": {
+        "row_count": 8
+      },
+      "name": "results_csv_nonempty",
+      "passed": true
+    }
+  ],
+  "created_utc": "2026-02-03T04:43:16Z",
+  "limitations": [
+    "This replay does not recompute EXP-015 from raw shards; it regenerates the baseline artifacts from the frozen snapshot.",
+    "EXP015_FINAL_REPORT.md references scripts/logs that are not present in the snapshot."
+  ],
+  "run_id": "EXP-015_baseline_replay"
+}

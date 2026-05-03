@@ -1,0 +1,19 @@
+{
+  "comparison": "EXP-062 vs EXP-070 frozen-universe overlap cohorts",
+  "exp062_run": "EXP-062_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_no_queuetime",
+  "exp070_run": "EXP-070_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_no_queuetime_plan2024",
+  "source": {
+    "exp062_count": 6995,
+    "exp070_count": 11898,
+    "intersection_count": 3228,
+    "union_count": 15665,
+    "jaccard": 0.2061
+  },
+  "target": {
+    "exp062_count": 2459,
+    "exp070_count": 1697,
+    "intersection_count": 241,
+    "union_count": 3915,
+    "jaccard": 0.0616
+  }
+}

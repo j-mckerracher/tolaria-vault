@@ -1,0 +1,44 @@
+{
+  "run_id": "EXP-030_modeling_alloc_perf_nomem_band_005_095",
+  "dataset_label": "local_job_partials_snapshot",
+  "inputs_manifest": "experiments\\EXP-016_feature_matrix\\manifests\\input_files.json",
+  "source_cluster": "anvil",
+  "target_cluster": "conte",
+  "regime": "cpu_standard",
+  "label_column": "value_memused_max",
+  "label_transform": "log1p",
+  "feature_columns": [
+    "ncores",
+    "timelimit",
+    "value_block_cnt",
+    "value_block_sum",
+    "value_cpuuser_cnt",
+    "value_cpuuser_sum",
+    "value_gpu_cnt",
+    "value_gpu_sum",
+    "value_nfs_cnt",
+    "value_nfs_sum"
+  ],
+  "overlap_run": {
+    "run_id": "EXP-029_regime_matching_alloc_perf_nomem_band_005_095",
+    "matched_source_indices": "experiments\\EXP-029_regime_matching_alloc_perf_nomem_band_005_095\\results\\matched_source_indices.parquet",
+    "matched_target_indices": "experiments\\EXP-029_regime_matching_alloc_perf_nomem_band_005_095\\results\\matched_target_indices.parquet",
+    "overlap_band": [0.05, 0.95]
+  },
+  "model": {
+    "type": "ridge",
+    "alpha": 1.0
+  },
+  "adaptation": {
+    "type": "none"
+  },
+  "split": {
+    "type": "random",
+    "test_frac": 0.2,
+    "seed": 1337
+  },
+  "max_rows_source": 200000,
+  "max_rows_target": 200000,
+  "n_boot": 200,
+  "random_seed": 1337
+}

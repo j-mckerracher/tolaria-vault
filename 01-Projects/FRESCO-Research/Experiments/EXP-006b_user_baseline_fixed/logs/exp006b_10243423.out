@@ -1,0 +1,142 @@
+[load] Loading data from /depot/sbagchi/data/josh/FRESCO/chunks...
+[load] Raw: 7,040,808 jobs
+
+[validate] Checking data quality...
+  runtime_sec: min=-1626.0, max=1481670475.0
+  runtime_sec <= 0: 15 jobs
+  timelimit null: 1 jobs
+  timelimit <= 0: 14 jobs
+[validate] After filtering: 7,016,864 jobs
+       C: 1,546,136 jobs, 557 unique users
+       NONE: 466,345 jobs, 2,384 unique users
+       S: 5,004,383 jobs, 12,225 unique users
+
+======================================================================
+CLUSTER: S (5,004,383 jobs)
+======================================================================
+
+--- Split: time_based ---
+[split] Time-based: Train 4,837,564, Test 166,819, Cutoff: 201705
+  global_median: R²=-0.0726, sMAPE=169.7%
+  user_median:   R²=0.0738, sMAPE=134.4%
+  no_timelimit (xgb): R²=0.3296, sMAPE=141.1%
+  with_timelimit (xgb): R²=0.3296, sMAPE=141.1%
+  with_user (xgb): R²=0.0482, sMAPE=161.5%
+  with_timelimit_user (xgb): R²=0.3615, sMAPE=135.7%
+
+--- Split: user_aware ---
+[split] User-aware: Train 4,199,065 (9,780 users), Test 805,318 (2,445 users)
+  global_median: R²=-0.0869, sMAPE=164.1%
+  user_median:   R²=-0.0869, sMAPE=164.1%
+  no_timelimit (xgb): R²=0.2115, sMAPE=142.9%
+  with_timelimit (xgb): R²=0.2115, sMAPE=142.9%
+  with_user (xgb): R²=-0.3050, sMAPE=172.1%
+  with_timelimit_user (xgb): R²=0.2149, sMAPE=140.5%
+
+======================================================================
+CLUSTER: C (1,546,136 jobs)
+======================================================================
+
+--- Split: time_based ---
+[split] Time-based: Train 1,020,789, Test 525,347, Cutoff: 201702
+  global_median: R²=-0.1322, sMAPE=164.3%
+  user_median:   R²=-0.3197, sMAPE=123.1%
+  no_timelimit (xgb): R²=0.1257, sMAPE=144.5%
+  with_timelimit (xgb): R²=0.1257, sMAPE=144.5%
+  with_user (xgb): R²=0.1218, sMAPE=89.9%
+  with_timelimit_user (xgb): R²=0.4112, sMAPE=112.2%
+
+--- Split: user_aware ---
+[split] User-aware: Train 1,155,574 (446 users), Test 390,562 (111 users)
+  global_median: R²=-0.2418, sMAPE=161.5%
+  user_median:   R²=-0.2418, sMAPE=161.5%
+  no_timelimit (xgb): R²=0.2008, sMAPE=141.0%
+  with_timelimit (xgb): R²=0.2008, sMAPE=141.0%
+  with_user (xgb): R²=-0.2688, sMAPE=93.2%
+  with_timelimit_user (xgb): R²=0.2660, sMAPE=123.4%
+
+======================================================================
+CLUSTER: NONE (466,345 jobs)
+======================================================================
+
+--- Split: time_based ---
+[split] Time-based: Train 345,784, Test 120,561, Cutoff: 202301
+  global_median: R²=-15.1615, sMAPE=200.0%
+  user_median:   R²=-13.3635, sMAPE=200.0%
+  no_timelimit (xgb): R²=-8.9377, sMAPE=200.0%
+  with_timelimit (xgb): R²=-8.9377, sMAPE=200.0%
+  with_user (xgb): R²=-9.2327, sMAPE=200.0%
+  with_timelimit_user (xgb): R²=-8.7359, sMAPE=200.0%
+
+--- Split: user_aware ---
+[split] User-aware: Train 433,220 (1,908 users), Test 33,125 (476 users)
+  global_median: R²=-0.7674, sMAPE=16.7%
+  user_median:   R²=-0.7674, sMAPE=16.7%
+  no_timelimit (xgb): R²=0.1376, sMAPE=192.6%
+  with_timelimit (xgb): R²=0.1376, sMAPE=192.6%
+  with_user (xgb): R²=-0.2813, sMAPE=185.8%
+  with_timelimit_user (xgb): R²=0.0955, sMAPE=184.7%
+
+[save] Results saved to /home/jmckerra/Experiments/EXP-006b_user_baseline_fixed/results/user_baseline_fixed.csv
+
+======================================================================
+KEY COMPARISONS
+======================================================================
+
+S:
+  time_based:
+    global_median        (baseline): R²=-0.0726, sMAPE= 169.7%
+    user_median          (baseline): R²= 0.0738, sMAPE= 134.4%
+    no_timelimit         (xgboost ): R²= 0.3296, sMAPE= 141.1%
+    with_timelimit       (xgboost ): R²= 0.3296, sMAPE= 141.1%
+    with_user            (xgboost ): R²= 0.0482, sMAPE= 161.5%
+    with_timelimit_user  (xgboost ): R²= 0.3615, sMAPE= 135.7%
+  user_aware:
+    global_median        (baseline): R²=-0.0869, sMAPE= 164.1%
+    user_median          (baseline): R²=-0.0869, sMAPE= 164.1%
+    no_timelimit         (xgboost ): R²= 0.2115, sMAPE= 142.9%
+    with_timelimit       (xgboost ): R²= 0.2115, sMAPE= 142.9%
+    with_user            (xgboost ): R²=-0.3050, sMAPE= 172.1%
+    with_timelimit_user  (xgboost ): R²= 0.2149, sMAPE= 140.5%
+
+C:
+  time_based:
+    global_median        (baseline): R²=-0.1322, sMAPE= 164.3%
+    user_median          (baseline): R²=-0.3197, sMAPE= 123.1%
+    no_timelimit         (xgboost ): R²= 0.1257, sMAPE= 144.5%
+    with_timelimit       (xgboost ): R²= 0.1257, sMAPE= 144.5%
+    with_user            (xgboost ): R²= 0.1218, sMAPE=  89.9%
+    with_timelimit_user  (xgboost ): R²= 0.4112, sMAPE= 112.2%
+  user_aware:
+    global_median        (baseline): R²=-0.2418, sMAPE= 161.5%
+    user_median          (baseline): R²=-0.2418, sMAPE= 161.5%
+    no_timelimit         (xgboost ): R²= 0.2008, sMAPE= 141.0%
+    with_timelimit       (xgboost ): R²= 0.2008, sMAPE= 141.0%
+    with_user            (xgboost ): R²=-0.2688, sMAPE=  93.2%
+    with_timelimit_user  (xgboost ): R²= 0.2660, sMAPE= 123.4%
+
+NONE:
+  time_based:
+    global_median        (baseline): R²=-15.1615, sMAPE= 200.0%
+    user_median          (baseline): R²=-13.3635, sMAPE= 200.0%
+    no_timelimit         (xgboost ): R²=-8.9377, sMAPE= 200.0%
+    with_timelimit       (xgboost ): R²=-8.9377, sMAPE= 200.0%
+    with_user            (xgboost ): R²=-9.2327, sMAPE= 200.0%
+    with_timelimit_user  (xgboost ): R²=-8.7359, sMAPE= 200.0%
+  user_aware:
+    global_median        (baseline): R²=-0.7674, sMAPE=  16.7%
+    user_median          (baseline): R²=-0.7674, sMAPE=  16.7%
+    no_timelimit         (xgboost ): R²= 0.1376, sMAPE= 192.6%
+    with_timelimit       (xgboost ): R²= 0.1376, sMAPE= 192.6%
+    with_user            (xgboost ): R²=-0.2813, sMAPE= 185.8%
+    with_timelimit_user  (xgboost ): R²= 0.0955, sMAPE= 184.7%
+
+----------------------------------------------------------------------
+LEAKAGE QUANTIFICATION (time_based - user_aware)
+----------------------------------------------------------------------
+  S: Δ R² = +0.1182 (time=0.3296, user=0.2115)
+  C: Δ R² = -0.0751 (time=0.1257, user=0.2008)
+  NONE: Δ R² = -9.0753 (time=-8.9377, user=0.1376)
+
+[done] Fixed user baseline complete!
+EXP-006b complete

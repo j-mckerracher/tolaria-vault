@@ -1,0 +1,72 @@
+{
+  "adaptation": {
+    "applied": false,
+    "config": {
+      "type": "none"
+    }
+  },
+  "created_utc": "2026-03-12T20:50:53Z",
+  "dataset_label": "chunks-v3-authoritative",
+  "eval": {
+    "source_test": {
+      "bias_log": 0.0002822986150800624,
+      "intercept": 0.02581473341830772,
+      "mae_log": 0.036713284296224134,
+      "mdae_log": 0.02733356329969125,
+      "overflow_pred": false,
+      "r2": 0.1264313204297154,
+      "slope": 0.8397350782938395,
+      "smape": 17.862346835656272
+    },
+    "target": {
+      "bias_log": -0.013062954827406395,
+      "intercept": -0.007617970782097354,
+      "mae_log": 0.0873613396931643,
+      "mdae_log": 0.07798216715663765,
+      "overflow_pred": false,
+      "r2": 0.10989126009684647,
+      "slope": 0.9593199886517678,
+      "smape": 79.17045428856544
+    },
+    "target_r2_bootstrap": {
+      "r2_ci_lower": 0.08611951890452085,
+      "r2_ci_upper": 0.13513210112848853,
+      "r2_mean": 0.11011624818420998
+    }
+  },
+  "features": [
+    "ncores",
+    "nhosts",
+    "timelimit_sec",
+    "runtime_sec",
+    "runtime_fraction"
+  ],
+  "label": {
+    "column": "peak_memory_fraction",
+    "proxy": false,
+    "transform": "log1p"
+  },
+  "limitations": [
+    "Model uses the feature set specified in the run config; treat this as an ablation baseline, not the final intended Phase 3 feature set.",
+    "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+  ],
+  "model": {
+    "alpha": 1.0,
+    "type": "ridge"
+  },
+  "overlap": {
+    "matched_source_n": 6995,
+    "matched_target_n": 2455,
+    "overlap_band": [
+      0.2,
+      0.8
+    ],
+    "run_id": "EXP-062_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_no_queuetime"
+  },
+  "pair": {
+    "source": "anvil",
+    "target": "conte"
+  },
+  "regime": "hardware_cpu_standard",
+  "run_id": "EXP-065_modeling_authoritative_v3_hardware_cpu_standard_peakmem_band_02_08_no_queuetime_seed_2024"
+}

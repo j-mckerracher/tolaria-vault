@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/jmckerra/Experiments/EXP-003_linear_regression/scripts/exp003_linear_regression.py", line 370, in <module>
+    raise SystemExit(main())
+  File "/home/jmckerra/Experiments/EXP-003_linear_regression/scripts/exp003_linear_regression.py", line 366, in main
+    args.func(args)
+  File "/home/jmckerra/Experiments/EXP-003_linear_regression/scripts/exp003_linear_regression.py", line 186, in train_command
+    df = load_job_rollup(input_dir, threads=args.threads)
+  File "/home/jmckerra/Experiments/EXP-003_linear_regression/scripts/exp003_linear_regression.py", line 72, in load_job_rollup
+    df = con.execute(sql).fetchdf()
+_duckdb.IOException: IO Error: No files found that match the pattern "/home/jmckerra/Experiments/EXP-001_baseline_statistical_analysis/results/job_rollup/**/*.parquet"
+
+LINE 12:     FROM read_parquet('/home/jmckerra/Experiments/EXP-001_baseline_s...
+                  ^

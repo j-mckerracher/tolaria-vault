@@ -1,0 +1,398 @@
+{
+  "schema_version": "2.0",
+  "last_updated": "2026-02-01",
+  "description": "Per-cluster metadata for FRESCO v2.0 dataset - documents collection methodology and hardware specifications",
+  
+  "clusters": {
+    "stampede": {
+      "institution": "TACC",
+      "location": "University of Texas at Austin",
+      "temporal_coverage": {
+        "start": "2013-02-01",
+        "end": "2018-04-30",
+        "duration_months": 63,
+        "total_jobs_estimate": 8200000
+      },
+      
+      "slurm_configuration": {
+        "versions": ["2.6.x", "14.03.x", "17.02.x"],
+        "version_changes": [
+          {"date": "2013-02", "version": "2.6.x", "notes": "Initial deployment"},
+          {"date": "2015-07", "version": "14.03.x", "notes": "Major upgrade"},
+          {"date": "2017-01", "version": "17.02.x", "notes": "Final version"}
+        ],
+        "accounting_interval_sec": 60,
+        "jobacct_gather_type": "jobacct_gather/linux"
+      },
+      
+      "memory_collection": {
+        "method": "tacc_stats_custom",
+        "collection_tool": "TACC_Stats framework with custom node-level monitors",
+        "includes_cache": true,
+        "includes_buffers": true,
+        "unit_in_source": "bytes",
+        "aggregation": "max_per_node_then_max_across_nodes",
+        "sampling_interval_sec": 600,
+        "sampling_method": "periodic",
+        "memory_field_source": "MemUsed from /proc/meminfo",
+        "known_issues": [
+          "Includes page cache - typically 2-5x larger than RSS",
+          "Node-partitioned data requires reconstruction",
+          "Some jobs <10min may have insufficient samples"
+        ],
+        "validation_notes": "Systematic 5.7x higher than Anvil (EXP-012)"
+      },
+      
+      "time_fields": {
+        "timelimit_unit": "minutes",
+        "timestamp_precision": "seconds",
+        "timestamp_timezone": "US/Central",
+        "known_issues": [
+          "Timelimit stored in minutes (all other clusters use seconds)",
+          "Timezone not explicitly marked in source"
+        ]
+      },
+      
+      "hardware_generations": [
+        {
+          "generation_id": "gen1_sandy_bridge",
+          "start_date": "2013-02-01",
+          "end_date": "2018-04-30",
+          "notes": "Primary deployment, no major hardware refresh",
+          "partitions": {
+            "normal": {
+              "node_memory_gb": 32,
+              "node_cores": 16,
+              "node_type": "Compute",
+              "cpu_model": "Intel Xeon E5-2680 (Sandy Bridge)",
+              "cpu_clock_ghz": 2.7,
+              "cpu_cores_per_socket": 8,
+              "sockets_per_node": 2,
+              "gpu_count_per_node": 0,
+              "interconnect": "Mellanox FDR InfiniBand",
+              "node_count": 6400,
+              "core_count_total": 102400
+            },
+            "largemem": {
+              "node_memory_gb": 256,
+              "node_cores": 32,
+              "node_type": "Large Memory",
+              "cpu_model": "Intel Xeon X7560 (Westmere)",
+              "cpu_clock_ghz": 2.27,
+              "cpu_cores_per_socket": 8,
+              "sockets_per_node": 4,
+              "gpu_count_per_node": 0,
+              "interconnect": "Mellanox FDR InfiniBand",
+              "node_count": 16,
+              "core_count_total": 512
+            },
+            "gpu": {
+              "node_memory_gb": 32,
+              "node_cores": 16,
+              "node_type": "GPU",
+              "cpu_model": "Intel Xeon E5-2680 (Sandy Bridge)",
+              "gpu_count_per_node": 1,
+              "gpu_model": "NVIDIA Tesla K20",
+              "gpu_memory_gb_per_device": 5,
+              "interconnect": "Mellanox FDR InfiniBand",
+              "node_count": 128,
+              "notes": "Specialized GPU partition with K20 accelerators"
+            }
+          }
+        }
+      ],
+      
+      "data_source_structure": {
+        "accounting_files": "AccountingStatistics/*.csv (SLURM sacct exports)",
+        "performance_metrics": "TACC_Stats/NODE*/[job_files]",
+        "organization": "node_partitioned",
+        "total_node_directories": 6976,
+        "notes": "Must reconstruct job-level metrics from node-partitioned files"
+      },
+      
+      "known_collection_gaps": [
+        {"start": "2014-08-15", "end": "2014-08-18", "reason": "Filesystem maintenance"},
+        {"start": "2016-03-10", "end": "2016-03-12", "reason": "Network infrastructure upgrade"}
+      ],
+      
+      "documentation_sources": [
+        "FRESCO_Repository_Description.pdf",
+        "TACC Stampede User Guide (archived)",
+        "https://www.tacc.utexas.edu/systems/stampede"
+      ]
+    },
+    
+    "conte": {
+      "institution": "Purdue University",
+      "location": "Rosen Center for Advanced Computing (RCAC)",
+      "temporal_coverage": {
+        "start": "2015-03-01",
+        "end": "2017-12-31",
+        "duration_months": 34,
+        "total_jobs_estimate": 2800000
+      },
+      
+      "slurm_configuration": {
+        "versions": ["14.11.x", "16.05.x"],
+        "version_changes": [
+          {"date": "2015-03", "version": "14.11.x", "notes": "Initial deployment"},
+          {"date": "2016-09", "version": "16.05.x", "notes": "Upgrade for stability"}
+        ],
+        "accounting_interval_sec": 60,
+        "jobacct_gather_type": "jobacct_gather/linux"
+      },
+      
+      "memory_collection": {
+        "method": "tacc_stats_monthly",
+        "collection_tool": "TACC_Stats framework adapted for Purdue",
+        "includes_cache": false,
+        "includes_buffers": false,
+        "unit_in_source": "kilobytes",
+        "aggregation": "max_per_node_then_max_across_nodes",
+        "sampling_interval_sec": 300,
+        "sampling_method": "periodic",
+        "memory_field_source": "RSS from cgroup memory.stat",
+        "known_issues": [
+          "Monthly directory organization (not node-partitioned)",
+          "Different cache inclusion than Stampede"
+        ],
+        "validation_notes": "Systematically lower than other clusters due to RSS-only measurement (EXP-012)"
+      },
+      
+      "time_fields": {
+        "timelimit_unit": "seconds",
+        "timestamp_precision": "seconds",
+        "timestamp_timezone": "US/Eastern",
+        "known_issues": []
+      },
+      
+      "hardware_generations": [
+        {
+          "generation_id": "gen1_haswell_knights",
+          "start_date": "2015-03-01",
+          "end_date": "2017-12-31",
+          "notes": "Heterogeneous cluster with CPU and KNL nodes",
+          "partitions": {
+            "shared": {
+              "node_memory_gb": 128,
+              "node_cores": 16,
+              "node_type": "Compute (Shared)",
+              "cpu_model": "Intel Xeon E5-2680 v3 (Haswell)",
+              "cpu_clock_ghz": 2.5,
+              "cpu_cores_per_socket": 8,
+              "sockets_per_node": 2,
+              "gpu_count_per_node": 0,
+              "interconnect": "Mellanox FDR InfiniBand",
+              "node_count": 340,
+              "notes": "Shared partition with oversubscription"
+            },
+            "debug": {
+              "node_memory_gb": 128,
+              "node_cores": 16,
+              "node_type": "Compute (Debug)",
+              "cpu_model": "Intel Xeon E5-2680 v3 (Haswell)",
+              "cpu_clock_ghz": 2.5,
+              "cpu_cores_per_socket": 8,
+              "sockets_per_node": 2,
+              "gpu_count_per_node": 0,
+              "interconnect": "Mellanox FDR InfiniBand",
+              "node_count": 8,
+              "notes": "Priority partition for testing"
+            },
+            "knl": {
+              "node_memory_gb": 96,
+              "node_cores": 64,
+              "node_type": "Compute (KNL)",
+              "cpu_model": "Intel Xeon Phi 7230 (Knights Landing)",
+              "cpu_clock_ghz": 1.3,
+              "cpu_cores_per_socket": 64,
+              "sockets_per_node": 1,
+              "gpu_count_per_node": 0,
+              "interconnect": "Mellanox EDR InfiniBand",
+              "node_count": 32,
+              "notes": "Many-core architecture with MCDRAM",
+              "special_features": "16GB MCDRAM high-bandwidth memory"
+            }
+          }
+        }
+      ],
+      
+      "data_source_structure": {
+        "accounting_files": "AccountingStatistics/*.csv",
+        "performance_metrics": "TACC_Stats/YYYY-MM/[metric_files]",
+        "organization": "monthly_partitioned",
+        "outage_tracking": "kickstand_2015.csv, Conte_outages.txt",
+        "notes": "Unique among clusters: explicit outage/downtime documentation"
+      },
+      
+      "known_collection_gaps": [
+        {"start": "2015-08-20", "end": "2015-08-22", "reason": "Cooling system failure"},
+        {"start": "2016-11-01", "end": "2016-11-03", "reason": "Network fabric upgrade"},
+        {"start": "2017-06-15", "end": "2017-06-16", "reason": "Power infrastructure work"}
+      ],
+      
+      "special_features": {
+        "outage_correlation": "Jobs can be correlated with system downtime via kickstand files",
+        "temporal_overlap": "2015-2017 overlap with Stampede enables cross-site validation"
+      },
+      
+      "documentation_sources": [
+        "FRESCO_Repository_Description.pdf",
+        "Conte_outages.txt (in repository)",
+        "RCAC internal documentation"
+      ]
+    },
+    
+    "anvil": {
+      "institution": "Purdue University",
+      "location": "Rosen Center for Advanced Computing (RCAC)",
+      "temporal_coverage": {
+        "start": "2022-06-01",
+        "end": "2023-06-30",
+        "duration_months": 13,
+        "total_jobs_estimate": 9900000
+      },
+      
+      "slurm_configuration": {
+        "versions": ["21.08.x"],
+        "version_changes": [
+          {"date": "2022-06", "version": "21.08.x", "notes": "Modern SLURM with improved GPU accounting"}
+        ],
+        "accounting_interval_sec": 30,
+        "jobacct_gather_type": "jobacct_gather/cgroup"
+      },
+      
+      "memory_collection": {
+        "method": "slurm_cgroup_native",
+        "collection_tool": "SLURM cgroup plugin (memory.usage_in_bytes)",
+        "includes_cache": true,
+        "includes_buffers": true,
+        "unit_in_source": "gigabytes",
+        "aggregation": "max_per_node_then_max_across_nodes",
+        "sampling_interval_sec": 300,
+        "sampling_method": "periodic",
+        "memory_field_source": "cgroup memory.usage_in_bytes",
+        "known_issues": [
+          "GPU workloads may show different memory patterns than CPU-only clusters",
+          "Includes page cache like Stampede but collected via different method"
+        ],
+        "validation_notes": "9.1x higher than Conte, intermediate between Conte and Stampede (EXP-012)"
+      },
+      
+      "time_fields": {
+        "timelimit_unit": "seconds",
+        "timestamp_precision": "microseconds",
+        "timestamp_timezone": "US/Eastern",
+        "known_issues": []
+      },
+      
+      "hardware_generations": [
+        {
+          "generation_id": "gen1_amd_milan_ampere",
+          "start_date": "2022-06-01",
+          "end_date": "2023-06-30",
+          "notes": "Modern GPU-centric cluster with AMD CPUs and NVIDIA A-series GPUs",
+          "partitions": {
+            "gpu": {
+              "node_memory_gb": 256,
+              "node_cores": 128,
+              "node_type": "GPU Compute",
+              "cpu_model": "AMD EPYC 7763 (Milan)",
+              "cpu_clock_ghz": 2.45,
+              "cpu_cores_per_socket": 64,
+              "sockets_per_node": 2,
+              "gpu_count_per_node": 4,
+              "gpu_model": "NVIDIA A100",
+              "gpu_memory_gb_per_device": 40,
+              "interconnect": "Mellanox HDR InfiniBand",
+              "node_count": 60,
+              "notes": "Primary compute partition optimized for AI/ML"
+            },
+            "wide": {
+              "node_memory_gb": 256,
+              "node_cores": 128,
+              "node_type": "CPU Compute",
+              "cpu_model": "AMD EPYC 7763 (Milan)",
+              "cpu_clock_ghz": 2.45,
+              "cpu_cores_per_socket": 64,
+              "sockets_per_node": 2,
+              "gpu_count_per_node": 0,
+              "interconnect": "Mellanox HDR InfiniBand",
+              "node_count": 32,
+              "notes": "Large CPU-only jobs"
+            },
+            "debug": {
+              "node_memory_gb": 256,
+              "node_cores": 128,
+              "node_type": "Debug",
+              "cpu_model": "AMD EPYC 7763 (Milan)",
+              "cpu_clock_ghz": 2.45,
+              "cpu_cores_per_socket": 64,
+              "sockets_per_node": 2,
+              "gpu_count_per_node": 4,
+              "gpu_model": "NVIDIA A100",
+              "gpu_memory_gb_per_device": 40,
+              "interconnect": "Mellanox HDR InfiniBand",
+              "node_count": 4,
+              "notes": "Priority partition for testing"
+            },
+            "highmem": {
+              "node_memory_gb": 1024,
+              "node_cores": 128,
+              "node_type": "Large Memory",
+              "cpu_model": "AMD EPYC 7763 (Milan)",
+              "cpu_clock_ghz": 2.45,
+              "cpu_cores_per_socket": 64,
+              "sockets_per_node": 2,
+              "gpu_count_per_node": 0,
+              "interconnect": "Mellanox HDR InfiniBand",
+              "node_count": 8,
+              "notes": "1TB RAM nodes for memory-intensive applications"
+            }
+          }
+        }
+      ],
+      
+      "data_source_structure": {
+        "accounting_files": "JobAccounting/job_accounting_*_anon.csv (monthly)",
+        "performance_metrics": "JobResourceUsage/job_ts_metrics_*_anon.csv (monthly time-series)",
+        "organization": "two_file_monthly",
+        "join_key": "JobID",
+        "notes": "Modern clean two-file format: accounting + time-series"
+      },
+      
+      "known_collection_gaps": [
+        {"start": "2022-08-10", "end": "2022-08-11", "reason": "Scheduled maintenance"},
+        {"start": "2023-03-15", "end": "2023-03-16", "reason": "Storage system upgrade"}
+      ],
+      
+      "special_features": {
+        "gpu_monitoring": "Native GPU utilization and memory tracking via NVIDIA DCGM",
+        "workload_characteristics": "Heavy ML/AI workload mix (TensorFlow, PyTorch, JAX)",
+        "anonymization": "Purpose-built anonymization pipeline preserving statistical properties"
+      },
+      
+      "documentation_sources": [
+        "FRESCO_Repository_Description.pdf",
+        "JobAccounting/README.pdf",
+        "JobResourceUsage/README.pdf",
+        "https://www.rcac.purdue.edu/compute/anvil"
+      ]
+    }
+  },
+  
+  "cross_cluster_notes": {
+    "memory_measurement_incompatibility": "Clusters use different memory metrics: Stampede/Anvil include page cache (larger values), Conte uses RSS only (smaller values). This causes 6-9x systematic offsets (EXP-012 FIND-028).",
+    "recommended_normalization": "Use peak_memory_fraction = peak_memory_gb / node_memory_gb for cross-site comparison. This removes hardware capacity differences but not measurement methodology differences.",
+    "temporal_overlap": "Conte (2015-2017) and Stampede (2013-2018) have 2-year overlap enabling cross-validation.",
+    "era_effects": "10-year span (2013-2023) shows evolution: legacy TACC_Stats → hybrid monitoring → modern cgroup-based collection.",
+    "workload_differences": "Anvil GPU-centric ML/AI workloads differ from Stampede/Conte traditional HPC workloads. May affect memory usage patterns beyond measurement differences."
+  },
+  
+  "validation_references": {
+    "systematic_offsets": "EXP-012 (FIND-028): Measured 6-9x offsets between clusters",
+    "calibration_study": "EXP-013 (FIND-030): Affine log-space calibration can rescue but requires target data",
+    "baseline_failure": "EXP-011 (FIND-027): Cross-site memory prediction R²=-24 without normalization",
+    "memory_coverage": "All clusters have >99% memory data coverage (not a missingness issue)"
+  }
+}

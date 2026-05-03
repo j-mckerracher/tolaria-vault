@@ -1,0 +1,62 @@
+[load] Loading data...
+[load] Raw: 7,040,808 jobs
+[clean] After: 6,766,216 jobs
+       C: 1,546,127 jobs
+       NONE: 215,706 jobs
+       S: 5,004,383 jobs
+[split] S: Train 4,837,564, Test 166,819, Cutoff: 201705
+[split] C: Train 1,020,786, Test 525,341, Cutoff: 201702
+[split] NONE: Train 166,055, Test 49,651, Cutoff: 202305
+[train] Trained model on S
+[train] Trained model on C
+[train] Trained model on NONE
+
+======================================================================
+TRANSFER MATRIX
+======================================================================
+  Train: S -> Test: S (SAME): R²=0.3291, sMAPE=141.0%
+  Train: S -> Test: C (TRANSFER): R²=0.0142, sMAPE=156.3%
+  Train: S -> Test: NONE (TRANSFER): R²=0.5040, sMAPE=116.6%
+  Train: C -> Test: S (TRANSFER): R²=0.2981, sMAPE=136.6%
+  Train: C -> Test: C (SAME): R²=0.1287, sMAPE=144.5%
+  Train: C -> Test: NONE (TRANSFER): R²=0.4334, sMAPE=121.8%
+  Train: NONE -> Test: S (TRANSFER): R²=0.0141, sMAPE=160.0%
+  Train: NONE -> Test: C (TRANSFER): R²=0.1624, sMAPE=126.7%
+  Train: NONE -> Test: NONE (SAME): R²=0.7044, sMAPE=93.8%
+
+======================================================================
+TRANSFER MATRIX (without timelimit)
+======================================================================
+  Train: S -> Test: S (SAME): R²=-0.0372, sMAPE=166.6%
+  Train: S -> Test: C (TRANSFER): R²=-0.1041, sMAPE=165.8%
+  Train: S -> Test: NONE (TRANSFER): R²=-0.2090, sMAPE=153.4%
+  Train: C -> Test: S (TRANSFER): R²=-0.0520, sMAPE=164.5%
+  Train: C -> Test: C (SAME): R²=-0.3651, sMAPE=168.1%
+  Train: C -> Test: NONE (TRANSFER): R²=-0.4282, sMAPE=126.0%
+  Train: NONE -> Test: S (TRANSFER): R²=-0.2025, sMAPE=166.5%
+  Train: NONE -> Test: C (TRANSFER): R²=-0.8351, sMAPE=119.5%
+  Train: NONE -> Test: NONE (SAME): R²=0.5186, sMAPE=111.8%
+
+[save] /home/jmckerra/Experiments/EXP-007_cross_cluster_transfer/results/transfer_matrix.csv
+
+======================================================================
+TRANSFER GAP ANALYSIS (with timelimit)
+======================================================================
+
+Test on S:
+  Same-cluster: R²=0.3291
+  Best transfer (C): R²=0.2981 (Δ=-0.0309)
+  Worst transfer (NONE): R²=0.0141 (Δ=-0.3150)
+
+Test on C:
+  Same-cluster: R²=0.1287
+  Best transfer (NONE): R²=0.1624 (Δ=+0.0338)
+  Worst transfer (S): R²=0.0142 (Δ=-0.1145)
+
+Test on NONE:
+  Same-cluster: R²=0.7044
+  Best transfer (S): R²=0.5040 (Δ=-0.2003)
+  Worst transfer (C): R²=0.4334 (Δ=-0.2709)
+
+[done] Cross-cluster transfer complete!
+EXP-007 complete

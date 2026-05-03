@@ -1,0 +1,21 @@
+{
+  "run_id": "EXP-018_regime_matching_alloc_only",
+  "dataset_label": "local_job_partials_snapshot",
+  "inputs_manifest": "experiments\\EXP-016_feature_matrix\\manifests\\input_files.json",
+  "source_cluster": "anvil",
+  "target_cluster": "conte",
+  "regime": "cpu_standard",
+  "feature_columns": [
+    "ncores",
+    "timelimit"
+  ],
+  "propensity_model": {
+    "type": "logreg",
+    "C": 1.0,
+    "max_iter": 2000,
+    "class_weight": "balanced"
+  },
+  "overlap_band": [0.2, 0.8],
+  "max_rows_per_cluster": 200000,
+  "random_seed": 1337
+}

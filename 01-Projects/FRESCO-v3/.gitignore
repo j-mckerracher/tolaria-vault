@@ -1,0 +1,28 @@
+# Python
+**/__pycache__/
+*.pyc
+
+# Local-only agent scratch
+AGENT_PROMPT.md
+
+# Ignore large/generated experiment artifacts by default
+experiments/**/results/*.parquet
+experiments/**/results/*.arrow
+experiments/**/results/*.feather
+experiments/**/results/predictions_*.parquet
+experiments/**/results/matched*indices.parquet
+
+experiments/**/logs/
+experiments/**/validation/pip_freeze.txt
+experiments/**/validation/python_version.txt
+experiments/**/manifests/input_files_used.json
+experiments/**/manifests/run_metadata.json
+
+# Allow configs, run logs, and small JSON results
+!experiments/**/config/*.json
+!experiments/**/EXP*_RUN_LOG.md
+!experiments/**/results/*.json
+
+# OS / editor
+Thumbs.db
+.DS_Store

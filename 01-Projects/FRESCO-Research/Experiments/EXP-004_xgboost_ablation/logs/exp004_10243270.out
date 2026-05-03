@@ -1,0 +1,104 @@
+[load] Loading FRESCO data from /depot/sbagchi/data/josh/FRESCO/chunks...
+[load] Loaded 7,291,381 jobs
+       S: 5,004,652 jobs
+       C: 1,820,385 jobs
+       NONE: 466,344 jobs
+
+[train] Training for clusters: ['C', 'NONE', 'S']
+
+======================================================================
+CLUSTER: C
+======================================================================
+[split] Train: 1,223,043, Test: 597,342, Cutoff: 201701
+
+--- xgb_full ---
+[eval] R² = 0.2205
+[eval] MdAE (log) = 1.5325
+[eval] MdAPE = 82.0%
+
+--- xgb_no_timelimit ---
+[eval] R² = -0.0478
+[eval] MdAE (log) = 1.9532
+[eval] MdAPE = 87.6%
+
+--- ridge_full ---
+[eval] R² = 0.2042
+[eval] MdAE (log) = 1.8034
+[eval] MdAPE = 84.5%
+
+--- ridge_no_timelimit ---
+[eval] R² = 0.0065
+[eval] MdAE (log) = 1.9458
+[eval] MdAPE = 86.9%
+
+======================================================================
+CLUSTER: NONE
+======================================================================
+[split] Train: 256,300, Test: 210,044, Cutoff: 202304
+
+--- xgb_full ---
+[eval] R² = 0.6300
+[eval] MdAE (log) = 1.0983
+[eval] MdAPE = 84.4%
+
+--- xgb_no_timelimit ---
+[eval] R² = 0.2833
+[eval] MdAE (log) = 1.9315
+[eval] MdAPE = 98.4%
+
+--- ridge_full ---
+[eval] R² = 0.5876
+[eval] MdAE (log) = 1.5871
+[eval] MdAPE = 93.3%
+
+--- ridge_no_timelimit ---
+[eval] R² = 0.0602
+[eval] MdAE (log) = 2.1952
+[eval] MdAPE = 99.7%
+
+======================================================================
+CLUSTER: S
+======================================================================
+[split] Train: 4,802,344, Test: 202,308, Cutoff: 201704
+
+--- xgb_full ---
+[eval] R² = 0.3619
+[eval] MdAE (log) = 1.5132
+[eval] MdAPE = 82.6%
+
+--- xgb_no_timelimit ---
+[eval] R² = 0.1461
+[eval] MdAE (log) = 1.9871
+[eval] MdAPE = 89.5%
+
+--- ridge_full ---
+[eval] R² = 0.3590
+[eval] MdAE (log) = 1.5830
+[eval] MdAPE = 83.5%
+
+--- ridge_no_timelimit ---
+[eval] R² = 0.1464
+[eval] MdAE (log) = 2.0810
+[eval] MdAPE = 90.2%
+
+======================================================================
+COMPARISON SUMMARY: XGBoost vs Ridge
+======================================================================
+                            mdae_log    mdape      r2
+cluster variant                                      
+C       ridge_full            1.8034  84.5266  0.2042
+        ridge_no_timelimit    1.9458  86.9157  0.0065
+        xgb_full              1.5325  82.0423  0.2205
+        xgb_no_timelimit      1.9532  87.6091 -0.0478
+NONE    ridge_full            1.5871  93.2645  0.5876
+        ridge_no_timelimit    2.1952  99.6740  0.0602
+        xgb_full              1.0983  84.3923  0.6300
+        xgb_no_timelimit      1.9315  98.4321  0.2833
+S       ridge_full            1.5830  83.4740  0.3590
+        ridge_no_timelimit    2.0810  90.2235  0.1464
+        xgb_full              1.5132  82.6131  0.3619
+        xgb_no_timelimit      1.9871  89.5120  0.1461
+[plot] Saved comparison plot
+
+[done] Training complete!
+EXP-004 complete

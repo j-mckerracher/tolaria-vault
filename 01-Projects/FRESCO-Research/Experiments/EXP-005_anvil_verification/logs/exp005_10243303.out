@@ -1,0 +1,136 @@
+[load] Loading Anvil data from /depot/sbagchi/data/josh/FRESCO/chunks...
+[load] Loaded 466,344 Anvil jobs
+       Unique users: 2,037
+       Unique accounts: 240
+
+======================================================================
+SPLIT TYPE: time_based
+======================================================================
+[split] Time-based: Train 352,940, Test 113,404, Cutoff: 202305
+
+--- no_timelimit / xgboost ---
+[eval] R² = 0.3937
+[eval] MdAE (log) = 1.5290
+[eval] MdAPE = 97.3%
+
+--- no_timelimit / ridge ---
+[eval] R² = 0.1690
+[eval] MdAE (log) = 1.6485
+[eval] MdAPE = 99.4%
+
+--- no_month / xgboost ---
+[eval] R² = 0.4047
+[eval] MdAE (log) = 1.5591
+[eval] MdAPE = 98.3%
+
+--- no_month / ridge ---
+[eval] R² = 0.1688
+[eval] MdAE (log) = 1.6558
+[eval] MdAPE = 99.4%
+
+--- cores_per_node / xgboost ---
+[eval] R² = 0.4033
+[eval] MdAE (log) = 1.5939
+[eval] MdAPE = 97.7%
+
+--- cores_per_node / ridge ---
+[eval] R² = 0.1679
+[eval] MdAE (log) = 1.6615
+[eval] MdAPE = 99.4%
+
+--- full_interaction / xgboost ---
+[eval] R² = 0.3793
+[eval] MdAE (log) = 1.6507
+[eval] MdAPE = 96.5%
+
+--- full_interaction / ridge ---
+[eval] R² = 0.1681
+[eval] MdAE (log) = 1.6514
+[eval] MdAPE = 99.4%
+
+======================================================================
+SPLIT TYPE: user_aware
+======================================================================
+[split] User-aware: Train 280,402 jobs (1,630 users), Test 185,942 jobs (407 users)
+
+--- no_timelimit / xgboost ---
+[eval] R² = -0.7381
+[eval] MdAE (log) = 1.9897
+[eval] MdAPE = 430.1%
+
+--- no_timelimit / ridge ---
+[eval] R² = -0.7815
+[eval] MdAE (log) = 1.8335
+[eval] MdAPE = 384.4%
+
+--- no_month / xgboost ---
+[eval] R² = -0.5337
+[eval] MdAE (log) = 1.7864
+[eval] MdAPE = 364.6%
+
+--- no_month / ridge ---
+[eval] R² = -0.6741
+[eval] MdAE (log) = 1.8370
+[eval] MdAPE = 329.4%
+
+--- cores_per_node / xgboost ---
+[eval] R² = -0.5662
+[eval] MdAE (log) = 1.8155
+[eval] MdAPE = 384.9%
+
+--- cores_per_node / ridge ---
+[eval] R² = -0.6752
+[eval] MdAE (log) = 1.8381
+[eval] MdAPE = 331.8%
+
+--- full_interaction / xgboost ---
+[eval] R² = -0.8799
+[eval] MdAE (log) = 2.1288
+[eval] MdAPE = 483.8%
+
+--- full_interaction / ridge ---
+[eval] R² = -0.7865
+[eval] MdAE (log) = 1.8406
+[eval] MdAPE = 389.5%
+
+[save] Results saved to /home/jmckerra/Experiments/EXP-005_anvil_verification/results/verification_results.csv
+
+======================================================================
+VERIFICATION SUMMARY
+======================================================================
+                                mdape                r2        
+model_type                      ridge   xgboost   ridge xgboost
+split_type variant                                             
+time_based cores_per_node     99.3544   97.6634  0.1679  0.4033
+           full_interaction   99.3558   96.5092  0.1681  0.3793
+           no_month           99.3530   98.3284  0.1688  0.4047
+           no_timelimit       99.3545   97.3128  0.1690  0.3937
+user_aware cores_per_node    331.7792  384.8577 -0.6752 -0.5662
+           full_interaction  389.4792  483.7508 -0.7865 -0.8799
+           no_month          329.3668  364.5875 -0.6741 -0.5337
+           no_timelimit      384.4173  430.0688 -0.7815 -0.7381
+
+----------------------------------------------------------------------
+KEY VERIFICATION TESTS:
+----------------------------------------------------------------------
+
+1. Month feature importance:
+   no_timelimit R² = 0.3937
+   no_month R² = 0.4047
+   Δ R² = -0.0111
+   → Month is NOT driving the signal
+
+2. Cores_per_node interaction:
+   no_month R² = 0.4047
+   cores_per_node R² = 0.4033
+   Δ R² = -0.0015
+   → Interaction adds minimal value
+
+3. User leakage test:
+   time_based R² = 0.3937
+   user_aware R² = -0.7381
+   Δ R² = 1.1318
+   → SIGNIFICANT leakage detected! User-aware split shows lower R²
+
+[done] Verification complete!
+EXP-005 complete

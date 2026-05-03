@@ -1,0 +1,2483 @@
+{
+  "base_dir": "/home/jmckerra/Code/FRESCO-v4",
+  "by_strategy_n": [
+    {
+      "actual_eval_n_unique": [
+        213
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 10,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.01041695216104166,
+      "r2_mean": 0.009097212296610202,
+      "r2_min": 0.007777472432178745,
+      "strategy": "fine_tune",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        198
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 25,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.03306422156521305,
+      "r2_mean": 0.027195181660623846,
+      "r2_min": 0.021326141756034644,
+      "strategy": "fine_tune",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        173
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 50,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.033236220007383355,
+      "r2_mean": 0.009785606461910124,
+      "r2_min": -0.013665007083563108,
+      "strategy": "fine_tune",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        123
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 100,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.040612796439272514,
+      "r2_mean": 0.03812852172028336,
+      "r2_min": 0.035644247001294205,
+      "strategy": "fine_tune",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        50
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 200,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.02664590453737814,
+      "r2_mean": 0.019820634586690977,
+      "r2_min": 0.012995364636003814,
+      "strategy": "fine_tune",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        50
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 500,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.02664590453737814,
+      "r2_mean": 0.019820634586690977,
+      "r2_min": 0.012995364636003814,
+      "strategy": "fine_tune",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        45
+      ],
+      "below_min_target_eval_rows_count": 2,
+      "count": 2,
+      "n_target_labels": -1,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": -0.007102291459446297,
+      "r2_mean": -0.020662937519196345,
+      "r2_min": -0.03422358357894639,
+      "strategy": "full_target",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        213
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 10,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": -0.060378008261966265,
+      "r2_mean": -0.171799063949289,
+      "r2_min": -0.28322011963661176,
+      "strategy": "output_recal",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        198
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 25,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": -0.0428652147164561,
+      "r2_mean": -0.05347760260572454,
+      "r2_min": -0.06408999049499298,
+      "strategy": "output_recal",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        173
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 50,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.009087625210095429,
+      "r2_mean": 0.003934339912726126,
+      "r2_min": -0.0012189453846431775,
+      "strategy": "output_recal",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        123
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 100,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.009530687467757204,
+      "r2_mean": -0.012106010285028335,
+      "r2_min": -0.03374270803781387,
+      "strategy": "output_recal",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        50
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 200,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": -0.01009598727958938,
+      "r2_mean": -0.15683876903511929,
+      "r2_min": -0.3035815507906492,
+      "strategy": "output_recal",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        50
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 500,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": -0.01009598727958938,
+      "r2_mean": -0.15683876903511929,
+      "r2_min": -0.3035815507906492,
+      "strategy": "output_recal",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        213
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 10,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": -0.13567076874900397,
+      "r2_mean": -0.2457504483885724,
+      "r2_min": -0.35583012802814085,
+      "strategy": "stacked",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        198
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 25,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.028056655767911165,
+      "r2_mean": 0.024112740803994115,
+      "r2_min": 0.020168825840077065,
+      "strategy": "stacked",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        173
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 50,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.06412089744632343,
+      "r2_mean": -0.01727368338707358,
+      "r2_min": -0.09866826422047059,
+      "strategy": "stacked",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        123
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 100,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.08313245207402398,
+      "r2_mean": 0.0613221865138347,
+      "r2_min": 0.03951192095364542,
+      "strategy": "stacked",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        50
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 200,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.07360335742034863,
+      "r2_mean": -0.028268381014510513,
+      "r2_min": -0.13014011944936965,
+      "strategy": "stacked",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        50
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 500,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.07360335742034863,
+      "r2_mean": -0.028268381014510513,
+      "r2_min": -0.13014011944936965,
+      "strategy": "stacked",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        213
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 10,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": -0.1784149251453604,
+      "r2_mean": -0.2538890588462238,
+      "r2_min": -0.32936319254708724,
+      "strategy": "target_only",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        198
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 25,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.020354383002380017,
+      "r2_mean": 0.019012156558731952,
+      "r2_min": 0.017669930115083887,
+      "strategy": "target_only",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        173
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 50,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.053360220693175475,
+      "r2_mean": -0.03411575928947491,
+      "r2_min": -0.1215917392721253,
+      "strategy": "target_only",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        123
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 100,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.07359720510781909,
+      "r2_mean": 0.053558596220560806,
+      "r2_min": 0.033519987333302526,
+      "strategy": "target_only",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        50
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 200,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.06466739638349317,
+      "r2_mean": -0.03964279110883617,
+      "r2_min": -0.14395297860116552,
+      "strategy": "target_only",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "actual_eval_n_unique": [
+        50
+      ],
+      "below_min_target_eval_rows_count": 0,
+      "count": 2,
+      "n_target_labels": 500,
+      "overlap_total_unique": [
+        223
+      ],
+      "r2_max": 0.06466739638349317,
+      "r2_mean": -0.03964279110883617,
+      "r2_min": -0.14395297860116552,
+      "strategy": "target_only",
+      "target_label_seeds": [
+        2024,
+        2025
+      ]
+    }
+  ],
+  "generated_utc": "2026-03-17T05:21:09Z",
+  "harvest": {
+    "below_min_target_eval_rows_experiments": [
+      78,
+      79
+    ],
+    "dirs_found": 50,
+    "expected_experiments": 50,
+    "experiment_range": "EXP-078..EXP-127",
+    "metrics_count": 50,
+    "missing_metrics": [],
+    "notes": [
+      "All metrics.json files were harvested from EXP-078..EXP-127.",
+      "full_target runs leave only 45 target eval rows and therefore fail the min_target_eval_rows>=50 check."
+    ],
+    "overlap_total_unique": [
+      223
+    ],
+    "seed_dependent_overlap_collapse_fixed": true,
+    "usable_outputs": true,
+    "zero_eval_experiments": [],
+    "zero_row_eval_exhaustion_fixed": true
+  },
+  "job": {
+    "all_tasks_completed": true,
+    "array_job_id": 10410106,
+    "first_task_start": "2026-03-16T18:07:16",
+    "last_task_end": "2026-03-16T19:44:05",
+    "state_counts": {
+      "COMPLETED": 50
+    },
+    "task_count": 50
+  },
+  "per_experiment": [
+    {
+      "actual_cal_n": 178,
+      "actual_eval_n": 45,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:09:25Z",
+      "effective_n_target_labels": 178,
+      "exp_dir": "experiments/EXP-078_few_shot_repair_non1337_full_target_seed2024",
+      "exp_num": 78,
+      "limitations": [
+        "Few-shot strategy=full_target, N=-1. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Target overlap cohort is smaller than the requested minimum target holdout: actual_eval_n=45 min_target_eval_rows=50."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": false,
+      "n_target_labels": -1,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-078_few_shot_repair_non1337_full_target_seed2024",
+      "strategy": "full_target",
+      "target_bias_log": -0.030713149408461485,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.08358771107410265,
+      "target_overflow_pred": false,
+      "target_r2": -0.03422358357894639,
+      "target_slope": 0.9313450184462821,
+      "target_smape": 61.76914980441015
+    },
+    {
+      "actual_cal_n": 178,
+      "actual_eval_n": 45,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:11:27Z",
+      "effective_n_target_labels": 178,
+      "exp_dir": "experiments/EXP-079_few_shot_repair_non1337_full_target_seed2025",
+      "exp_num": 79,
+      "limitations": [
+        "Few-shot strategy=full_target, N=-1. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Target overlap cohort is smaller than the requested minimum target holdout: actual_eval_n=45 min_target_eval_rows=50."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": false,
+      "n_target_labels": -1,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-079_few_shot_repair_non1337_full_target_seed2025",
+      "strategy": "full_target",
+      "target_bias_log": 0.010352840835557476,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.09208734366900079,
+      "target_overflow_pred": false,
+      "target_r2": -0.007102291459446297,
+      "target_slope": 0.5099867895537417,
+      "target_smape": 57.97704180448804
+    },
+    {
+      "actual_cal_n": 10,
+      "actual_eval_n": 213,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:13:38Z",
+      "effective_n_target_labels": 10,
+      "exp_dir": "experiments/EXP-080_few_shot_repair_non1337_output_recal_n10_seed2024",
+      "exp_num": 80,
+      "limitations": [
+        "Few-shot strategy=output_recal, N=10. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 10,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-080_few_shot_repair_non1337_output_recal_n10_seed2024",
+      "strategy": "output_recal",
+      "target_bias_log": 0.05190431740852947,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.08170526828351068,
+      "target_overflow_pred": false,
+      "target_r2": -0.28322011963661176,
+      "target_slope": -0.5456428227414275,
+      "target_smape": 39.34745923275842
+    },
+    {
+      "actual_cal_n": 10,
+      "actual_eval_n": 213,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:15:42Z",
+      "effective_n_target_labels": 10,
+      "exp_dir": "experiments/EXP-081_few_shot_repair_non1337_output_recal_n10_seed2025",
+      "exp_num": 81,
+      "limitations": [
+        "Few-shot strategy=output_recal, N=10. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 10,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-081_few_shot_repair_non1337_output_recal_n10_seed2025",
+      "strategy": "output_recal",
+      "target_bias_log": 0.01959967769321282,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.08640459587781761,
+      "target_overflow_pred": false,
+      "target_r2": -0.060378008261966265,
+      "target_slope": -1.0131606992671132,
+      "target_smape": 43.98366019628639
+    },
+    {
+      "actual_cal_n": 25,
+      "actual_eval_n": 198,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:17:43Z",
+      "effective_n_target_labels": 25,
+      "exp_dir": "experiments/EXP-082_few_shot_repair_non1337_output_recal_n25_seed2024",
+      "exp_num": 82,
+      "limitations": [
+        "Few-shot strategy=output_recal, N=25. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 25,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-082_few_shot_repair_non1337_output_recal_n25_seed2024",
+      "strategy": "output_recal",
+      "target_bias_log": 0.00502034602704635,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.09138853668445547,
+      "target_overflow_pred": false,
+      "target_r2": -0.06408999049499298,
+      "target_slope": -0.8280411191565221,
+      "target_smape": 50.32945306655354
+    },
+    {
+      "actual_cal_n": 25,
+      "actual_eval_n": 198,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:19:45Z",
+      "effective_n_target_labels": 25,
+      "exp_dir": "experiments/EXP-083_few_shot_repair_non1337_output_recal_n25_seed2025",
+      "exp_num": 83,
+      "limitations": [
+        "Few-shot strategy=output_recal, N=25. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 25,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-083_few_shot_repair_non1337_output_recal_n25_seed2025",
+      "strategy": "output_recal",
+      "target_bias_log": 0.01708826497806081,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.08812071550543044,
+      "target_overflow_pred": false,
+      "target_r2": -0.0428652147164561,
+      "target_slope": -1.6537702882147116,
+      "target_smape": 48.84269360575957
+    },
+    {
+      "actual_cal_n": 50,
+      "actual_eval_n": 173,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:21:34Z",
+      "effective_n_target_labels": 50,
+      "exp_dir": "experiments/EXP-084_few_shot_repair_non1337_output_recal_n50_seed2024",
+      "exp_num": 84,
+      "limitations": [
+        "Few-shot strategy=output_recal, N=50. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 50,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-084_few_shot_repair_non1337_output_recal_n50_seed2024",
+      "strategy": "output_recal",
+      "target_bias_log": 0.011996282761373636,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.09246180263186927,
+      "target_overflow_pred": false,
+      "target_r2": -0.0012189453846431775,
+      "target_slope": 1.394808989515794,
+      "target_smape": 63.269983990864965
+    },
+    {
+      "actual_cal_n": 50,
+      "actual_eval_n": 173,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:23:21Z",
+      "effective_n_target_labels": 50,
+      "exp_dir": "experiments/EXP-085_few_shot_repair_non1337_output_recal_n50_seed2025",
+      "exp_num": 85,
+      "limitations": [
+        "Few-shot strategy=output_recal, N=50. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 50,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-085_few_shot_repair_non1337_output_recal_n50_seed2025",
+      "strategy": "output_recal",
+      "target_bias_log": 0.00342619047980457,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.09222422299333954,
+      "target_overflow_pred": false,
+      "target_r2": 0.009087625210095429,
+      "target_slope": 1.1633571727486618,
+      "target_smape": 68.1020815298269
+    },
+    {
+      "actual_cal_n": 100,
+      "actual_eval_n": 123,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:25:19Z",
+      "effective_n_target_labels": 100,
+      "exp_dir": "experiments/EXP-086_few_shot_repair_non1337_output_recal_n100_seed2024",
+      "exp_num": 86,
+      "limitations": [
+        "Few-shot strategy=output_recal, N=100. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 100,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-086_few_shot_repair_non1337_output_recal_n100_seed2024",
+      "strategy": "output_recal",
+      "target_bias_log": -0.0021678895816502953,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.09275712917859136,
+      "target_overflow_pred": false,
+      "target_r2": 0.009530687467757204,
+      "target_slope": 3.596451926832285,
+      "target_smape": 66.95061962412859
+    },
+    {
+      "actual_cal_n": 100,
+      "actual_eval_n": 123,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:27:11Z",
+      "effective_n_target_labels": 100,
+      "exp_dir": "experiments/EXP-087_few_shot_repair_non1337_output_recal_n100_seed2025",
+      "exp_num": 87,
+      "limitations": [
+        "Few-shot strategy=output_recal, N=100. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 100,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-087_few_shot_repair_non1337_output_recal_n100_seed2025",
+      "strategy": "output_recal",
+      "target_bias_log": 0.0064421735944494045,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.09466921256583154,
+      "target_overflow_pred": false,
+      "target_r2": -0.03374270803781387,
+      "target_slope": 0.08950991026666022,
+      "target_smape": 70.72831005039892
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T22:28:50Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-088_few_shot_repair_non1337_output_recal_n200_seed2024",
+      "exp_num": 88,
+      "limitations": [
+        "Few-shot strategy=output_recal, N=200. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 200 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 200,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-088_few_shot_repair_non1337_output_recal_n200_seed2024",
+      "strategy": "output_recal",
+      "target_bias_log": 0.0035315598601025743,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.10334071426334245,
+      "target_overflow_pred": false,
+      "target_r2": -0.3035815507906492,
+      "target_slope": -1.8660576252628263,
+      "target_smape": 79.34135776434965
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T22:30:26Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-089_few_shot_repair_non1337_output_recal_n200_seed2025",
+      "exp_num": 89,
+      "limitations": [
+        "Few-shot strategy=output_recal, N=200. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 200 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 200,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-089_few_shot_repair_non1337_output_recal_n200_seed2025",
+      "strategy": "output_recal",
+      "target_bias_log": 0.020149382449122743,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.10034733958736941,
+      "target_overflow_pred": false,
+      "target_r2": -0.01009598727958938,
+      "target_slope": 1.9638293985599964,
+      "target_smape": 65.23794133983421
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T22:32:10Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-090_few_shot_repair_non1337_output_recal_n500_seed2024",
+      "exp_num": 90,
+      "limitations": [
+        "Few-shot strategy=output_recal, N=500. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 500 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 500,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-090_few_shot_repair_non1337_output_recal_n500_seed2024",
+      "strategy": "output_recal",
+      "target_bias_log": 0.0035315598601025743,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.10334071426334245,
+      "target_overflow_pred": false,
+      "target_r2": -0.3035815507906492,
+      "target_slope": -1.8660576252628263,
+      "target_smape": 79.34135776434965
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T22:33:54Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-091_few_shot_repair_non1337_output_recal_n500_seed2025",
+      "exp_num": 91,
+      "limitations": [
+        "Few-shot strategy=output_recal, N=500. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 500 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 500,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-091_few_shot_repair_non1337_output_recal_n500_seed2025",
+      "strategy": "output_recal",
+      "target_bias_log": 0.020149382449122743,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.10034733958736941,
+      "target_overflow_pred": false,
+      "target_r2": -0.01009598727958938,
+      "target_slope": 1.9638293985599964,
+      "target_smape": 65.23794133983421
+    },
+    {
+      "actual_cal_n": 10,
+      "actual_eval_n": 213,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:35:55Z",
+      "effective_n_target_labels": 10,
+      "exp_dir": "experiments/EXP-092_few_shot_repair_non1337_fine_tune_n10_seed2024",
+      "exp_num": 92,
+      "limitations": [
+        "Few-shot strategy=fine_tune, N=10. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 10,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-092_few_shot_repair_non1337_fine_tune_n10_seed2024",
+      "strategy": "fine_tune",
+      "target_bias_log": 0.022943855428426342,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.08451048246963613,
+      "target_overflow_pred": false,
+      "target_r2": 0.01041695216104166,
+      "target_slope": 1.2340758344840428,
+      "target_smape": 61.74743758791281
+    },
+    {
+      "actual_cal_n": 10,
+      "actual_eval_n": 213,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:37:54Z",
+      "effective_n_target_labels": 10,
+      "exp_dir": "experiments/EXP-093_few_shot_repair_non1337_fine_tune_n10_seed2025",
+      "exp_num": 93,
+      "limitations": [
+        "Few-shot strategy=fine_tune, N=10. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 10,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-093_few_shot_repair_non1337_fine_tune_n10_seed2025",
+      "strategy": "fine_tune",
+      "target_bias_log": 0.003924939215964502,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.09124138615672722,
+      "target_overflow_pred": false,
+      "target_r2": 0.007777472432178745,
+      "target_slope": 2.2436723405492325,
+      "target_smape": 61.81724272280926
+    },
+    {
+      "actual_cal_n": 25,
+      "actual_eval_n": 198,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:40:06Z",
+      "effective_n_target_labels": 25,
+      "exp_dir": "experiments/EXP-094_few_shot_repair_non1337_fine_tune_n25_seed2024",
+      "exp_num": 94,
+      "limitations": [
+        "Few-shot strategy=fine_tune, N=25. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 25,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-094_few_shot_repair_non1337_fine_tune_n25_seed2024",
+      "strategy": "fine_tune",
+      "target_bias_log": -0.004102404441477784,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.09211885812375356,
+      "target_overflow_pred": false,
+      "target_r2": 0.021326141756034644,
+      "target_slope": 0.9540693728161914,
+      "target_smape": 66.88082333139738
+    },
+    {
+      "actual_cal_n": 25,
+      "actual_eval_n": 198,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:42:05Z",
+      "effective_n_target_labels": 25,
+      "exp_dir": "experiments/EXP-095_few_shot_repair_non1337_fine_tune_n25_seed2025",
+      "exp_num": 95,
+      "limitations": [
+        "Few-shot strategy=fine_tune, N=25. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 25,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-095_few_shot_repair_non1337_fine_tune_n25_seed2025",
+      "strategy": "fine_tune",
+      "target_bias_log": 0.0071839726646870826,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.08899676181804021,
+      "target_overflow_pred": false,
+      "target_r2": 0.03306422156521305,
+      "target_slope": 1.4763539952455438,
+      "target_smape": 64.91941943981902
+    },
+    {
+      "actual_cal_n": 50,
+      "actual_eval_n": 173,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:44:00Z",
+      "effective_n_target_labels": 50,
+      "exp_dir": "experiments/EXP-096_few_shot_repair_non1337_fine_tune_n50_seed2024",
+      "exp_num": 96,
+      "limitations": [
+        "Few-shot strategy=fine_tune, N=50. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 50,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-096_few_shot_repair_non1337_fine_tune_n50_seed2024",
+      "strategy": "fine_tune",
+      "target_bias_log": 0.0027033354412879743,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.09572259359628633,
+      "target_overflow_pred": false,
+      "target_r2": -0.013665007083563108,
+      "target_slope": -9.002542928977554,
+      "target_smape": 64.36585990035411
+    },
+    {
+      "actual_cal_n": 50,
+      "actual_eval_n": 173,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:45:51Z",
+      "effective_n_target_labels": 50,
+      "exp_dir": "experiments/EXP-097_few_shot_repair_non1337_fine_tune_n50_seed2025",
+      "exp_num": 97,
+      "limitations": [
+        "Few-shot strategy=fine_tune, N=50. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 50,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-097_few_shot_repair_non1337_fine_tune_n50_seed2025",
+      "strategy": "fine_tune",
+      "target_bias_log": -7.398212051776474e-05,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.09127113049261426,
+      "target_overflow_pred": false,
+      "target_r2": 0.033236220007383355,
+      "target_slope": 3.1758216789947453,
+      "target_smape": 63.63548174570439
+    },
+    {
+      "actual_cal_n": 100,
+      "actual_eval_n": 123,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:47:42Z",
+      "effective_n_target_labels": 100,
+      "exp_dir": "experiments/EXP-098_few_shot_repair_non1337_fine_tune_n100_seed2024",
+      "exp_num": 98,
+      "limitations": [
+        "Few-shot strategy=fine_tune, N=100. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 100,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-098_few_shot_repair_non1337_fine_tune_n100_seed2024",
+      "strategy": "fine_tune",
+      "target_bias_log": -0.004772194045205682,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.09163384961043962,
+      "target_overflow_pred": false,
+      "target_r2": 0.035644247001294205,
+      "target_slope": 1.7325958552970606,
+      "target_smape": 62.71534382378993
+    },
+    {
+      "actual_cal_n": 100,
+      "actual_eval_n": 123,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:49:38Z",
+      "effective_n_target_labels": 100,
+      "exp_dir": "experiments/EXP-099_few_shot_repair_non1337_fine_tune_n100_seed2025",
+      "exp_num": 99,
+      "limitations": [
+        "Few-shot strategy=fine_tune, N=100. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 100,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-099_few_shot_repair_non1337_fine_tune_n100_seed2025",
+      "strategy": "fine_tune",
+      "target_bias_log": 0.005464803242614836,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.08915487763007943,
+      "target_overflow_pred": false,
+      "target_r2": 0.040612796439272514,
+      "target_slope": 1.9877278993347756,
+      "target_smape": 64.31499873381166
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T22:52:07Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-100_few_shot_repair_non1337_fine_tune_n200_seed2024",
+      "exp_num": 100,
+      "limitations": [
+        "Few-shot strategy=fine_tune, N=200. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 200 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 200,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-100_few_shot_repair_non1337_fine_tune_n200_seed2024",
+      "strategy": "fine_tune",
+      "target_bias_log": 0.014313513882594853,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.08160365786087354,
+      "target_overflow_pred": false,
+      "target_r2": 0.012995364636003814,
+      "target_slope": 1.4584822449023316,
+      "target_smape": 50.95726177124942
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T22:53:54Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-101_few_shot_repair_non1337_fine_tune_n200_seed2025",
+      "exp_num": 101,
+      "limitations": [
+        "Few-shot strategy=fine_tune, N=200. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 200 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 200,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-101_few_shot_repair_non1337_fine_tune_n200_seed2025",
+      "strategy": "fine_tune",
+      "target_bias_log": 0.017395837657545404,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.09893452220579099,
+      "target_overflow_pred": false,
+      "target_r2": 0.02664590453737814,
+      "target_slope": 2.641058134171101,
+      "target_smape": 65.2163517188759
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T22:55:51Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-102_few_shot_repair_non1337_fine_tune_n500_seed2024",
+      "exp_num": 102,
+      "limitations": [
+        "Few-shot strategy=fine_tune, N=500. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 500 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 500,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-102_few_shot_repair_non1337_fine_tune_n500_seed2024",
+      "strategy": "fine_tune",
+      "target_bias_log": 0.014313513882594853,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.08160365786087354,
+      "target_overflow_pred": false,
+      "target_r2": 0.012995364636003814,
+      "target_slope": 1.4584822449023316,
+      "target_smape": 50.95726177124942
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T22:57:40Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-103_few_shot_repair_non1337_fine_tune_n500_seed2025",
+      "exp_num": 103,
+      "limitations": [
+        "Few-shot strategy=fine_tune, N=500. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 500 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 500,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-103_few_shot_repair_non1337_fine_tune_n500_seed2025",
+      "strategy": "fine_tune",
+      "target_bias_log": 0.017395837657545404,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.09893452220579099,
+      "target_overflow_pred": false,
+      "target_r2": 0.02664590453737814,
+      "target_slope": 2.641058134171101,
+      "target_smape": 65.2163517188759
+    },
+    {
+      "actual_cal_n": 10,
+      "actual_eval_n": 213,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T22:59:32Z",
+      "effective_n_target_labels": 10,
+      "exp_dir": "experiments/EXP-104_few_shot_repair_non1337_stacked_n10_seed2024",
+      "exp_num": 104,
+      "limitations": [
+        "Few-shot strategy=stacked, N=10. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 10,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-104_few_shot_repair_non1337_stacked_n10_seed2024",
+      "strategy": "stacked",
+      "target_bias_log": 0.055749104683224186,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.08464917419097714,
+      "target_overflow_pred": false,
+      "target_r2": -0.35583012802814085,
+      "target_slope": -0.6004211223852178,
+      "target_smape": 37.80495980408951
+    },
+    {
+      "actual_cal_n": 10,
+      "actual_eval_n": 213,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:01:36Z",
+      "effective_n_target_labels": 10,
+      "exp_dir": "experiments/EXP-105_few_shot_repair_non1337_stacked_n10_seed2025",
+      "exp_num": 105,
+      "limitations": [
+        "Few-shot strategy=stacked, N=10. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 10,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-105_few_shot_repair_non1337_stacked_n10_seed2025",
+      "strategy": "stacked",
+      "target_bias_log": 0.02100423880492492,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.08713688229477154,
+      "target_overflow_pred": false,
+      "target_r2": -0.13567076874900397,
+      "target_slope": -0.9734772778025043,
+      "target_smape": 47.764271023121594
+    },
+    {
+      "actual_cal_n": 25,
+      "actual_eval_n": 198,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:03:07Z",
+      "effective_n_target_labels": 25,
+      "exp_dir": "experiments/EXP-106_few_shot_repair_non1337_stacked_n25_seed2024",
+      "exp_num": 106,
+      "limitations": [
+        "Few-shot strategy=stacked, N=25. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 25,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-106_few_shot_repair_non1337_stacked_n25_seed2024",
+      "strategy": "stacked",
+      "target_bias_log": -0.0019242624266550606,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.09085307372412435,
+      "target_overflow_pred": false,
+      "target_r2": 0.028056655767911165,
+      "target_slope": 0.7636063775643854,
+      "target_smape": 67.76243140021401
+    },
+    {
+      "actual_cal_n": 25,
+      "actual_eval_n": 198,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:05:01Z",
+      "effective_n_target_labels": 25,
+      "exp_dir": "experiments/EXP-107_few_shot_repair_non1337_stacked_n25_seed2025",
+      "exp_num": 107,
+      "limitations": [
+        "Few-shot strategy=stacked, N=25. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 25,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-107_few_shot_repair_non1337_stacked_n25_seed2025",
+      "strategy": "stacked",
+      "target_bias_log": 0.014945567497196381,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.08554201472156665,
+      "target_overflow_pred": false,
+      "target_r2": 0.020168825840077065,
+      "target_slope": 1.0175506466663178,
+      "target_smape": 63.545969633076815
+    },
+    {
+      "actual_cal_n": 50,
+      "actual_eval_n": 173,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:06:30Z",
+      "effective_n_target_labels": 50,
+      "exp_dir": "experiments/EXP-108_few_shot_repair_non1337_stacked_n50_seed2024",
+      "exp_num": 108,
+      "limitations": [
+        "Few-shot strategy=stacked, N=50. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 50,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-108_few_shot_repair_non1337_stacked_n50_seed2024",
+      "strategy": "stacked",
+      "target_bias_log": 0.013470486791323363,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.09581412739899198,
+      "target_overflow_pred": false,
+      "target_r2": -0.09866826422047059,
+      "target_slope": -1.4269389466038362,
+      "target_smape": 64.73907166617082
+    },
+    {
+      "actual_cal_n": 50,
+      "actual_eval_n": 173,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:08:13Z",
+      "effective_n_target_labels": 50,
+      "exp_dir": "experiments/EXP-109_few_shot_repair_non1337_stacked_n50_seed2025",
+      "exp_num": 109,
+      "limitations": [
+        "Few-shot strategy=stacked, N=50. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 50,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-109_few_shot_repair_non1337_stacked_n50_seed2025",
+      "strategy": "stacked",
+      "target_bias_log": 0.005475329631623567,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.08802927540873166,
+      "target_overflow_pred": false,
+      "target_r2": 0.06412089744632343,
+      "target_slope": 2.430886959228408,
+      "target_smape": 64.36484781049472
+    },
+    {
+      "actual_cal_n": 100,
+      "actual_eval_n": 123,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:09:31Z",
+      "effective_n_target_labels": 100,
+      "exp_dir": "experiments/EXP-110_few_shot_repair_non1337_stacked_n100_seed2024",
+      "exp_num": 110,
+      "limitations": [
+        "Few-shot strategy=stacked, N=100. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 100,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-110_few_shot_repair_non1337_stacked_n100_seed2024",
+      "strategy": "stacked",
+      "target_bias_log": -0.006089176748011252,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.08946332412124147,
+      "target_overflow_pred": false,
+      "target_r2": 0.08313245207402398,
+      "target_slope": 1.3559436689375952,
+      "target_smape": 66.10745215040214
+    },
+    {
+      "actual_cal_n": 100,
+      "actual_eval_n": 123,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:11:38Z",
+      "effective_n_target_labels": 100,
+      "exp_dir": "experiments/EXP-111_few_shot_repair_non1337_stacked_n100_seed2025",
+      "exp_num": 111,
+      "limitations": [
+        "Few-shot strategy=stacked, N=100. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 100,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-111_few_shot_repair_non1337_stacked_n100_seed2025",
+      "strategy": "stacked",
+      "target_bias_log": 0.00588653498583589,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.08879276676558026,
+      "target_overflow_pred": false,
+      "target_r2": 0.03951192095364542,
+      "target_slope": 0.770900088129852,
+      "target_smape": 64.84586588771782
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T23:13:46Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-112_few_shot_repair_non1337_stacked_n200_seed2024",
+      "exp_num": 112,
+      "limitations": [
+        "Few-shot strategy=stacked, N=200. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 200 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 200,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-112_few_shot_repair_non1337_stacked_n200_seed2024",
+      "strategy": "stacked",
+      "target_bias_log": 0.023618290919710266,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.08526959036743513,
+      "target_overflow_pred": false,
+      "target_r2": -0.13014011944936965,
+      "target_slope": -0.02813889517518004,
+      "target_smape": 61.02334877878546
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T23:15:45Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-113_few_shot_repair_non1337_stacked_n200_seed2025",
+      "exp_num": 113,
+      "limitations": [
+        "Few-shot strategy=stacked, N=200. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 200 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 200,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-113_few_shot_repair_non1337_stacked_n200_seed2025",
+      "strategy": "stacked",
+      "target_bias_log": 0.01563570581867009,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.09582475113007473,
+      "target_overflow_pred": false,
+      "target_r2": 0.07360335742034863,
+      "target_slope": 1.6028226709233742,
+      "target_smape": 68.24742168805902
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T23:17:48Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-114_few_shot_repair_non1337_stacked_n500_seed2024",
+      "exp_num": 114,
+      "limitations": [
+        "Few-shot strategy=stacked, N=500. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 500 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 500,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-114_few_shot_repair_non1337_stacked_n500_seed2024",
+      "strategy": "stacked",
+      "target_bias_log": 0.023618290919710266,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.08526959036743513,
+      "target_overflow_pred": false,
+      "target_r2": -0.13014011944936965,
+      "target_slope": -0.02813889517518004,
+      "target_smape": 61.02334877878546
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T23:19:56Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-115_few_shot_repair_non1337_stacked_n500_seed2025",
+      "exp_num": 115,
+      "limitations": [
+        "Few-shot strategy=stacked, N=500. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 500 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 500,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-115_few_shot_repair_non1337_stacked_n500_seed2025",
+      "strategy": "stacked",
+      "target_bias_log": 0.01563570581867009,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.09582475113007473,
+      "target_overflow_pred": false,
+      "target_r2": 0.07360335742034863,
+      "target_slope": 1.6028226709233742,
+      "target_smape": 68.24742168805902
+    },
+    {
+      "actual_cal_n": 10,
+      "actual_eval_n": 213,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:21:56Z",
+      "effective_n_target_labels": 10,
+      "exp_dir": "experiments/EXP-116_few_shot_repair_non1337_target_only_n10_seed2024",
+      "exp_num": 116,
+      "limitations": [
+        "Few-shot strategy=target_only, N=10. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 10,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-116_few_shot_repair_non1337_target_only_n10_seed2024",
+      "strategy": "target_only",
+      "target_bias_log": 0.05458281633629302,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.08359003234016733,
+      "target_overflow_pred": false,
+      "target_r2": -0.32936319254708724,
+      "target_slope": -0.5810901038618753,
+      "target_smape": 37.89450358710678
+    },
+    {
+      "actual_cal_n": 10,
+      "actual_eval_n": 213,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:23:59Z",
+      "effective_n_target_labels": 10,
+      "exp_dir": "experiments/EXP-117_few_shot_repair_non1337_target_only_n10_seed2025",
+      "exp_num": 117,
+      "limitations": [
+        "Few-shot strategy=target_only, N=10. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 10,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-117_few_shot_repair_non1337_target_only_n10_seed2025",
+      "strategy": "target_only",
+      "target_bias_log": 0.023286971572687318,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.08672260186109247,
+      "target_overflow_pred": false,
+      "target_r2": -0.1784149251453604,
+      "target_slope": -0.8378492261954107,
+      "target_smape": 46.72347464297171
+    },
+    {
+      "actual_cal_n": 25,
+      "actual_eval_n": 198,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:26:01Z",
+      "effective_n_target_labels": 25,
+      "exp_dir": "experiments/EXP-118_few_shot_repair_non1337_target_only_n25_seed2024",
+      "exp_num": 118,
+      "limitations": [
+        "Few-shot strategy=target_only, N=25. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 25,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-118_few_shot_repair_non1337_target_only_n25_seed2024",
+      "strategy": "target_only",
+      "target_bias_log": -0.0015841185310409764,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.09047942925214787,
+      "target_overflow_pred": false,
+      "target_r2": 0.017669930115083887,
+      "target_slope": 0.6753195437565613,
+      "target_smape": 66.93770888578383
+    },
+    {
+      "actual_cal_n": 25,
+      "actual_eval_n": 198,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:28:06Z",
+      "effective_n_target_labels": 25,
+      "exp_dir": "experiments/EXP-119_few_shot_repair_non1337_target_only_n25_seed2025",
+      "exp_num": 119,
+      "limitations": [
+        "Few-shot strategy=target_only, N=25. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 25,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-119_few_shot_repair_non1337_target_only_n25_seed2025",
+      "strategy": "target_only",
+      "target_bias_log": 0.014949898407831454,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.08554219669694493,
+      "target_overflow_pred": false,
+      "target_r2": 0.020354383002380017,
+      "target_slope": 1.0207158597340085,
+      "target_smape": 63.53019413116456
+    },
+    {
+      "actual_cal_n": 50,
+      "actual_eval_n": 173,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:30:08Z",
+      "effective_n_target_labels": 50,
+      "exp_dir": "experiments/EXP-120_few_shot_repair_non1337_target_only_n50_seed2024",
+      "exp_num": 120,
+      "limitations": [
+        "Few-shot strategy=target_only, N=50. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 50,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-120_few_shot_repair_non1337_target_only_n50_seed2024",
+      "strategy": "target_only",
+      "target_bias_log": 0.012141889899935355,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.0970470789756254,
+      "target_overflow_pred": false,
+      "target_r2": -0.1215917392721253,
+      "target_slope": -1.6653300604530628,
+      "target_smape": 65.9861178664441
+    },
+    {
+      "actual_cal_n": 50,
+      "actual_eval_n": 173,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:32:05Z",
+      "effective_n_target_labels": 50,
+      "exp_dir": "experiments/EXP-121_few_shot_repair_non1337_target_only_n50_seed2025",
+      "exp_num": 121,
+      "limitations": [
+        "Few-shot strategy=target_only, N=50. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 50,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-121_few_shot_repair_non1337_target_only_n50_seed2025",
+      "strategy": "target_only",
+      "target_bias_log": 0.004133686493511963,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.08921974043871153,
+      "target_overflow_pred": false,
+      "target_r2": 0.053360220693175475,
+      "target_slope": 2.8151498904246957,
+      "target_smape": 65.09163336111389
+    },
+    {
+      "actual_cal_n": 100,
+      "actual_eval_n": 123,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:34:02Z",
+      "effective_n_target_labels": 100,
+      "exp_dir": "experiments/EXP-122_few_shot_repair_non1337_target_only_n100_seed2024",
+      "exp_num": 122,
+      "limitations": [
+        "Few-shot strategy=target_only, N=100. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 100,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-122_few_shot_repair_non1337_target_only_n100_seed2024",
+      "strategy": "target_only",
+      "target_bias_log": -0.006291428970370022,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.0899438227300826,
+      "target_overflow_pred": false,
+      "target_r2": 0.07359720510781909,
+      "target_slope": 1.2760724367579175,
+      "target_smape": 64.2159078337093
+    },
+    {
+      "actual_cal_n": 100,
+      "actual_eval_n": 123,
+      "calibration_n_capped": false,
+      "created_utc": "2026-03-16T23:35:56Z",
+      "effective_n_target_labels": 100,
+      "exp_dir": "experiments/EXP-123_few_shot_repair_non1337_target_only_n100_seed2025",
+      "exp_num": 123,
+      "limitations": [
+        "Few-shot strategy=target_only, N=100. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 100,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-123_few_shot_repair_non1337_target_only_n100_seed2025",
+      "strategy": "target_only",
+      "target_bias_log": 0.005723603621909182,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.08922074226865938,
+      "target_overflow_pred": false,
+      "target_r2": 0.033519987333302526,
+      "target_slope": 0.7530163092319972,
+      "target_smape": 62.24405250767979
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T23:37:55Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-124_few_shot_repair_non1337_target_only_n200_seed2024",
+      "exp_num": 124,
+      "limitations": [
+        "Few-shot strategy=target_only, N=200. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 200 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 200,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-124_few_shot_repair_non1337_target_only_n200_seed2024",
+      "strategy": "target_only",
+      "target_bias_log": 0.021436193166494283,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.08687306959805513,
+      "target_overflow_pred": false,
+      "target_r2": -0.14395297860116552,
+      "target_slope": -0.5518180177436645,
+      "target_smape": 60.543794294815534
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T23:39:53Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-125_few_shot_repair_non1337_target_only_n200_seed2025",
+      "exp_num": 125,
+      "limitations": [
+        "Few-shot strategy=target_only, N=200. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 200 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 200,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-125_few_shot_repair_non1337_target_only_n200_seed2025",
+      "strategy": "target_only",
+      "target_bias_log": 0.016774633244502644,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.0956437207069603,
+      "target_overflow_pred": false,
+      "target_r2": 0.06466739638349317,
+      "target_slope": 1.5703360118973366,
+      "target_smape": 63.51430792042778
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T23:41:57Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-126_few_shot_repair_non1337_target_only_n500_seed2024",
+      "exp_num": 126,
+      "limitations": [
+        "Few-shot strategy=target_only, N=500. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 500 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 500,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-126_few_shot_repair_non1337_target_only_n500_seed2024",
+      "strategy": "target_only",
+      "target_bias_log": 0.021436193166494283,
+      "target_label_seed": 2024,
+      "target_mae_log": 0.08687306959805513,
+      "target_overflow_pred": false,
+      "target_r2": -0.14395297860116552,
+      "target_slope": -0.5518180177436645,
+      "target_smape": 60.543794294815534
+    },
+    {
+      "actual_cal_n": 173,
+      "actual_eval_n": 50,
+      "calibration_n_capped": true,
+      "created_utc": "2026-03-16T23:43:58Z",
+      "effective_n_target_labels": 173,
+      "exp_dir": "experiments/EXP-127_few_shot_repair_non1337_target_only_n500_seed2025",
+      "exp_num": 127,
+      "limitations": [
+        "Few-shot strategy=target_only, N=500. Calibration set sampled stratified by label quartile.",
+        "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue.",
+        "Requested target calibration size 500 was capped to 173 to preserve at least 50 target evaluation rows."
+      ],
+      "metrics_exists": true,
+      "min_target_eval_rows": 50,
+      "min_target_eval_rows_satisfied": true,
+      "n_target_labels": 500,
+      "overlap": {
+        "matched_source_n": 6995,
+        "matched_target_n": 223,
+        "overlap_band": [
+          0.2,
+          0.8
+        ],
+        "run_id": "EXP-001_regime_matching_baseline"
+      },
+      "overlap_total": 223,
+      "pair_source": null,
+      "pair_target": null,
+      "regime": "hardware_cpu_standard",
+      "run_id": "EXP-127_few_shot_repair_non1337_target_only_n500_seed2025",
+      "strategy": "target_only",
+      "target_bias_log": 0.016774633244502644,
+      "target_label_seed": 2025,
+      "target_mae_log": 0.0956437207069603,
+      "target_overflow_pred": false,
+      "target_r2": 0.06466739638349317,
+      "target_slope": 1.5703360118973366,
+      "target_smape": 63.51430792042778
+    }
+  ]
+}

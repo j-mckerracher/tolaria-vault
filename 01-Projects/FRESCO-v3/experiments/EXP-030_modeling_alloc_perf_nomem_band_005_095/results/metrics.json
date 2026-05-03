@@ -1,0 +1,75 @@
+{
+  "adaptation": {
+    "applied": false,
+    "config": null
+  },
+  "created_utc": "2026-02-03T18:59:05Z",
+  "dataset_label": "local_job_partials_snapshot",
+  "eval": {
+    "source_test": {
+      "bias_log": -0.027670896887809802,
+      "intercept": 0.15336378561398178,
+      "mae_log": 0.04608040095524353,
+      "mdae_log": 0.022673241071051287,
+      "overflow_pred": false,
+      "r2": 0.6364102059020931,
+      "slope": 0.9610497398802944,
+      "smape": 2.28393155740602
+    },
+    "target": {
+      "bias_log": -12.411738748274951,
+      "intercept": 2.0585829162981177,
+      "mae_log": 12.435540559876872,
+      "mdae_log": 10.70777294627841,
+      "overflow_pred": false,
+      "r2": -949.5184905948441,
+      "slope": 0.01774025771228095,
+      "smape": 199.99160498465406
+    },
+    "target_r2_bootstrap": {
+      "r2_ci_lower": -1089.6253372199392,
+      "r2_ci_upper": -796.8139074538966,
+      "r2_mean": -940.7820763437816
+    }
+  },
+  "features": [
+    "ncores",
+    "timelimit",
+    "value_block_cnt",
+    "value_block_sum",
+    "value_cpuuser_cnt",
+    "value_cpuuser_sum",
+    "value_gpu_cnt",
+    "value_gpu_sum",
+    "value_nfs_cnt",
+    "value_nfs_sum"
+  ],
+  "label": {
+    "column": "value_memused_max",
+    "proxy": true,
+    "transform": "log1p"
+  },
+  "limitations": [
+    "Label is a local proxy (value_memused_max) from job_partials, not the authoritative v3 peak_memory_fraction target.",
+    "Model uses the feature set specified in the run config; treat this as an ablation baseline, not the final intended Phase 3 feature set."
+  ],
+  "model": {
+    "alpha": 1.0,
+    "type": "ridge"
+  },
+  "overlap": {
+    "matched_source_n": 54,
+    "matched_target_n": 797,
+    "overlap_band": [
+      0.05,
+      0.95
+    ],
+    "run_id": "EXP-029_regime_matching_alloc_perf_nomem_band_005_095"
+  },
+  "pair": {
+    "source": "anvil",
+    "target": "conte"
+  },
+  "regime": "cpu_standard",
+  "run_id": "EXP-030_modeling_alloc_perf_nomem_band_005_095"
+}

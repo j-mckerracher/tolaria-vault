@@ -1,0 +1,51 @@
+{
+  "base_config": "config/exp002_zero_shot_baseline.json",
+  "exp_number_start": 3,
+  "description_prefix": "few_shot_main",
+  "strategies": [
+    "output_recal",
+    "fine_tune",
+    "stacked",
+    "target_only"
+  ],
+  "n_values": [
+    10,
+    25,
+    50,
+    100,
+    200,
+    500
+  ],
+  "seeds": [
+    1337,
+    2024,
+    2025
+  ],
+  "data_seed": 1337,
+  "split_seed": 1337,
+  "baseline_strategies": [
+    "full_target"
+  ],
+  "few_shot": {
+    "min_target_eval_rows": 50
+  },
+  "manifest_path": "config/exp003_main_few_shot_manifest.json",
+  "config_list_path": "config/exp003_main_few_shot_config_paths.txt",
+  "slurm_script_path": "scripts/exp003_main_few_shot.slurm",
+  "slurm": {
+    "job_name": "fresco_v4_fs_main",
+    "partition": "a100-80gb",
+    "qos": "normal",
+    "account": "sbagchi",
+    "gres": "gpu:1",
+    "cpus_per_task": 8,
+    "mem": "48G",
+    "time": "00:30:00",
+    "output": "experiments/sweep_logs/exp003_main_%A_%a.out",
+    "error": "experiments/sweep_logs/exp003_main_%A_%a.err",
+    "setup_commands": [
+      "source /home/jmckerra/anaconda3/etc/profile.d/conda.sh",
+      "conda activate fresco_v2"
+    ]
+  }
+}

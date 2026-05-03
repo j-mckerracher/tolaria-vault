@@ -1,0 +1,105 @@
+{
+  "clusters": {
+    "anvil": {
+      "entries": [
+        {
+          "path": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/PROD-20260203-v3_v3.parquet",
+          "row_groups": [
+            59879,
+            58325,
+            58571,
+            60013,
+            58715,
+            58387,
+            60899,
+            62127,
+            58783,
+            60414,
+            59488,
+            61243,
+            61149,
+            60212,
+            59467,
+            61598,
+            60235,
+            60213,
+            59859,
+            59061,
+            58591,
+            58706,
+            60931,
+            62070
+          ]
+        }
+      ],
+      "job_rows": 13260,
+      "raw_rows_sampled": 286843,
+      "read_errors": [],
+      "row_groups_read": 24,
+      "seed": 1337
+    },
+    "conte": {
+      "entries": [
+        {
+          "path": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/PROD-20260203-v3_v3.parquet",
+          "row_groups": [
+            41272,
+            51923,
+            24408,
+            40638,
+            35358,
+            31299,
+            28898,
+            26548,
+            43519,
+            28212,
+            40684,
+            42350,
+            40903,
+            39612,
+            32627,
+            49227,
+            48531,
+            47171,
+            27676,
+            50884,
+            27355,
+            40528,
+            27430,
+            31574
+          ]
+        }
+      ],
+      "job_rows": 7383,
+      "raw_rows_sampled": 131122,
+      "read_errors": [],
+      "row_groups_read": 24,
+      "seed": 1338
+    }
+  },
+  "created_utc": "2026-03-12T18:54:23Z",
+  "dataset_label": "chunks-v3-authoritative",
+  "git": {
+    "git_commit": null,
+    "git_root": "/home/jmckerra/Code/FRESCO-Pipeline",
+    "git_status_porcelain": null
+  },
+  "input_files_used": [
+    {
+      "bytes": 356,
+      "cluster": "manifest",
+      "path": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/manifests/output_manifest.jsonl",
+      "sha256": "a1d95ffa72ebdde6776016a615775f53d4f36adc17003413ee8526dd9c7f2b22"
+    }
+  ],
+  "inputs_manifest": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/manifests/output_manifest.jsonl",
+  "notes": [
+    "Frozen from the EXP-044 authoritative baseline to remove seed-dependent row-group drift before the no-queue-time family."
+  ],
+  "reference_config": "/home/jmckerra/Code/FRESCO-Pipeline/experiments/EXP-044_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08/config/exp044_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08.json",
+  "sampling": {
+    "base_seed": 1337,
+    "max_rows_per_cluster": 300000,
+    "sample_n_row_groups_per_file": 24
+  }
+}

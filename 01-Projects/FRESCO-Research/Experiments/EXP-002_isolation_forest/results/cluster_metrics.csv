@@ -1,0 +1,4 @@
+spearman_rho,spearman_p,precision_at_1pct,precision_at_5pct,precision_at_10pct,baseline_failure_rate,cluster,n_jobs,n_anomalies,anomaly_rate
+,,1.0,1.0,1.0,1.0,C,1820388,18204,0.010000065920012657
+,,1.0,1.0,1.0,1.0,S,5004700,50047,0.01
+,,1.0,1.0,1.0,1.0,NONE,466344,4664,0.010001200830288371

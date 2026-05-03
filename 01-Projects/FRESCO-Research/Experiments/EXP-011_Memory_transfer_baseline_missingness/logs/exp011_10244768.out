@@ -1,0 +1,24 @@
+[load] Loading data with memory metrics...
+[load] Raw: 7,291,447 jobs
+[missingness] Jobs with ≥1 memory sample: 7,283,667 / 7,291,447 (99.9%)
+              C: 1,820,100 / 1,820,392 (100.0%)
+              NONE: 458,912 / 466,355 (98.4%)
+              S: 5,004,655 / 5,004,700 (100.0%)
+[filter] After requiring ≥1 mem sample and peak_memused > 0: 7,283,667 jobs
+[clean] After standard filters: 7,255,485 jobs
+        C: 1,792,246 jobs
+        NONE: 458,901 jobs
+        S: 5,004,338 jobs
+[split] S: Train 4,837,540, Test 166,798, Cutoff: 201705
+        Memory coverage (overall): 100.0%
+[split] C: Train 1,267,081, Test 525,165, Cutoff: 201702
+        Memory coverage (overall): 100.0%
+[split] NONE: Train 351,670, Test 107,231, Cutoff: 202305
+        Memory coverage (overall): 98.4%
+[train] single clusters=('S',) conditioning=False
+[train] single clusters=('C',) conditioning=False
+[train] single clusters=('NONE',) conditioning=False
+[train] pooled_all_no_cluster clusters=('S', 'C', 'NONE') conditioning=False
+[train] pooled_all_with_cluster clusters=('S', 'C', 'NONE') conditioning=True
+[save] /home/jmckerra/Experiments/EXP-011_Memory_transfer_baseline_missingness/results/exp011_results.csv
+EXP-011 complete

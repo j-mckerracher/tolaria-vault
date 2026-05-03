@@ -1,0 +1,43 @@
+[EXP-012] Memory Label Validation
+[config] Input: /depot/sbagchi/data/josh/FRESCO/chunks
+[config] Output: /home/jmckerra/Experiments/EXP-012_memory_label_validation/results
+[config] Threads: 16
+[config] Sample fraction: 1.0%
+[load] Loading 1.0% sample with memory metrics...
+[load] Loaded: 1,548,063 jobs
+
+================================================================================
+VALIDATION 1: Units
+================================================================================
+cluster  n_jobs  peak_min  peak_p01  peak_p10  peak_p50   peak_p90   peak_p99   peak_max  peak_mean  peak_std  node_ram_gb  likely_unit_bytes  likely_unit_kb  likely_unit_mb  likely_unit_gb  p90_ratio_nodeRAM_bytes  p90_ratio_nodeRAM_kb  p90_ratio_nodeRAM_mb  p90_ratio_nodeRAM_gb
+      S 1090728  0.020673  3.789928  4.198321  6.636475  20.804799  30.447055 151.694588   9.730290  7.079760           32                  1               1               1               1             6.054994e-10          6.200313e-07              0.000635              0.650150
+      C  266114  1.180558  1.268145  1.976966  4.490342  15.516895  31.859386  31.947224   6.862449  6.675248          128                  1               1               1               1             1.129003e-10          1.156099e-07              0.000118              0.121226
+   NONE  191221 11.836922 13.964996 16.689484 48.511192 117.194230 241.204162 996.760250  58.978864 49.680584          256                  1               1               1               1             4.263501e-10          4.365825e-07              0.000447              0.457790
+
+================================================================================
+VALIDATION 2: Aggregation (multi-node jobs)
+================================================================================
+cluster  n_multinode_jobs  log_corr_peak_nhosts  linreg_slope  linreg_r2  linreg_pvalue      interpretation
+      S            914890             -0.029460     -0.012943   0.000868  9.091301e-175 likely_max_per_node
+      C            111254              0.076900      0.069712   0.005914  1.606519e-145 likely_max_per_node
+   NONE             18776              0.015239      0.021240   0.000232   3.678227e-02 likely_max_per_node
+
+================================================================================
+VALIDATION 3: Distributions (log scale)
+================================================================================
+cluster  n_jobs  log_peak_mean  log_peak_std  log_peak_min  log_peak_p25  log_peak_p50  log_peak_p75  log_peak_max
+      S 1090728       2.062567      0.651110     -3.878918      1.583535      1.892581      2.480045      5.021869
+      C  266114       1.599055      0.765266      0.165987      1.003475      1.501929      2.022487      3.464085
+   NONE  191221       3.806995      0.727249      2.471224      3.148375      3.881795      4.302643      6.904510
+
+================================================================================
+VALIDATION 4: Pairwise Offsets
+================================================================================
+cluster_1 cluster_2  log_offset_c2_minus_c1  scale_factor_c2_over_c1                              interpretation
+        C         S                0.463512                 1.589647    S values are 1.59× C values (on average)
+        C      NONE                2.207939                 9.096952 NONE values are 9.10× C values (on average)
+     NONE         S               -1.744428                 0.174745 S values are 0.17× NONE values (on average)
+
+[save] Results written to /home/jmckerra/Experiments/EXP-012_memory_label_validation/results
+EXP-012 complete
+EXP-012 complete

@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-02-03T06:30:04Z",
+  "dataset_label": "local_job_partials_snapshot",
+  "domain_classifier_auc": 0.6128428107396899,
+  "feature_columns": [
+    "ncores",
+    "timelimit"
+  ],
+  "ks_by_feature_all": {
+    "ncores": 0.2223140495867768,
+    "timelimit": 0.5001913509376196
+  },
+  "ks_by_feature_overlap": {
+    "ncores": 0.024870466321243567,
+    "timelimit": 0.4856242615202836
+  },
+  "n_source": 1210,
+  "n_source_overlap": 965,
+  "n_target": 2613,
+  "n_target_overlap": 2539,
+  "notes": [
+    "Propensity model trained on a sampled subset of rows from parquet files listed in the input manifest.",
+    "Regime definition is a local proxy: cpu_standard := (value_gpu_cnt<=0 and value_gpu_sum<=0)."
+  ],
+  "overlap_band": [
+    0.2,
+    0.8
+  ],
+  "regime": "cpu_standard",
+  "run_id": "EXP-018_regime_matching_alloc_only",
+  "source_cluster": "anvil",
+  "target_cluster": "conte",
+  "target_overlap_coverage": 0.9716800612323
+}

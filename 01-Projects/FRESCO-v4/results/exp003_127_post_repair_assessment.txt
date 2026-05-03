@@ -1,0 +1,64 @@
+EXP-003 / EXP-078..127 post-repair assessment
+=============================================
+
+Sources used
+------------
+- results\exp003_127_post_repair_consolidated_rows.csv
+- results\exp003_127_post_repair_grouped_stats.csv
+- results\exp003_127_post_repair_grouped_stats.json
+- results\exp003_127_post_repair_summary.txt
+- results\exp003_main_few_shot_grouped_stats.json
+
+Bottom line
+-----------
+The repair appears to have fixed the pipeline failure mode, but it did not rescue the scientific result. The repaired few-shot transfer evidence is still weak, and the current v4 pivot is not supported as a promising path forward on this cluster pair.
+
+1) Best defensible few-shot result after repair
+-----------------------------------------------
+- Best overall single row in the consolidated file: EXP-003_few_shot_main_full_target_seed1337, full_target, target R^2=0.1370. This is an upper-bound baseline, not evidence for the source-using few-shot pivot.
+- Best single source-using row: EXP-054_few_shot_main_stacked_n200_seed1337, stacked, N=200, target R^2=0.1343. This is not enough for the main claim because it is one original seed-1337 row from the larger target_overlap_n=2459 cohort.
+- Best grouped source-using result on the consolidated panel: stacked at N=100, mean target R^2=0.0763, median=0.0831, std=0.0276 (3 rows). This is 0.0307 below the EXP-002 zero-shot baseline (R^2=0.1070).
+- Best same-cohort repaired source-using result: stacked at N=100, mean/median target R^2=0.0613 across repaired seeds 2024/2025. This is 0.0457 below the EXP-002 zero-shot baseline.
+- Defensible baseline comparison: no source-using grouped mean or grouped median beats the EXP-002 zero-shot baseline. No repaired source-using row beats EXP-002 at all. The only above-baseline source-using rows come from the original seed-1337 cohort, so they are not a defensible project-level win.
+
+2) Does the repaired evidence support the v4 pivot?
+---------------------------------------------------
+No. The repair supports the claim that the pipeline is now structurally sound, but it does not support the scientific hypothesis that these few-shot source-using methods are a strong path forward.
+
+Pipeline-fixed evidence:
+- 50 repaired rows harvested.
+- repaired target_overlap_n is constant at 223.
+- repaired actual_eval_n=0 failures are fully resolved.
+- repaired rows now produce metrics across the panel.
+
+Scientific call:
+- The clean repaired panel peaks at only target R^2=0.0613 (stacked, N=100).
+- The best consolidated grouped source-using result is still only target R^2=0.0763.
+- Both are clearly below the EXP-002 zero-shot baseline of 0.1070.
+- Source-using methods sometimes edge out target_only on matched seeds, but the gains are small and still do not clear the zero-shot baseline. That is not enough to justify calling the pivot promising.
+
+3) How to treat the full_target caveat (actual_eval_n=45 < 50)
+--------------------------------------------------------------
+- This caveat is real and should stay explicit in any table or writeup that includes the repaired full_target rows.
+- It is not serious enough to block the main conclusion about the pivot.
+- Reason: the main negative conclusion comes from source-using grouped results versus the EXP-002 zero-shot baseline, and those comparisons do not depend on the caveated full_target rows.
+- Recommendation: do not run another repair just to resolve this before making the main project-level call. Only clean it up later if you need a publication-clean full_target upper-bound reference.
+
+4) Is a second cluster-pair sweep justified now?
+------------------------------------------------
+Recommendation: no, probably stop the current sweep plan.
+
+Reason:
+- After the repair, the clean repaired source-using panel still tops out at target R^2=0.0613.
+- The consolidated grouped source-using peak is 0.0763, still below zero-shot 0.1070.
+- That is too weak to justify spending more compute on the same strategy set across another cluster pair.
+
+If work continues, it should only continue under a materially different hypothesis or method, not as a straight second sweep of the current approach.
+
+5) Most honest next actions
+---------------------------
+- Treat EXP-003/EXP-078..127 as a structurally repaired but scientifically negative result.
+- Use this result in project notes/paper framing as: "pipeline fixed" is supported, "few-shot pivot works" is not supported.
+- Do not launch a second cluster-pair sweep with the current methods.
+- If the project continues, first define a materially different adaptation idea and a clear success threshold.
+- Keep the full_target actual_eval_n=45 caveat attached to the repaired upper-bound rows until/unless that edge case is cleaned up.

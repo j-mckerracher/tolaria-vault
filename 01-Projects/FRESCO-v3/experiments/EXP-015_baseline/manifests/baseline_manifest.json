@@ -1,0 +1,51 @@
+{
+  "created_utc": "2026-02-03T04:43:16Z",
+  "files": [
+    {
+      "bytes": 418,
+      "path": "experiments\\EXP-015_baseline\\config\\reproduce_exp015_baseline.json",
+      "sha256": "a34acad3b47a86327a61b014d6cc4a4c950f473c24ca97d0696c1a938cabf1a0"
+    },
+    {
+      "bytes": 212,
+      "path": "experiments\\EXP-015_baseline\\logs\\reproduce_exp015_baseline.log",
+      "sha256": "ad3fd1913cbc46468c207e846a6d307ea6f0938ae567fbc1fc6abc49c685958a"
+    },
+    {
+      "bytes": 2843,
+      "path": "experiments\\EXP-015_baseline\\results\\exp015_results.csv",
+      "sha256": "4206822b8120d656dc9890b716a08bdd6276f1d479cd86e79a252164efb98dde"
+    },
+    {
+      "bytes": 3254,
+      "path": "experiments\\EXP-015_baseline\\results\\exp015_covariate_shift.json",
+      "sha256": "41d6d873bf58e8e5d7e2386fc9592ae5b2e64204486a85ee829b5f0cf55818b4"
+    },
+    {
+      "bytes": 8368,
+      "path": "experiments\\EXP-015_baseline\\results\\EXP015_FINAL_REPORT.md",
+      "sha256": "fa2ab3a486089d24d997cac4c011f20f649d229728d53ffac68a00f06117ef16"
+    },
+    {
+      "bytes": 1013,
+      "path": "experiments\\EXP-015_baseline\\results\\exp015_baseline_summary.md",
+      "sha256": "4d24bc9c40053106f8d84fdc6300c1474b0706239b1585630fd240bc16d1b6c1"
+    },
+    {
+      "bytes": 82,
+      "path": "experiments\\EXP-015_baseline\\validation\\python_version.txt",
+      "sha256": "c97abee3123de74ff3ded08fe4a4b15868a8e695855afa0588945fa4a475bbb8"
+    },
+    {
+      "bytes": 4039,
+      "path": "experiments\\EXP-015_baseline\\validation\\pip_freeze.txt",
+      "sha256": "c503c51001754ce9e10d1b37c2c3c43580ff12c77e418f52b55d4a319dbd914e"
+    },
+    {
+      "bytes": 1399,
+      "path": "experiments\\EXP-015_baseline\\manifests\\run_metadata.json",
+      "sha256": "3e87aacccef5d39ffed6583508ec947bd7ee7b256b374d674e697bfe85df4ef9"
+    }
+  ],
+  "run_id": "EXP-015_baseline_replay"
+}

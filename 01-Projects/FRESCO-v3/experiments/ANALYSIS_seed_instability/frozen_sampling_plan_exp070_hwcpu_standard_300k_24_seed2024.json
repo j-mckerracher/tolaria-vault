@@ -1,0 +1,106 @@
+{
+  "clusters": {
+    "anvil": {
+      "entries": [
+        {
+          "path": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/PROD-20260203-v3_v3.parquet",
+          "row_groups": [
+            58852,
+            59044,
+            59920,
+            60571,
+            59561,
+            61279,
+            58488,
+            58313,
+            59181,
+            61026,
+            60229,
+            62113,
+            58521,
+            58399,
+            61841,
+            62346,
+            58459,
+            58550,
+            62066,
+            61179,
+            60814,
+            59816,
+            62560,
+            61043
+          ]
+        }
+      ],
+      "job_rows": 17346,
+      "raw_rows_sampled": 241089,
+      "read_errors": [],
+      "row_groups_read": 24,
+      "seed": 2024
+    },
+    "conte": {
+      "entries": [
+        {
+          "path": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/PROD-20260203-v3_v3.parquet",
+          "row_groups": [
+            35187,
+            22962,
+            40325,
+            22711,
+            46533,
+            29085,
+            46606,
+            25140,
+            40929,
+            38937,
+            51265,
+            38561,
+            36098,
+            31919,
+            38166,
+            49120,
+            51871,
+            28185,
+            36840,
+            37733,
+            31233,
+            17518,
+            31205,
+            43418
+          ]
+        }
+      ],
+      "job_rows": 6136,
+      "raw_rows_sampled": 101776,
+      "read_errors": [],
+      "row_groups_read": 24,
+      "seed": 2025
+    }
+  },
+  "created_utc": "2026-03-12T21:31:36Z",
+  "dataset_label": "chunks-v3-authoritative",
+  "git": {
+    "git_commit": null,
+    "git_root": "/home/jmckerra/Code/FRESCO-Pipeline",
+    "git_status_porcelain": null
+  },
+  "input_files_used": [
+    {
+      "bytes": 356,
+      "cluster": "manifest",
+      "path": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/manifests/output_manifest.jsonl",
+      "sha256": "a1d95ffa72ebdde6776016a615775f53d4f36adc17003413ee8526dd9c7f2b22"
+    }
+  ],
+  "inputs_manifest": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/manifests/output_manifest.jsonl",
+  "notes": [
+    "Second frozen-universe validation of the stable no-queue Anvil->Conte hardware_cpu_standard baseline.",
+    "Uses base seed 2024 (target seed 2025) to test sensitivity to frozen sampled-universe choice while keeping the EXP-062 feature recipe fixed."
+  ],
+  "reference_config": "/home/jmckerra/Code/FRESCO-Pipeline/experiments/EXP-062_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_no_queuetime/config/exp062_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_no_queuetime.json",
+  "sampling": {
+    "base_seed": 2024,
+    "max_rows_per_cluster": 300000,
+    "sample_n_row_groups_per_file": 24
+  }
+}

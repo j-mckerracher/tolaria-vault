@@ -1,0 +1,4 @@
+cluster_1,cluster_2,log_offset_c2_minus_c1,scale_factor_c2_over_c1,interpretation
+C,S,0.4635118645893499,1.5896468181193835,S values are 1.59× C values (on average)
+C,NONE,2.2079394097683016,9.096951976412203,NONE values are 9.10× C values (on average)
+NONE,S,-1.7444275451789517,0.1747449939541544,S values are 0.17× NONE values (on average)

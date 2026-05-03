@@ -1,0 +1,74 @@
+{
+  "adaptation": {
+    "applied": true,
+    "config": {
+      "n_quantiles_requested": 100,
+      "n_quantiles_used": 100,
+      "type": "quantile_output"
+    }
+  },
+  "created_utc": "2026-03-13T06:28:10Z",
+  "dataset_label": "chunks-v3-authoritative",
+  "eval": {
+    "source_test": {
+      "bias_log": 0.0008590655798065022,
+      "intercept": 0.0014919290136450577,
+      "mae_log": 0.036868977760304227,
+      "mdae_log": 0.017397336973195204,
+      "overflow_pred": false,
+      "r2": 0.08420592822009554,
+      "slope": 0.996457705602381,
+      "smape": 10.691716016262722
+    },
+    "target": {
+      "bias_log": -0.019892298327320906,
+      "intercept": 0.048843916014231416,
+      "mae_log": 0.08913520963350027,
+      "mdae_log": 0.0721467031833652,
+      "overflow_pred": false,
+      "r2": -0.02853674098238912,
+      "slope": 0.6150054277423572,
+      "smape": 52.01674239867666
+    },
+    "target_r2_bootstrap": {
+      "r2_ci_lower": -0.05715172300378727,
+      "r2_ci_upper": -0.009634722026864023,
+      "r2_mean": -0.031013329908774655
+    }
+  },
+  "features": [
+    "ncores",
+    "nhosts",
+    "timelimit_sec",
+    "runtime_sec",
+    "runtime_fraction"
+  ],
+  "label": {
+    "column": "peak_memory_fraction",
+    "proxy": false,
+    "transform": "log1p"
+  },
+  "limitations": [
+    "Model uses the feature set specified in the run config; treat this as an ablation baseline, not the final intended Phase 3 feature set.",
+    "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+  ],
+  "model": {
+    "alpha": 1.0,
+    "type": "ridge"
+  },
+  "overlap": {
+    "matched_source_n": 11133,
+    "matched_target_n": 1686,
+    "overlap_band": [
+      0.2,
+      0.8
+    ],
+    "run_id": "EXP-070_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_no_queuetime_plan2024"
+  },
+  "pair": {
+    "source": "anvil",
+    "target": "conte"
+  },
+  "regime": "hardware_cpu_standard",
+  "run_id": "EXP-084_modeling_authoritative_v3_hardware_cpu_standard_peakmem_band_02_08_no_queuetime_quantile_output_plan2024"
+}

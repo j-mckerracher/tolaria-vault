@@ -1,0 +1,362 @@
+[
+  {
+    "bytes": 28612,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-ec89208910d5403a85df2754cedd066c.parquet",
+    "sha256": "0250de7da35bab50918d504e4df19144237a562b14788e64216fd1d2a7276dfc"
+  },
+  {
+    "bytes": 28569,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-96c5cdf0c21c472bacba3cf9d6016ae3.parquet",
+    "sha256": "dd09b7cb5398785e5e08b1559d62a3200df655a7497339895496102ed2f57e43"
+  },
+  {
+    "bytes": 28116,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-fa5cabd03ec04f02bea8daa88fa51a5b.parquet",
+    "sha256": "15d1d586c4bb202b87507838375e172979401d14dd496b56a1bc649dfa27ac64"
+  },
+  {
+    "bytes": 25361,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-2e97fa6f7b29447b932aa468a62bcf30.parquet",
+    "sha256": "0ff9706644c89576cd08ebf728d92dcef8280d875e3e965df37d3ce3d8dd4b42"
+  },
+  {
+    "bytes": 25361,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-7d35d37a7c774239bd8e2a21c11430d3.parquet",
+    "sha256": "515b4388e59cc6258669996f26ab404c99fb2b86d83aeb1c79bfc18b4295302c"
+  },
+  {
+    "bytes": 28683,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-9eaa6e2a36f6445ea142f7aed8129efd.parquet",
+    "sha256": "ac781201b533c9bb33f7524ea1d3f3fc54a78c87d7f9f80be618c2713d3acf02"
+  },
+  {
+    "bytes": 28675,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-fc7510d966fa42bab84d55dbd605e017.parquet",
+    "sha256": "9f9ccb518982aaeb21f95d388a22f6eaad83744f4c52472ae16c50673bf4104f"
+  },
+  {
+    "bytes": 28164,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-6ff8cc849b0b45928dccc5b53384bff2.parquet",
+    "sha256": "d1e44ce1a01f042fcef8fc548777cafefe8b869884e3422dd7a050c22184e4e6"
+  },
+  {
+    "bytes": 25048,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-9ee379d2be984bcfa886c5c9d5c1ef91.parquet",
+    "sha256": "a30639740054bbe705205d7b8ed3072a92cccdee9185a9f032bd3cb0a06060b6"
+  },
+  {
+    "bytes": 25048,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-37f7ee5e947240348b004c0b932b4217.parquet",
+    "sha256": "577f76d76159c8b94d475d97886b3f98cd7bab4a415e33128fd464216a2a09bd"
+  },
+  {
+    "bytes": 28707,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-ef0e3b951e894604862d4e7931d83908.parquet",
+    "sha256": "d1fc5528b05ea46315c69a89c743641feec7804c9a74fd3029368e5b1b2ab4a5"
+  },
+  {
+    "bytes": 27911,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-148284a973bf4be29cbb370f3aeab8bb.parquet",
+    "sha256": "1055af1236203bc3628ae427b4b620c60de7c89ba8f7170090f4672bcac28342"
+  },
+  {
+    "bytes": 24974,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-aa07fcc32d9f4d97b6bc27b0aaf02e91.parquet",
+    "sha256": "4c662f28d34ed616482e87b80fbc8d29b3f1cbc9f5846bafc6bbe4eec9dddcb5"
+  },
+  {
+    "bytes": 27915,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-a565bc145bcf4c74997a75ecc041e5df.parquet",
+    "sha256": "490bec9428c854a41ab64c83ca8fc4ca0d469147a06d2d08988787467c6b1f36"
+  },
+  {
+    "bytes": 28480,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-77a5a527d5e94f169359208c2ec267dc.parquet",
+    "sha256": "e791f781cc8186ce3ac92c06744bf4c91aa280f04005e00df7e91d2613b6e6ca"
+  },
+  {
+    "bytes": 27979,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-3557f980fd0b4c15825e4c43d0c05427.parquet",
+    "sha256": "c4b8bfb3f1a38865b98bcc174bdaf5d15ed71b809c12be70e764c88604cc38b5"
+  },
+  {
+    "bytes": 27532,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-b533a7f754514bf79d5511d728a4431f.parquet",
+    "sha256": "dc3d3b27be836a5723ec3325448d49da626b97adc2d254ce7c23c4aa6057f1c2"
+  },
+  {
+    "bytes": 25355,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-04ce869591cc4407b69af199f292e6b6.parquet",
+    "sha256": "4e2da2033c155e6cf83cc8cb30befb9604b51601fb39d190c43e2f7b702519c1"
+  },
+  {
+    "bytes": 27917,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-59222b3255ac4b58932bb63c2f2f8f2f.parquet",
+    "sha256": "725524d5bcac8de1014409c929ed510df40f968866047264e942b5d9a5757a8a"
+  },
+  {
+    "bytes": 24566,
+    "cluster": "anvil",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2023\\start_month=06\\source_token=NONE\\part-r000-914d01f5d70e4198951d72f2d6f598fb.parquet",
+    "sha256": "3bdb951b60396c934ef50e545f6c3dd7c65c72054575bfcbede0a83dc22d2ba6"
+  },
+  {
+    "bytes": 28000,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-b2b2ed02a27648b49ec1f85e33a4c6a8.parquet",
+    "sha256": "98e620a4a4118b1f0ab7c1d1970c19f920032880c9018a66bb031103288263ea"
+  },
+  {
+    "bytes": 30713,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-ce06d623e04c424bafe28b4d8813f987.parquet",
+    "sha256": "ee599f641d2c710f80e5ce271709125f716ba0b11678b8cbdd77fde74e930528"
+  },
+  {
+    "bytes": 24677,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-a14551e0e71c4e6e8b200a4f6d32e287.parquet",
+    "sha256": "7d7f1072c6c98b997118095a4320c57788cabaf4e12aeefee2ba28e77ec7591c"
+  },
+  {
+    "bytes": 36954,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-0cbcc43151e94ff7860aba474633fd8b.parquet",
+    "sha256": "8e4d10029e54e9a79c1ce30a26d5112424908cfa61f72a3ce2820213d2589fcb"
+  },
+  {
+    "bytes": 26612,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-b620fbe7cd364b06a73919a37334256a.parquet",
+    "sha256": "70100e12e3eccfaf7495755db69625656316c5fc8991691b57a8af59d4314f85"
+  },
+  {
+    "bytes": 27023,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-43c822d1193747c7b0854bd646e82669.parquet",
+    "sha256": "c39ec0224a7d3dcd820510481384241d223eb0af6c89dfed5c699d166851a4e4"
+  },
+  {
+    "bytes": 26932,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-e9b47c968b93434595cf5a922f91010d.parquet",
+    "sha256": "b1ab0aa6476eee0946dc5b4b9c52898eacd05168b57cd411f8275c65b3146c99"
+  },
+  {
+    "bytes": 35510,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-82076c55886f40e48e586133244c8125.parquet",
+    "sha256": "6338af5081f7ad1aaef58dc3e240b6f3ece9b49d6328cfff3ad792e07c14461f"
+  },
+  {
+    "bytes": 26208,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-5e8aa2d960384a938dc5f1f950ce9bf1.parquet",
+    "sha256": "2d7eb459b39d861aa6255542917e7f87486d3c803801f51888e0bbc3c56468df"
+  },
+  {
+    "bytes": 63932,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-a36c09baec414fb8828a1eea340ba422.parquet",
+    "sha256": "2e83bd0220bf12672430228a722565b7c0f3d2797c9a1ae1ac8d8a33a758aa45"
+  },
+  {
+    "bytes": 66580,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-e7c8de793c9e4147ae5de74284855410.parquet",
+    "sha256": "30e7cf5210c4f9d28146c013562947b8c47505ed2465630944ef9cb3bfd065dd"
+  },
+  {
+    "bytes": 27514,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-8ba6be463bc142989eae292f5317ee2c.parquet",
+    "sha256": "e171913be193350569f8f42d81df0ab1fce702e46fdc341df8a6a0d3e70322a2"
+  },
+  {
+    "bytes": 39749,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-6d3d8cc48c7f4d47b3192746069b5a9e.parquet",
+    "sha256": "e244b901aa934bb451249c42eee1243f3362310b967b528d5375107032d64566"
+  },
+  {
+    "bytes": 58719,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-267c7d90816c4b339b088aa2da127267.parquet",
+    "sha256": "c90271a8d8d72e98b97468545c94064778b8b53f6b4409dfcd9e0ca01b9029f9"
+  },
+  {
+    "bytes": 33508,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-1adeb1a60c2b4b83a7511eedad43c1ee.parquet",
+    "sha256": "64c04aa5ff7f60a00e6f27ade57effcd5bbb627fbd32e15336e0ed60ee7b33b5"
+  },
+  {
+    "bytes": 26193,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-2a4e6d0ae1e544c3b80d95da533d3c71.parquet",
+    "sha256": "4bb7e0d8d0a13feb952f917a95e74d4132693fc4880a9bcb9e9933c7838449cc"
+  },
+  {
+    "bytes": 69431,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-cfa2cc55b5cf4d649a501c6cbba34bb1.parquet",
+    "sha256": "152fa8e0cf4e75599fbe3961525598c83978a6a6c3407a17eb6c0f6b73b7edf9"
+  },
+  {
+    "bytes": 39007,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-2051a830bd394269a7f5b35e38f51d9b.parquet",
+    "sha256": "bd046dc7643f39b9d834940fc3b5f1e160e57ea6ec7bff9b667ae4f375010e3c"
+  },
+  {
+    "bytes": 60246,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-0c85663c4d4743f7818f2fb9584c3f92.parquet",
+    "sha256": "bfc680bf7f682f195d768eb62fe1dc1999615f3a78fb2687baaac843e7b85c47"
+  },
+  {
+    "bytes": 33462,
+    "cluster": "conte",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=07\\source_token=C\\part-r000-6c2335ae02674194b691ff6f1f4ae96c.parquet",
+    "sha256": "a8026be171e158f028b431694d258114bc5e1a984931b4b370a689f8cb46e0b2"
+  },
+  {
+    "bytes": 95305,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-420b30bc17df455985449b03bc2f350e.parquet",
+    "sha256": "c3312d4dbaac43b4b34f1d96c338f1e79acd20f4d5488550508fd8ffc0e9a18c"
+  },
+  {
+    "bytes": 73975,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-22afb544477445628540e0b2b51f1898.parquet",
+    "sha256": "264de9689da624e6613af1d122a797e25c5493e858401fcfad59f0ed5be8f756"
+  },
+  {
+    "bytes": 103565,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-62e8ba65df1d4bb58c926ee3db39c7bd.parquet",
+    "sha256": "d918fb123c84c341fda029d4a012e81043d44eaadc7ad70bad9bfbcf18f7c3ed"
+  },
+  {
+    "bytes": 97977,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-a216aa5e1fbc416889c2ff15af0b383f.parquet",
+    "sha256": "c489b7ade2250c135193b90d903b5b733186a72b6aea08d91c58a1d1a3a86525"
+  },
+  {
+    "bytes": 91569,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-c7692ff8316143e9b47d6415c9a0b867.parquet",
+    "sha256": "be01ec0b9108a9971c45e70661f694fd8625a5baba95bd61f6f0e81dfb9329eb"
+  },
+  {
+    "bytes": 78236,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-6e94576200884f1f819927149e313d1c.parquet",
+    "sha256": "95a02626cd4fee0aa3d7661765e1ebb63a86fa6a753686d07a661642d42fd89e"
+  },
+  {
+    "bytes": 93129,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-043ce1c6b1d048bd904697af4f086a20.parquet",
+    "sha256": "d2c8f5fe869b0ff1b5709e825e11b939408faddbe9a727a68d2a4bd2f31a4b98"
+  },
+  {
+    "bytes": 95227,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-d675b3a02e0743dcaa8fa77ea9828fdb.parquet",
+    "sha256": "2c81ba8d97bc5809f3f16bb0bc679097344ce45697640c676adc6669d5afd731"
+  },
+  {
+    "bytes": 87780,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-74474db75fe04dba85a65c9cbd4cd17c.parquet",
+    "sha256": "106859ecc17913eb2e14afabb9afdda02614fe7408fddbf8e6c6ef5851a40d82"
+  },
+  {
+    "bytes": 84525,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-97e99756cbd14601aff5abc7d10e78b1.parquet",
+    "sha256": "598d9bc4c612cf9ddad235d88e0f58a1101f52b1afbc146749dd45732d810466"
+  },
+  {
+    "bytes": 95964,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-c84b66004205431ca13d60e427b4d6b1.parquet",
+    "sha256": "b2220e0fd6f29dce915b0747908f3874a0bb7438911e4a62661c436a9a0724fb"
+  },
+  {
+    "bytes": 91829,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-4eb2fe2130af4ce1b42ec0c08434f64e.parquet",
+    "sha256": "0e87fdb5375256df44d278723cfbb702d8d63b9d5793dac11e393b5003faf8c8"
+  },
+  {
+    "bytes": 84310,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-c266cc0dcb294a3b95e651c3865784ec.parquet",
+    "sha256": "05da70506336a29864267ced3f75b6bb247d054f70fa679b30a2b8979efe42fc"
+  },
+  {
+    "bytes": 97371,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-0f717a7ca23c4bbc86998d89b7ff1b3a.parquet",
+    "sha256": "e8f02ac3562ee729680ce8872ca59a0171f7f9e0bd3b7976ba55f3c50a18db39"
+  },
+  {
+    "bytes": 87895,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-c405a01c2219464a853f58958959b71f.parquet",
+    "sha256": "84715601b66a11d2d3fe579a8060870521fc5a3575cf00a604c5284805583714"
+  },
+  {
+    "bytes": 90100,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-fff98494558745738ce6d9c69d8ea49b.parquet",
+    "sha256": "b3f4b302f6aa15199bdad15f974e37a34096d02263ead6be94ee9dc33485745c"
+  },
+  {
+    "bytes": 107502,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-e385bd714c9444799f16c3baf62fe318.parquet",
+    "sha256": "443b4e07dcd49cdedfdfaa88381e77c8f3c09bd0215b6f33953fd5340eea566b"
+  },
+  {
+    "bytes": 81988,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-6be32871891f4fd5baaf8e9f9e01ad1c.parquet",
+    "sha256": "63c5d1426cb3f6c02fc5b6f09ecaa68b5b8c1a57a051b887783c9ab2bdb1dfc8"
+  },
+  {
+    "bytes": 110056,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-49dbb2150c334075a5475c2319444d5f.parquet",
+    "sha256": "8e8539b5dc73ed281ce9e16525e3e3bfa6fef90ee67805de606cb51bb9d84d29"
+  },
+  {
+    "bytes": 67187,
+    "cluster": "stampede",
+    "path": "C:\\Users\\jmckerra\\ObsidianNotes\\Main\\01-Projects\\FRESCO-Research\\Experiments\\EXP-001_baseline_statistical_analysis\\results\\tmp\\job_partials\\start_year=2016\\start_month=10\\source_token=S\\part-r000-d76346ddef714b4ea36213c17e49c521.parquet",
+    "sha256": "368c8ca6da2a4f3a426a5aa14362e8e859e3b6a7a5b855300161a971643031b1"
+  }
+]

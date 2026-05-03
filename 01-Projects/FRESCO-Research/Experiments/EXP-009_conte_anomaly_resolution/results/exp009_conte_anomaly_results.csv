@@ -1,0 +1,5 @@
+r2,mae_log,mdae_log,smape,variant,condition,n_train,n_test,notes
+0.11375900969613761,1.819998598973237,1.8424519743921302,145.29537388139184,with_timelimit,A_C_to_C_time,1020786,525341,Conte cutoff=201702
+0.4723427756777884,1.4365207170029095,1.180561668469986,106.0195053875049,with_timelimit,B_C_to_C_random,1020786,525341,Random split; train size matched to A
+0.15555741282050095,1.644584926813945,1.4204779601569264,122.16533618929127,with_timelimit,C_NONE_to_C_transfer,166055,525341,NONE cutoff=202305; test is Conte time-test
+0.18588285015105532,1.6692623158649291,1.4349932665824499,123.07125432908693,with_timelimit,D_NONE_to_C_transfer_supportmatch,24842,525341,NONE train filtered to ncores=1 & nhosts=1; test is Conte time-test

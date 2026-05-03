@@ -1,0 +1,78 @@
+{
+  "adaptation": {
+    "applied": true,
+    "config": {
+      "reg": 1e-06,
+      "type": "coral"
+    }
+  },
+  "created_utc": "2026-02-03T18:27:22Z",
+  "dataset_label": "local_job_partials_snapshot",
+  "eval": {
+    "source_test": {
+      "bias_log": 259.33748652460105,
+      "intercept": 4.5989863410101455,
+      "mae_log": 259.3727208899156,
+      "mdae_log": 0.03228798038281866,
+      "overflow_pred": false,
+      "r2": -223060454.95646116,
+      "slope": -5.603066044338788e-05,
+      "smape": 3.260282300956527
+    },
+    "target": {
+      "bias_log": -3400.5845889047123,
+      "intercept": 2.381196399989918,
+      "mae_log": 9854.31128926017,
+      "mdae_log": 5201.585097845026,
+      "overflow_pred": true,
+      "r2": -706600418.1647416,
+      "slope": -2.1335850942858073e-05,
+      "smape": NaN
+    },
+    "target_r2_bootstrap": {
+      "r2_ci_lower": -811091871.8674845,
+      "r2_ci_upper": -620578550.184492,
+      "r2_mean": -707619857.4940338
+    }
+  },
+  "features": [
+    "ncores",
+    "timelimit",
+    "value_block_cnt",
+    "value_block_sum",
+    "value_cpuuser_cnt",
+    "value_cpuuser_sum",
+    "value_gpu_cnt",
+    "value_gpu_sum",
+    "value_nfs_cnt",
+    "value_nfs_sum"
+  ],
+  "label": {
+    "column": "value_memused_max",
+    "proxy": true,
+    "transform": "log1p"
+  },
+  "limitations": [
+    "Label is a local proxy (value_memused_max) from job_partials, not the authoritative v3 peak_memory_fraction target.",
+    "Model uses the feature set specified in the run config; treat this as an ablation baseline, not the final intended Phase 3 feature set."
+  ],
+  "model": {
+    "alpha": 1.0,
+    "type": "ridge"
+  },
+  "overlap": {
+    "matched_source_n": 53,
+    "matched_target_n": 704,
+    "overlap_band": [
+      0.1,
+      0.9
+    ],
+    "run_id": "EXP-024_regime_matching_alloc_perf_nomem_band_01_09"
+  },
+  "pair": {
+    "source": "anvil",
+    "target": "conte"
+  },
+  "regime": "cpu_standard",
+  "run_id": "EXP-027_modeling_alloc_perf_nomem_band_01_09_coral"
+}

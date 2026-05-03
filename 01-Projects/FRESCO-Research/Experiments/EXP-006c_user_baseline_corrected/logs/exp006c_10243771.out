@@ -1,0 +1,90 @@
+[load] Loading data from /depot/sbagchi/data/josh/FRESCO/chunks...
+[load] Raw: 7,040,808 jobs
+  S timelimit_sec: min=60, max=604800
+  C timelimit_sec: min=0, max=5472000
+  NONE timelimit_sec: min=60, max=2592000
+
+[clean] Filtering invalid data...
+[clean] Removed 274,592 invalid jobs
+[clean] After filtering: 6,766,216 jobs
+       C: 1,546,127 jobs, 557 unique users
+       NONE: 215,706 jobs, 1,968 unique users
+       S: 5,004,383 jobs, 12,225 unique users
+
+======================================================================
+CLUSTER: S (5,004,383 jobs)
+======================================================================
+
+--- time_based ---
+[split] Time: Train 4,837,564, Test 166,819, Cutoff: 201705
+  global_median:      R²=-0.0726, sMAPE=169.7%
+  user_median:        R²=0.0738, sMAPE=134.4%
+  resources_only    : R²=-0.0372, sMAPE=166.6% (features=2)
+  with_timelimit    : R²=0.3293, sMAPE=141.1% (features=3)
+  with_user         : R²=0.0481, sMAPE=161.1% (features=3)
+  full              : R²=0.3593, sMAPE=136.6% (features=4)
+
+--- user_aware ---
+[split] User: Train 4,076,777 (9,780 users), Test 927,606 (2,445 users)
+  global_median:      R²=-0.0249, sMAPE=165.6%
+  user_median:        R²=-0.0249, sMAPE=165.6%
+  resources_only    : R²=-0.0176, sMAPE=162.3% (features=2)
+  with_timelimit    : R²=0.2251, sMAPE=145.3% (features=3)
+  with_user         : R²=-0.2035, sMAPE=162.1% (features=3)
+  full              : R²=0.1864, sMAPE=145.7% (features=4)
+
+======================================================================
+CLUSTER: C (1,546,127 jobs)
+======================================================================
+
+--- time_based ---
+[split] Time: Train 1,020,786, Test 525,341, Cutoff: 201702
+  global_median:      R²=-0.1322, sMAPE=164.3%
+  user_median:        R²=-0.3197, sMAPE=123.1%
+  resources_only    : R²=-0.3652, sMAPE=168.1% (features=2)
+  with_timelimit    : R²=0.1258, sMAPE=144.4% (features=3)
+  with_user         : R²=0.1156, sMAPE=91.5% (features=3)
+  full              : R²=0.4215, sMAPE=102.8% (features=4)
+
+--- user_aware ---
+[split] User: Train 962,383 (446 users), Test 583,744 (111 users)
+  global_median:      R²=-0.2364, sMAPE=154.0%
+  user_median:        R²=-0.2364, sMAPE=154.0%
+  resources_only    : R²=-0.0913, sMAPE=148.3% (features=2)
+  with_timelimit    : R²=0.2372, sMAPE=138.9% (features=3)
+  with_user         : R²=-0.7078, sMAPE=156.6% (features=3)
+  full              : R²=0.2019, sMAPE=133.6% (features=4)
+
+======================================================================
+CLUSTER: NONE (215,706 jobs)
+======================================================================
+
+--- time_based ---
+[split] Time: Train 166,055, Test 49,651, Cutoff: 202305
+  global_median:      R²=-0.1214, sMAPE=162.1%
+  user_median:        R²=0.5813, sMAPE=95.5%
+  resources_only    : R²=0.5194, sMAPE=111.4% (features=2)
+  with_timelimit    : R²=0.7123, sMAPE=93.6% (features=3)
+  with_user         : R²=0.5807, sMAPE=117.1% (features=3)
+  full              : R²=0.7544, sMAPE=87.3% (features=4)
+
+--- user_aware ---
+[split] User: Train 172,654 (1,575 users), Test 43,052 (393 users)
+  global_median:      R²=-0.1621, sMAPE=164.5%
+  user_median:        R²=-0.1621, sMAPE=164.5%
+  resources_only    : R²=-0.9732, sMAPE=177.7% (features=2)
+  with_timelimit    : R²=0.3947, sMAPE=112.3% (features=3)
+  with_user         : R²=-1.4581, sMAPE=187.1% (features=3)
+  full              : R²=-0.0583, sMAPE=143.2% (features=4)
+
+[save] /home/jmckerra/Experiments/EXP-006c_user_baseline_corrected/results/user_baseline_corrected.csv
+
+======================================================================
+LEAKAGE QUANTIFICATION
+======================================================================
+  S: Δ R² = +0.1042 (time=0.3293, user=0.2251)
+  C: Δ R² = -0.1114 (time=0.1258, user=0.2372)
+  NONE: Δ R² = +0.3175 (time=0.7123, user=0.3947)
+
+[done] Corrected experiment complete!
+EXP-006c complete

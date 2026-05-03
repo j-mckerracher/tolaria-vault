@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-02-03T19:30:45Z",
+  "dataset_label": "local_job_partials_snapshot",
+  "domain_classifier_auc": 1.0,
+  "feature_columns": [
+    "ncores",
+    "timelimit",
+    "value_block_cnt",
+    "value_block_sum",
+    "value_cpuuser_cnt",
+    "value_cpuuser_sum",
+    "value_gpu_cnt",
+    "value_gpu_sum",
+    "value_nfs_cnt",
+    "value_nfs_sum"
+  ],
+  "ks_by_feature_all": {
+    "ncores": 0.8297872340425532,
+    "timelimit": 1.0,
+    "value_block_cnt": 0.4123384679121074,
+    "value_block_sum": 0.5231807224527609,
+    "value_cpuuser_cnt": 0.4123384679121074,
+    "value_cpuuser_sum": 0.37579585212231026,
+    "value_gpu_cnt": 0.0,
+    "value_gpu_sum": 0.0,
+    "value_nfs_cnt": 1.0,
+    "value_nfs_sum": 0.9468085106382979
+  },
+  "ks_by_feature_overlap": {
+    "ncores": null,
+    "timelimit": null,
+    "value_block_cnt": null,
+    "value_block_sum": null,
+    "value_cpuuser_cnt": null,
+    "value_cpuuser_sum": null,
+    "value_gpu_cnt": null,
+    "value_gpu_sum": null,
+    "value_nfs_cnt": null,
+    "value_nfs_sum": null
+  },
+  "n_source": 94,
+  "n_source_overlap": 0,
+  "n_target": 9347,
+  "n_target_overlap": 0,
+  "notes": [
+    "Propensity model trained on a sampled subset of rows from parquet files listed in the input manifest.",
+    "Regime definition is a local proxy: cpu_standard := (value_gpu_cnt<=0 and value_gpu_sum<=0)."
+  ],
+  "overlap_band": [
+    0.2,
+    0.8
+  ],
+  "regime": "cpu_standard",
+  "run_id": "EXP-037_regime_matching_anvil_to_stampede_band_02_08",
+  "source_cluster": "anvil",
+  "target_cluster": "stampede",
+  "target_overlap_coverage": 0.0
+}

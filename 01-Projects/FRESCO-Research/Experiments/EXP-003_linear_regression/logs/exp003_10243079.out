@@ -1,0 +1,57 @@
+[load] Loading raw FRESCO data from /depot/sbagchi/data/josh/FRESCO/chunks...
+[load] Loaded 7,040,743 jobs with valid runtime
+[train] Found clusters: ['S' 'NONE']
+[train] Features: ['ncores', 'nhosts', 'log_timelimit', 'log_wait_sec', 'month_1', 'month_2', 'month_3', 'month_4', 'month_5', 'month_6', 'month_7', 'month_8', 'month_9', 'month_10', 'month_11', 'month_12']
+
+============================================================
+CLUSTER: S
+============================================================
+[split] Train: 4,802,344 jobs, Test: 202,308 jobs
+[split] Cutoff time_idx: 201704
+[train] Training Ridge Regression...
+[eval] R² = 0.3560
+[eval] MAE (log) = 1.8551
+[eval] MAE (sec) = 15842.3
+[eval] MAPE = 3309.2%
+
+[coef] Top 5 features:
+      feature  coefficient  abs_coefficient cluster  intercept
+log_timelimit     0.671890         0.671890       S   2.342277
+      month_3    -0.265009         0.265009       S   2.342277
+      month_1    -0.245462         0.245462       S   2.342277
+     month_12     0.216874         0.216874       S   2.342277
+      month_4    -0.176201         0.176201       S   2.342277
+
+============================================================
+CLUSTER: NONE
+============================================================
+[split] Train: 1,891,930 jobs, Test: 144,161 jobs
+[split] Cutoff time_idx: 202211
+[train] Training Ridge Regression...
+[eval] R² = 0.2578
+[eval] MAE (log) = 1.9491
+[eval] MAE (sec) = 45266.7
+[eval] MAPE = 201.2%
+
+[coef] Top 5 features:
+      feature  coefficient  abs_coefficient cluster  intercept
+log_timelimit     0.579007         0.579007    NONE  -0.722279
+      month_6     0.455686         0.455686    NONE  -0.722279
+      month_8    -0.297613         0.297613    NONE  -0.722279
+     month_11    -0.287309         0.287309    NONE  -0.722279
+      month_2     0.275981         0.275981    NONE  -0.722279
+
+[save] Saved metrics to /home/jmckerra/Experiments/EXP-003_linear_regression/results/metrics.csv
+
+============================================================
+SUMMARY
+============================================================
+      r2  mae_log  rmse_log      mae_sec        mape cluster  n_train  n_test
+0.355959 1.855149  2.301256 15842.263451 3309.236385       S  4802344  202308
+0.257797 1.949073  2.545144 45266.680523  201.230881    NONE  1891930  144161
+[save] Saved coefficients to /home/jmckerra/Experiments/EXP-003_linear_regression/results/coefficients.csv
+[save] Saved predictions to /home/jmckerra/Experiments/EXP-003_linear_regression/results/predictions.parquet
+[plot] Saved diagnostic plots to /home/jmckerra/Experiments/EXP-003_linear_regression/results/figures
+
+[done] Training complete!
+EXP-003 complete

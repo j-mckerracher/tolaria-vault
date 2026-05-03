@@ -1,0 +1,3 @@
+[stage2] Wrote job rollups to: /home/jmckerra/Experiments/EXP-001_baseline_statistical_analysis/results/job_rollup
+[stage3] Wrote monthly summary to: /home/jmckerra/Experiments/EXP-001_baseline_statistical_analysis/results/monthly_summary.parquet and /home/jmckerra/Experiments/EXP-001_baseline_statistical_analysis/results/monthly_summary.csv
+EXP-001 stage2+3 complete

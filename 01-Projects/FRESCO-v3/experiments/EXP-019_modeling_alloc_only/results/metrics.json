@@ -1,0 +1,57 @@
+{
+  "created_utc": "2026-02-03T11:00:12Z",
+  "dataset_label": "local_job_partials_snapshot",
+  "eval": {
+    "source_test": {
+      "bias_log": -0.06974782955328776,
+      "intercept": 25.91285873417039,
+      "mae_log": 0.37346045746356465,
+      "mdae_log": 0.31527813571703556,
+      "r2": -0.041109475411270635,
+      "slope": -5.641694243049565,
+      "smape": 31.804967226945497
+    },
+    "target": {
+      "bias_log": -1.2435049133967369,
+      "intercept": -0.48598582757041564,
+      "mae_log": 1.2444729346541608,
+      "mdae_log": 1.2348965154220615,
+      "r2": -5.513156488127225,
+      "slope": 0.7956804969588489,
+      "smape": 116.32857706326894
+    },
+    "target_r2_bootstrap": {
+      "r2_ci_lower": -5.8576407664799,
+      "r2_ci_upper": -5.161631797919546,
+      "r2_mean": -5.507465581113429
+    }
+  },
+  "features": [
+    "ncores",
+    "timelimit"
+  ],
+  "label": {
+    "column": "value_memused_max",
+    "proxy": true,
+    "transform": "log1p"
+  },
+  "limitations": [
+    "Label is a local proxy (value_memused_max) from job_partials, not the authoritative v3 peak_memory_fraction target.",
+    "Model uses allocations-only features; this is an ablation baseline, not the final intended Phase 3 feature set."
+  ],
+  "overlap": {
+    "matched_source_n": 753,
+    "matched_target_n": 2539,
+    "overlap_band": [
+      0.2,
+      0.8
+    ],
+    "run_id": "EXP-018_regime_matching_alloc_only"
+  },
+  "pair": {
+    "source": "anvil",
+    "target": "conte"
+  },
+  "regime": "cpu_standard",
+  "run_id": "EXP-019_modeling_alloc_only"
+}

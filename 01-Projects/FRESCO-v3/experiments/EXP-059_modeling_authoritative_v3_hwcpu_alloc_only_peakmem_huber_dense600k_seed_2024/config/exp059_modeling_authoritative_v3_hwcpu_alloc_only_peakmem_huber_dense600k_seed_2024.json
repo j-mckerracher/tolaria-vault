@@ -1,0 +1,59 @@
+{
+  "run_id": "EXP-059_modeling_authoritative_v3_hwcpu_alloc_only_peakmem_huber_dense600k_seed_2024",
+  "dataset_version": "v3.0",
+  "dataset_label": "chunks-v3-authoritative",
+  "input_root": "/depot/sbagchi/data/josh/FRESCO/chunks-v3",
+  "output_root": "/home/jmckerra/Code/FRESCO-Pipeline/experiments/EXP-059_modeling_authoritative_v3_hwcpu_alloc_only_peakmem_huber_dense600k_seed_2024",
+  "clusters": [
+    "anvil",
+    "conte",
+    "stampede"
+  ],
+  "date_range": {
+    "start": "2015-01-01",
+    "end": "2023-12-31"
+  },
+  "inputs_manifest": "/depot/sbagchi/data/josh/FRESCO/chunks-v3/manifests/output_manifest.jsonl",
+  "source_cluster": "anvil",
+  "target_cluster": "conte",
+  "regime": "hardware_cpu_standard",
+  "label_column": "peak_memory_fraction",
+  "label_transform": "log1p",
+  "label_proxy": false,
+  "feature_columns": [
+    "ncores",
+    "nhosts",
+    "timelimit_sec"
+  ],
+  "overlap_run": {
+    "run_id": "EXP-058_regime_matching_authoritative_v3_hwcpu_alloc_only_dense600k_seed_2024",
+    "matched_source_indices": "experiments/EXP-058_regime_matching_authoritative_v3_hwcpu_alloc_only_dense600k_seed_2024/results/matched_source_indices.parquet",
+    "matched_target_indices": "experiments/EXP-058_regime_matching_authoritative_v3_hwcpu_alloc_only_dense600k_seed_2024/results/matched_target_indices.parquet",
+    "overlap_band": [
+      0.2,
+      0.8
+    ]
+  },
+  "model": {
+    "type": "huber",
+    "alpha": 0.0001,
+    "epsilon": 1.35,
+    "max_iter": 500
+  },
+  "adaptation": {
+    "type": "none"
+  },
+  "split": {
+    "type": "random",
+    "test_frac": 0.2,
+    "seed": 2024
+  },
+  "max_rows_source": 600000,
+  "max_rows_target": 600000,
+  "sample_n_row_groups_per_file": 128,
+  "n_boot": 200,
+  "random_seed": 2024,
+  "write_manifests": true,
+  "write_validation_reports": true,
+  "validation_level": "strict"
+}

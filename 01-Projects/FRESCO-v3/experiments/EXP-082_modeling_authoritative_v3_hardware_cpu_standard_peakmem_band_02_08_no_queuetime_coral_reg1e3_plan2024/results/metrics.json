@@ -1,0 +1,73 @@
+{
+  "adaptation": {
+    "applied": true,
+    "config": {
+      "reg": 0.001,
+      "type": "coral"
+    }
+  },
+  "created_utc": "2026-03-13T05:40:43Z",
+  "dataset_label": "chunks-v3-authoritative",
+  "eval": {
+    "source_test": {
+      "bias_log": 0.000859334251560373,
+      "intercept": 0.0015690797824156604,
+      "mae_log": 0.03686823342877056,
+      "mdae_log": 0.01742612647230682,
+      "overflow_pred": false,
+      "r2": 0.08419819760314096,
+      "slope": 0.996027371366294,
+      "smape": 10.697104966101339
+    },
+    "target": {
+      "bias_log": 0.019243501012461944,
+      "intercept": 0.09647035277715343,
+      "mae_log": 0.0888483641248016,
+      "mdae_log": 0.08641738474241417,
+      "overflow_pred": false,
+      "r2": -0.06328630214913455,
+      "slope": 0.4460146643335975,
+      "smape": 66.54716496172222
+    },
+    "target_r2_bootstrap": {
+      "r2_ci_lower": -0.10897653841633875,
+      "r2_ci_upper": -0.01562074078375214,
+      "r2_mean": -0.06362066590840099
+    }
+  },
+  "features": [
+    "ncores",
+    "nhosts",
+    "timelimit_sec",
+    "runtime_sec",
+    "runtime_fraction"
+  ],
+  "label": {
+    "column": "peak_memory_fraction",
+    "proxy": false,
+    "transform": "log1p"
+  },
+  "limitations": [
+    "Model uses the feature set specified in the run config; treat this as an ablation baseline, not the final intended Phase 3 feature set.",
+    "hardware_cpu_standard uses recovered hardware metadata from config/clusters.json: gpu_count_per_node<=0 and node_memory_gb<512, with partition recovered from queue."
+  ],
+  "model": {
+    "alpha": 1.0,
+    "type": "ridge"
+  },
+  "overlap": {
+    "matched_source_n": 11133,
+    "matched_target_n": 1686,
+    "overlap_band": [
+      0.2,
+      0.8
+    ],
+    "run_id": "EXP-070_regime_matching_authoritative_v3_hardware_cpu_standard_band_02_08_no_queuetime_plan2024"
+  },
+  "pair": {
+    "source": "anvil",
+    "target": "conte"
+  },
+  "regime": "hardware_cpu_standard",
+  "run_id": "EXP-082_modeling_authoritative_v3_hardware_cpu_standard_peakmem_band_02_08_no_queuetime_coral_reg1e3_plan2024"
+}
